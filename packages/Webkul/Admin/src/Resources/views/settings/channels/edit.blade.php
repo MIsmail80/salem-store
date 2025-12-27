@@ -1,7 +1,7 @@
 @php
     $locale = core()->getRequestedLocaleCode();
 
-    $seo = $channel->translate($locale)['home_seo'] ?? $channel->home_seo;
+    $seo = $channel->translate($locale)['home_seo'] ?? $channel->home_seo ?? [];
 @endphp
 
 <x-admin::layouts>
@@ -109,14 +109,14 @@
 
                         <x-admin::form.control-group.control
                             type="textarea"
-                            id="description"
-                            name="description"
-                            :value="old('description') ?? $channel->description"
+                            :id="$locale . '[description]'"
+                            :name="$locale . '[description]'"
+                            :value="old($locale . '.description') ?? $channel->description"
                             :label="trans('admin::app.settings.channels.edit.description')"
                             :placeholder="trans('admin::app.settings.channels.edit.description')"
                         />
 
-                        <x-admin::form.control-group.error control-name="description" />
+                        <x-admin::form.control-group.error :control-name="$locale . '[description]'" />
                     </x-admin::form.control-group>
 
                     <!-- Inventory Sources -->
@@ -295,7 +295,7 @@
                         <x-admin::form.control-group.control
                             type="text"
                             :name="$locale . '[seo_title]'"
-                            :value="old($locale)['seo_title'] ?? $seo['meta_title']"
+                            :value="old($locale)['seo_title'] ?? ($seo['meta_title'] ?? '')"
                             id="meta_title"
                             rules="required"
                             :label="trans('admin::app.settings.channels.edit.seo-title')"
@@ -315,7 +315,7 @@
                             type="textarea"
                             id="seo_keywords"
                             :name="$locale . '[seo_keywords]'"
-                            :value="old($locale)['seo_keywords'] ?? $seo['meta_keywords']"
+                            :value="old($locale)['seo_keywords'] ?? ($seo['meta_keywords'] ?? '')"
                             :label="trans('admin::app.settings.channels.edit.seo-keywords')"
                             :placeholder="trans('admin::app.settings.channels.edit.seo-keywords')"
                         />
@@ -332,7 +332,7 @@
                             id="meta_description"
                             :name="$locale . '[seo_description]'"
                             rules="required"
-                            :value="old($locale)['seo_description'] ?? $seo['meta_description']"
+                            :value="old($locale)['seo_description'] ?? ($seo['meta_description'] ?? '')"
                             :label="trans('admin::app.settings.channels.edit.seo-description')"
                             :placeholder="trans('admin::app.settings.channels.edit.seo-description')"
                         />
