@@ -70,10 +70,31 @@
             href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
         >
 
+        {{-- Cairo Font for Arabic --}}
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+            as="style"
+        >
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+        >
+
         @stack('styles')
 
         <style>
             {!! core()->getConfigData('general.content.custom_scripts.custom_css') !!}
+
+            /* Apply Cairo font for Arabic/RTL content */
+            html[dir="rtl"] {
+                font-family: 'Cairo', sans-serif;
+            }
+
+            html[dir="rtl"] body,
+            html[dir="rtl"] * {
+                font-family: 'Cairo', sans-serif;
+            }
         </style>
 
         @if(core()->getConfigData('general.content.speculation_rules.enabled'))
