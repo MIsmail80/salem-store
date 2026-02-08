@@ -34,6 +34,18 @@ module.exports = {
                 darkGreen: '#40994A',
                 darkBlue: '#0044F2',
                 darkPink: '#F85156',
+                // Salem Store Brand Colors
+                gold: {
+                    DEFAULT: '#C4A35A',
+                    light: '#D4B86A',
+                    dark: '#A68B4B',
+                    muted: '#E8DCC4',
+                },
+                brandBlack: {
+                    DEFAULT: '#000000',
+                    light: '#1A1A1A',
+                    muted: '#333333',
+                },
             },
 
             fontFamily: {
@@ -48,6 +60,33 @@ module.exports = {
     safelist: [
         {
             pattern: /icon-/,
-        }
+        },
+        {
+            pattern: /bg-gold/,
+        },
+        {
+            pattern: /text-gold/,
+        },
+        {
+            pattern: /border-gold/,
+        },
+        {
+            pattern: /bg-brandBlack/,
+        },
+        {
+            pattern: /text-brandBlack/,
+        },
+        {
+            pattern: /border-brandBlack/,
+        },
+        {
+            pattern: /hover:bg-gold/,
+        },
+        {
+            pattern: /hover:text-gold/,
+        },
+        {
+            pattern: /placeholder:text-gold/,
+        },
     ]
 };

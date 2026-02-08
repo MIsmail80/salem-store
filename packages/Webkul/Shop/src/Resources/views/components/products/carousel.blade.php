@@ -1,86 +1,91 @@
-<v-products-carousel
-    src="{{ $src }}"
-    title="{{ $title }}"
-    navigation-link="{{ $navigationLink ?? '' }}"
->
+<v-products-carousel src="{{ $src }}" title="{{ $title }}" navigation-link="{{ $navigationLink ?? '' }}">
     <x-shop::shimmer.products.carousel :navigation-link="$navigationLink ?? false" />
 </v-products-carousel>
 
 @pushOnce('scripts')
-    <script
-        type="text/x-template"
-        id="v-products-carousel-template"
-    >
-        <div
-            class="container mt-20 max-lg:px-8 max-md:mt-8 max-sm:mt-7 max-sm:!px-4"
-            v-if="! isLoading && products.length"
-        >
-            <div class="flex justify-between">
-                <h2 class="font-dmserif text-3xl max-md:text-2xl max-sm:text-xl">
-                    @{{ title }}
-                </h2>
+    <script type="text/x-template" id="v-products-carousel-template">
+            <!-- Premium Products Section -->
+    <section class="relative py-16 max-md:py-10 max-sm:py-8" v-if="! isLoading && products.length">
+        <!-- Decorative Background Pattern -->
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50"></div>
 
-                <div class="flex items-center justify-between gap-8">
-                    <a
-                        :href="navigationLink"
-                        class="hidden max-lg:flex"
-                        v-if="navigationLink"
-                    >
-                        <p class="items-center text-xl max-md:text-base max-sm:text-sm">
+        <div class="container relative max-lg:px-8 max-sm:!px-4">
+            <!-- Section Header -->
+            <div class="flex items-center justify-between mb-10 max-md:mb-6">
+                <div class="relative">
+                    <!-- Gold accent line -->
+                    <div
+                        class="absolute -top-3 left-0 w-12 h-0.5 bg-gradient-to-r from-gold to-gold-light rtl:right-0 rtl:left-auto">
+                    </div>
+                    <h2 class="font-dmserif text-3xl text-brandBlack max-md:text-2xl max-sm:text-xl">
+                        @{{ title }}
+                    </h2>
+                    <!-- Subtle subtitle line -->
+                    <div class="mt-2 w-24 h-px bg-gradient-to-r from-gold/50 to-transparent rtl:bg-gradient-to-l"></div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <!-- Mobile View All Link -->
+                    <a :href="navigationLink"
+                        class="hidden max-lg:flex items-center gap-2 text-gold hover:text-gold-light transition-colors"
+                        v-if="navigationLink">
+                        <span class="text-base font-medium max-sm:text-sm">
                             @lang('shop::app.components.products.carousel.view-all')
-
-                            <span class="icon-arrow-right text-2xl max-md:text-lg max-sm:text-sm"></span>
-                        </p>
+                        </span>
+                        <span class="icon-arrow-right text-lg rtl:icon-arrow-left"></span>
                     </a>
 
+                    <!-- Navigation Arrows -->
                     <template v-if="products.length > 3">
-                        <span
-                            v-if="products.length > 4 || (products.length > 3 && isScreenMax2xl)"
-                            class="icon-arrow-left-stylish rtl:icon-arrow-right-stylish inline-block cursor-pointer text-2xl max-lg:hidden"
-                            role="button"
-                            aria-label="@lang('shop::app.components.products.carousel.previous')"
-                            tabindex="0"
-                            @click="swipeLeft"
-                        >
-                        </span>
+                        <div class="flex items-center gap-3 max-lg:hidden"
+                            v-if="products.length > 4 || (products.length > 3 && isScreenMax2xl)">
+                            <button
+                                class="group flex h-11 w-11 items-center justify-center rounded-full border-2 border-brandBlack bg-white text-brandBlack transition-all duration-300 hover:bg-brandBlack hover:text-gold hover:border-gold hover:shadow-[0_0_15px_rgba(196,163,90,0.3)]"
+                                role="button" aria-label="@lang('shop::app.components.products.carousel.previous')"
+                                tabindex="0" @click="swipeLeft">
+                                <span
+                                    class="icon-arrow-left-stylish rtl:icon-arrow-right-stylish text-xl transition-transform group-hover:scale-110"></span>
+                            </button>
 
-                        <span
-                            v-if="products.length > 4 || (products.length > 3 && isScreenMax2xl)"
-                            class="icon-arrow-right-stylish rtl:icon-arrow-left-stylish inline-block cursor-pointer text-2xl max-lg:hidden"
-                            role="button"
-                            aria-label="@lang('shop::app.components.products.carousel.next')"
-                            tabindex="0"
-                            @click="swipeRight"
-                        >
-                        </span>
+                            <button
+                                class="group flex h-11 w-11 items-center justify-center rounded-full border-2 border-brandBlack bg-white text-brandBlack transition-all duration-300 hover:bg-brandBlack hover:text-gold hover:border-gold hover:shadow-[0_0_15px_rgba(196,163,90,0.3)]"
+                                role="button" aria-label="@lang('shop::app.components.products.carousel.next')" tabindex="0"
+                                @click="swipeRight">
+                                <span
+                                    class="icon-arrow-right-stylish rtl:icon-arrow-left-stylish text-xl transition-transform group-hover:scale-110"></span>
+                            </button>
+                        </div>
                     </template>
                 </div>
             </div>
 
-            <div
-                ref="swiperContainer"
-                class="flex gap-8 pb-2.5 [&>*]:flex-[0] mt-10 overflow-auto scroll-smooth scrollbar-hide max-md:gap-7 max-md:mt-5 max-sm:gap-4 max-md:pb-0 max-md:whitespace-nowrap"
-            >
-                <x-shop::products.card
-                    class="min-w-[291px] max-md:h-fit max-md:min-w-56 max-sm:min-w-[192px]"
-                    v-for="product in products"
-                />
+            <!-- Products Grid -->
+            <div ref="swiperContainer"
+                class="flex gap-6 pb-4 [&>*]:flex-[0] overflow-auto scroll-smooth scrollbar-hide max-md:gap-5 max-sm:gap-4">
+                <x-shop::products.card class="min-w-[291px] max-md:h-fit max-md:min-w-56 max-sm:min-w-[192px]"
+                    v-for="product in products" />
             </div>
 
-            <a
-                :href="navigationLink"
-                class="secondary-button mx-auto mt-5 block w-max rounded-2xl px-11 py-3 text-center text-base max-lg:mt-0 max-lg:hidden max-lg:py-3.5 max-md:rounded-lg"
-                :aria-label="title"
-                v-if="navigationLink"
-            >
-                @lang('shop::app.components.products.carousel.view-all')
-            </a>
+            <!-- View All Button - Desktop -->
+            <div class="flex justify-center mt-10 max-lg:hidden" v-if="navigationLink">
+                <a :href="navigationLink"
+                    class="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-brandBlack px-10 py-3.5 text-gold font-medium transition-all duration-300 hover:shadow-[0_0_25px_rgba(196,163,90,0.4)]"
+                    :aria-label="title">
+                    <!-- Gold highlight effect on hover -->
+                    <span
+                        class="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/10 to-gold/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                    <span class="relative">@lang('shop::app.components.products.carousel.view-all')</span>
+                    <span
+                        class="relative icon-arrow-right rtl:icon-arrow-left transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1"></span>
+                </a>
+            </div>
         </div>
+    </section>
 
-        <!-- Product Card Listing -->
-        <template v-if="isLoading">
-            <x-shop::shimmer.products.carousel :navigation-link="$navigationLink ?? false" />
-        </template>
+    <!-- Product Card Listing -->
+    <template v-if="isLoading">
+        <x-shop::shimmer.products.carousel :navigation-link="$navigationLink ?? false" />
+    </template>
     </script>
 
     <script type="module">
