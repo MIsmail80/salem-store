@@ -13,10 +13,9 @@ class RegistrationRequest extends FormRequest
      * @var array
      */
     private $rules = [
-        'first_name' => 'string|required',
-        'last_name'  => 'string|required',
-        'email'      => 'email|required|unique:customers,email',
-        'password'   => 'confirmed|min:6|required',
+        'full_name' => 'string|required',
+        'phone' => 'required|string|min:10|max:20|unique:customers,phone',
+        'password' => 'confirmed|min:6|required',
     ];
 
     /**

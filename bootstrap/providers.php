@@ -39,6 +39,7 @@ return [
     Webkul\EgyptShipping\Providers\EgyptShippingServiceProvider::class,
     Webkul\Shop\Providers\ShopServiceProvider::class,
     Webkul\Sitemap\Providers\SitemapServiceProvider::class,
+    Webkul\SmsOtp\Providers\SmsOtpServiceProvider::class,
     Webkul\SocialLogin\Providers\SocialLoginServiceProvider::class,
     Webkul\SocialShare\Providers\SocialShareServiceProvider::class,
     Webkul\Tax\Providers\TaxServiceProvider::class,

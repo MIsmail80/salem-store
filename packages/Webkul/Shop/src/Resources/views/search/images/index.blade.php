@@ -1,74 +1,69 @@
 <v-image-search>
-    <button
-        type="button"
-        class="icon-camera absolute top-3 flex items-center text-xl max-sm:top-2.5 ltr:right-3 ltr:pr-3 max-md:ltr:right-1.5 rtl:left-3 rtl:pl-3 max-md:rtl:left-1.5"
-        aria-label="@lang('shop::app.search.images.index.search')"
-    >
+    <button type="button"
+        class="icon-camera absolute top-3 flex items-center text-xl text-gold max-sm:top-2.5 ltr:right-3 ltr:pr-3 max-md:ltr:right-1.5 rtl:left-3 rtl:pl-3 max-md:rtl:left-1.5"
+        aria-label="@lang('shop::app.search.images.index.search')">
     </button>
 </v-image-search>
 
 @pushOnce('scripts')
-    <script
-        type="text/x-template"
-        id="v-image-search-template"
-    >
-        <div>
-            <label
-                class="icon-camera absolute top-3 flex items-center text-xl max-sm:top-2.5 ltr:right-3 ltr:pr-3 max-md:ltr:right-1.5 rtl:left-3 rtl:pl-3 max-md:rtl:left-1.5"
-                aria-label="@lang('shop::app.search.images.index.search')"
-                :for="'v-image-search-' + $.uid"
-                v-if="! isSearching"
-            >
-            </label>
-
-            <label
-                class="absolute top-2.5 flex cursor-pointer items-center text-xl ltr:right-3 ltr:pr-3 max-md:ltr:pr-1 rtl:left-3 rtl:pl-3 max-md:rtl:pl-1"
-                v-else
-            >
-                <!-- Spinner -->
-                <svg
-                    class="h-5 w-5 animate-spin text-black"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
+    <script type="text/x-template" id="v-image-search-template">
+            <div>
+                <label
+                    class="icon-camera absolute top-3 flex items-center text-xl text-gold max-sm:top-2.5 ltr:right-3 ltr:pr-3 max-md:ltr:right-1.5 rtl:left-3 rtl:pl-3 max-md:rtl:left-1.5"
+                    aria-label="@lang('shop::app.search.images.index.search')"
+                    :for="'v-image-search-' + $.uid"
+                    v-if="! isSearching"
                 >
-                    <circle
-                        class="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        stroke-width="4"
+                </label>
+
+                <label
+                    class="absolute top-2.5 flex cursor-pointer items-center text-xl ltr:right-3 ltr:pr-3 max-md:ltr:pr-1 rtl:left-3 rtl:pl-3 max-md:rtl:pl-1"
+                    v-else
+                >
+                    <!-- Spinner -->
+                    <svg
+                        class="h-5 w-5 animate-spin text-gold"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
                     >
-                    </circle>
+                        <circle
+                            class="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            stroke-width="4"
+                        >
+                        </circle>
 
-                    <path
-                        class="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                    >
-                    </path>
-                </svg>
-            </label>
+                        <path
+                            class="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        >
+                        </path>
+                    </svg>
+                </label>
 
-            <input
-                type="file"
-                class="hidden"
-                ref="imageSearchInput"
-                :id="'v-image-search-' + $.uid"
-                @change="loadLibrary()"
-            />
+                <input
+                    type="file"
+                    class="hidden"
+                    ref="imageSearchInput"
+                    :id="'v-image-search-' + $.uid"
+                    @change="loadLibrary()"
+                />
 
-            <img
-                id="uploaded-image-url"
-                class="hidden"
-                :src="uploadedImageUrl"
-                alt="uploaded image url"
-                width="20"
-                height="20"
-            />
-        </div>
-    </script>
+                <img
+                    id="uploaded-image-url"
+                    class="hidden"
+                    :src="uploadedImageUrl"
+                    alt="uploaded image url"
+                    width="20"
+                    height="20"
+                />
+            </div>
+        </script>
 
     <script type="module">
         app.component('v-image-search', {
@@ -120,10 +115,10 @@
                                 formData.append('image', imageInput.files[0]);
 
                                 this.$axios.post('{{ route('shop.search.upload') }}', formData, {
-                                        headers: {
-                                            'Content-Type': 'multipart/form-data'
-                                        }
-                                    })
+                                    headers: {
+                                        'Content-Type': 'multipart/form-data'
+                                    }
+                                })
                                     .then(response => {
                                         let net;
 
@@ -141,7 +136,7 @@
                                             try {
                                                 const result = await net.classify(document.getElementById('uploaded-image-url'));
 
-                                                result.forEach(function(value) {
+                                                result.forEach(function (value) {
                                                     queryString = value.className.split(',');
 
                                                     if (queryString.length > 1) {
@@ -151,7 +146,7 @@
                                                     }
                                                 });
                                             } catch (error) {
-                                                this.$emitter.emit('add-flash', { type: 'error', message: "@lang('shop::app.search.images.index.something-went-wrong')"});
+                                                this.$emitter.emit('add-flash', { type: 'error', message: "@lang('shop::app.search.images.index.something-went-wrong')" });
                                             }
 
                                             localStorage.searchedImageUrl = self.uploadedImageUrl;
@@ -168,21 +163,21 @@
                                         app();
                                     })
                                     .catch((error) => {
-                                        this.$emitter.emit('add-flash', { type: 'error', message: "@lang('shop::app.search.images.index.something-went-wrong')"});
+                                        this.$emitter.emit('add-flash', { type: 'error', message: "@lang('shop::app.search.images.index.something-went-wrong')" });
 
                                         this.isSearching = false;
                                     });
                             } else {
                                 imageInput.value = '';
 
-                                this.$emitter.emit('add-flash', { type: 'error', message: '@lang('shop::app.search.images.index.size-limit-error')'});
+                                this.$emitter.emit('add-flash', { type: 'error', message: '@lang('shop::app.search.images.index.size-limit-error')' });
 
                                 this.isSearching = false;
                             }
                         } else {
                             imageInput.value = '';
 
-                            this.$emitter.emit('add-flash', { type: 'error', message: '@lang('shop::app.search.images.index.only-images-allowed')'});
+                            this.$emitter.emit('add-flash', { type: 'error', message: '@lang('shop::app.search.images.index.only-images-allowed')' });
 
                             this.isSearching = false;
                         }

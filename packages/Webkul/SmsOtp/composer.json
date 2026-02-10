@@ -1,0 +1,26 @@
+{
+    "name": "bagisto/smsotp",
+    "description": "SMS OTP verification package for Bagisto using SMSala",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Salem Store",
+            "email": "admin@salem-store.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Webkul\\SmsOtp\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\SmsOtp\\Providers\\SmsOtpServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}

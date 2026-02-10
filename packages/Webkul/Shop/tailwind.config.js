@@ -88,5 +88,14 @@ module.exports = {
         {
             pattern: /placeholder:text-gold/,
         },
+        {
+            pattern: /from-brandBlack/,
+        },
+        {
+            pattern: /via-brandBlack/,
+        },
+        {
+            pattern: /to-brandBlack/,
+        },
     ]
 };
