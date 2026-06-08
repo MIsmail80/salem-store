@@ -27,7 +27,7 @@ class ContactRequest extends FormRequest
     {
         return Captcha::getValidations([
             'name'    => 'string|required',
-            'email'   => 'string|required',
+            'email'   => 'email|required',
             'contact' => new PhoneNumber,
             'message' => 'required',
         ]);

@@ -1,5 +1,5 @@
-<div class="flex items-center justify-center relative overflow-hidden"
-    style="background-color: #F5F7FA; padding: 2rem; border-radius: 2rem;">
+<div class="min-h-screen flex items-center justify-center relative overflow-hidden py-12 px-4 sm:px-6 lg:px-8"
+    style="background-color: #F5F7FA;">
     <style>
         @keyframes blob {
             0% {
@@ -48,17 +48,9 @@
         }
 
         @media (min-width: 768px) {
-            .md-flex-row {
-                flex-direction: row !important;
-            }
-
-            .md-flex-col {
-                flex-direction: column !important;
-            }
-
-            .md-w-24 {
-                width: 6rem !important;
-            }
+            .md-flex-row { flex-direction: row !important; }
+            .md-flex-col { flex-direction: column !important; }
+            .md-w-24 { width: 6rem !important; }
         }
     </style>
 
@@ -73,22 +65,22 @@
     </div>
 
     <!-- Card Container -->
-    <div dir="ltr" class="relative animate-fade-in-up"
-        style="display: flex; flex-wrap: wrap; background-color: white; border-radius: 2rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); min-height: 600px; width: 100%; max-width: 72rem;">
+    <div dir="ltr"
+        class="relative z-10 bg-white w-full max-w-6xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row md-flex-row min-h-[600px] animate-fade-in-up">
 
         <!-- 1. Left Sidebar (Socials) -->
-        <div
-            style="flex-grow: 1; flex-basis: 6rem; background: linear-gradient(to bottom, #D4AF37, #AA771C) !important; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem; padding: 1.5rem; flex-shrink: 0;">
-            <!-- TikTok -->
-            <a href="https://tiktok.com/@salemthestore"
+        <div class="w-full md:w-24 md-w-24 flex md:flex-col md-flex-col items-center justify-center md:justify-center gap-8 py-6 md:py-0 shrink-0"
+            style="background: linear-gradient(to bottom, #667EEA, #764BA2);">
+            <!-- LinkedIn -->
+            <a href="#"
                 class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path
-                        d="M12.525.02c1.31-.02 2.61-.01 3.91.04.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-1.15 4.34-2.88 5.6-1.89 1.37-4.4 1.73-6.59 1.07-2.19-.66-3.95-2.28-4.73-4.41-.78-2.13-.53-4.63.67-6.55 1.2-1.92 3.32-3.15 5.56-3.32.18-.01.35-.01.53-.01v4.06c-1.41.06-2.67.92-3.35 2.15-.68 1.23-.74 2.82-.16 4.1.58 1.28 1.83 2.21 3.23 2.39 1.4.18 2.87-.27 3.86-1.17 1-.9 1.55-2.24 1.53-3.62V0h-1.74v.02z" />
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
             </a>
             <!-- Facebook -->
-            <a href="https://facebook.com/ASalem.store" target="_blank"
+            <a href="https://www.facebook.com/salemstore.eg" target="_blank"
                 class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -96,7 +88,7 @@
                 </svg>
             </a>
             <!-- Instagram -->
-            <a href="https://tiktok.com/@salemthestore" target="_blank"
+            <a href="https://www.instagram.com/salemstore.eg" target="_blank"
                 class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -104,7 +96,7 @@
                 </svg>
             </a>
             <!-- Phone -->
-            <a href="tel:+201050704078"
+            <a href="tel:+201050704079"
                 class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -114,12 +106,12 @@
         </div>
 
         <!-- Content Area -->
-        <div style="flex-grow: 999; flex-basis: 0; min-width: 300px; display: flex; flex-wrap: wrap;">
+        <div class="flex-1 grid grid-cols-1 lg:grid-cols-2">
 
             <!-- 2. Contact Form Section -->
-            <div class="p-8 lg:p-12 flex flex-col justify-center" style="flex-grow: 1; flex-basis: 300px;">
+            <div class="p-8 lg:p-12 flex flex-col justify-center">
                 <div class="mb-8">
-                    <h2 class="text-3xl font-bold mb-2" style="color: #D4AF37;">Contact Us</h2>
+                    <h2 class="text-3xl font-bold mb-2" style="color: #667EEA;">Contact Us</h2>
                     <p class="text-gray-500">We'd love to hear from you! Send us a message.</p>
                 </div>
 
@@ -130,7 +122,7 @@
                     <div class="group">
                         <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
                         <input type="text" name="name" id="name" required
-                            class="w-full px-0 py-2 border-b-2 border-gray-200 focus:border-[#D4AF37] outline-none bg-transparent transition-colors placeholder-gray-300"
+                            class="w-full px-0 py-2 border-b-2 border-gray-200 focus:border-[#667EEA] outline-none bg-transparent transition-colors placeholder-gray-300"
                             placeholder="John Doe">
                     </div>
 
@@ -138,7 +130,7 @@
                     <div class="group">
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
                         <input type="email" name="email" id="email" required
-                            class="w-full px-0 py-2 border-b-2 border-gray-200 focus:border-[#D4AF37] outline-none bg-transparent transition-colors placeholder-gray-300"
+                            class="w-full px-0 py-2 border-b-2 border-gray-200 focus:border-[#667EEA] outline-none bg-transparent transition-colors placeholder-gray-300"
                             placeholder="john@example.com">
                     </div>
 
@@ -146,22 +138,21 @@
                     <div class="group">
                         <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
                         <textarea name="message" id="message" rows="3" required
-                            class="w-full px-3 py-3 rounded-lg bg-gray-50 border border-transparent focus:bg-white focus:border-[#D4AF37] outline-none transition-all placeholder-gray-300 resize-none"
+                            class="w-full px-3 py-3 rounded-lg bg-gray-50 border border-transparent focus:bg-white focus:border-[#667EEA] outline-none transition-all placeholder-gray-300 resize-none"
                             placeholder="Write your message here..."></textarea>
                     </div>
 
                     <!-- Privacy -->
                     <div class="flex items-center space-x-3" dir="ltr">
                         <input id="privacy" type="checkbox" required
-                            class="w-4 h-4 text-[#D4AF37] border-gray-300 rounded focus:ring-[#D4AF37]">
+                            class="w-4 h-4 text-[#667EEA] border-gray-300 rounded focus:ring-[#667EEA]">
                         <label for="privacy" class="font-medium text-gray-700 text-sm m-0 leading-none">
-                            I agree to the <a href="#" class="text-[#D4AF37] hover:underline"
-                                style="color: #D4AF37;">privacy policy</a>
+                            I agree to the <a href="#" class="text-[#667EEA] hover:underline" style="color: #667EEA;">privacy policy</a>
                         </label>
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" style="background: linear-gradient(to right, #D4AF37, #AA771C);"
+                    <button type="submit" style="background: linear-gradient(to right, #667EEA, #764BA2);"
                         class="w-full text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transform transition-all duration-200 flex items-center justify-center">
                         <span>Send Message</span>
                         <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -173,13 +164,36 @@
             </div>
 
             <!-- 3. Map Section -->
-            <div class="relative bg-gray-100" style="flex-grow: 1; flex-basis: 300px; min-height: 400px;">
+            <div class="relative bg-gray-100 min-h-[400px] lg:min-h-full w-full">
+                <!-- Address Card Overlay -->
+                <div
+                    class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg max-w-xs border border-white/50">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-red-100 p-2 rounded-full text-red-500 shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Campinas</h4>
+                            <p class="text-xs text-gray-500 mt-1">State of São Paulo, Brazil</p>
+                            <div class="flex items-center mt-2 text-xs font-semibold" style="color: #667EEA;">
+                                <span>4.9</span>
+                                <div class="flex mx-1 text-yellow-400">★★★★★</div>
+                                <span class="text-gray-400">(254 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Google Map Embed -->
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3418.2907752940614!2d31.364040299999996!3d31.0460038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f79d83b4a2652b%3A0x98741ababa0848c3!2sSalem%20Store!5e0!3m2!1sen!2seg!4v1736522260754!5m2!1sen!2seg"
-                    width="90%" height="450" class="absolute top-0 left-0 w-full h-full" style="border:0;"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.3468531102927!2d-47.06584218503463!3d-22.906846685012356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c8cb7f4a56c5%3A0x6ce6b70c2d3b2c1f!2sCampinas%2C%20State%20of%20S%C3%A3o%20Paulo%2C%20Brazil!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg"
+                    class="absolute top-0 left-0 w-full h-full" style="border:0;" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>

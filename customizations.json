@@ -31,14 +31,14 @@
         "id": 5,
         "type": "static_content",
         "name": "أفضل المجموعات",
-        "status": "ON",
+        "status": "OFF",
         "sort_order": 5
     },
     {
         "id": 6,
         "type": "static_content",
         "name": "مجموعات بارزة",
-        "status": "ON",
+        "status": "OFF",
         "sort_order": 6
     },
     {
@@ -66,7 +66,7 @@
         "id": 10,
         "type": "static_content",
         "name": "مجموعات بارزة",
-        "status": "ON",
+        "status": "OFF",
         "sort_order": 10
     },
     {
