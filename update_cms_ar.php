@@ -5,11 +5,11 @@ $app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
 use Illuminate\Support\Facades\DB;
 
-$htmlContent = file_get_contents(__DIR__ . '/touch-me-cms-content.html');
+$htmlContent = file_get_contents(__DIR__ . '/touch-me-cms-content-ar.html');
 
 $updated = DB::table('cms_page_translations')
     ->where('url_key', 'touch-me')
-    ->where('locale', 'en')
+    ->where('locale', 'ar')
     ->update(['html_content' => $htmlContent]);
 
-echo "Updated $updated rows in cms_page_translations with url_key='touch-me' and locale='en'.\n";
+echo "Updated $updated rows in cms_page_translations with url_key='touch-me' and locale='ar'.\n";
