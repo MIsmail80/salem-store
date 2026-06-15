@@ -1102,11 +1102,13 @@ return [
         ],
 
         'index' => [
+            'brand-showcase' => 'عرض العلامة التجارية',
             'categories-carousel' => 'سلاسل الفئات',
             'image-carousel' => 'سلاسل الصور',
             'offer' => 'احصل على خصم يصل إلى 40% على طلبك الأول، تسوق الآن',
             'product-carousel' => 'سلاسل المنتجات',
             'resend-verify-email' => 'إعادة إرسال بريد التحقق',
+            'shop-by-category' => 'تصفح حسب الفئة',
             'verify-email' => 'تحقق من حساب بريدك الإلكتروني',
         ],
 

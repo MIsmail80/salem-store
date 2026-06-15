@@ -60,7 +60,7 @@
                 <!-- Categories carousel -->
                 <x-shop::categories.carousel
                     :title="$data['title'] ?? ''"
-                    :src="route('shop.api.categories.index', $data['filters'] ?? [])"
+                    :src="route('shop.api.categories.index', array_merge($data['filters'] ?? [], ['include_all_statuses' => 1]))"
                     :navigation-link="route('shop.home.index')"
                     aria-label="{{ trans('shop::app.home.index.categories-carousel') }}"
                 />
@@ -73,6 +73,15 @@
                     :src="route('shop.api.products.index', $data['filters'] ?? [])"
                     :navigation-link="route('shop.search.index', $data['filters'] ?? [])"
                     aria-label="{{ trans('shop::app.home.index.product-carousel') }}"
+                />
+
+                @break
+
+            @case ($customization::BRAND_SHOWCASE)
+                <!-- Brand Showcase -->
+                <x-shop::brand.showcase
+                    :options="$data"
+                    aria-label="{{ trans('shop::app.home.index.brand-showcase') }}"
                 />
 
                 @break

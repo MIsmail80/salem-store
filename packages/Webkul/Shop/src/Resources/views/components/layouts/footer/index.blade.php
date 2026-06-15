@@ -55,10 +55,10 @@
                 @lang('shop::app.components.layouts.footer.footer-content')
                 </x-slot>
 
-                <x-slot:content class="flex justify-between !bg-transparent !p-4">
+                <x-slot:content class="flex flex-wrap gap-x-8 gap-y-6 !bg-transparent !p-4">
                     @if ($customization?->options)
                         @foreach ($customization->options as $footerLinkSection)
-                            <ul class="grid gap-5 text-sm text-gold">
+                            <ul class="grid gap-4 text-sm text-gold min-w-[130px]">
                                 @php
                                     usort($footerLinkSection, function ($a, $b) {
                                         return $a['sort_order'] - $b['sort_order'];
@@ -67,7 +67,7 @@
 
                                 @foreach ($footerLinkSection as $link)
                                     <li>
-                                        <a href="{{ $link['url'] }}" class="text-sm font-medium max-sm:text-xs">
+                                        <a href="{{ $link['url'] }}" class="text-sm font-medium max-sm:text-xs hover:text-gold-light transition-colors">
                                             {{ $link['title'] }}
                                         </a>
                                     </li>
@@ -82,8 +82,8 @@
 
         <!-- News Letter subscription -->
         @if (core()->getConfigData('customer.settings.newsletter.subscription'))
-            <div class="grid gap-2.5">
-                <p class="max-w-[288px] text-3xl italic leading-[45px] text-gold max-md:text-2xl max-sm:text-lg"
+            <div class="grid gap-2.5 max-1060:w-full">
+                <p class="max-w-[288px] text-3xl italic leading-[45px] text-gold max-md:text-2xl max-sm:text-xl max-sm:leading-8"
                     role="heading" aria-level="2">
                     @lang('shop::app.components.layouts.footer.newsletter-text')
                 </p>
@@ -93,10 +93,10 @@
                 </p>
 
                 <div>
-                    <x-shop::form :action="route('shop.subscription.store')" class="mt-2.5 rounded max-sm:mt-0">
+                    <x-shop::form :action="route('shop.subscription.store')" class="mt-2.5 rounded max-sm:mt-1">
                         <div class="relative w-full">
                             <x-shop::form.control-group.control type="email"
-                                class="block w-[420px] max-w-full rounded-xl border-2 border-gold/30 bg-brandBlack-light px-5 py-4 text-base text-gold placeholder:text-gold/50 max-1060:w-full max-md:p-3.5 max-sm:mb-0 max-sm:rounded-lg max-sm:border-2 max-sm:p-2 max-sm:text-sm"
+                                class="block w-[420px] max-w-full rounded-xl border-2 border-gold/30 bg-brandBlack-light px-5 py-4 text-base text-gold placeholder:text-gold/50 max-1060:w-full max-md:p-3.5 max-sm:mb-0 max-sm:rounded-lg max-sm:border-2 max-sm:p-3 max-sm:text-sm max-sm:pr-24"
                                 name="email" rules="required|email" label="Email"
                                 :aria-label="trans('shop::app.components.layouts.footer.email')"
                                 placeholder="email@example.com" />
@@ -104,7 +104,7 @@
                             <x-shop::form.control-group.error control-name="email" />
 
                             <button type="submit"
-                                class="absolute top-1.5 flex w-max items-center rounded-xl bg-gold px-7 py-2.5 font-medium text-brandBlack hover:bg-gold-light max-md:top-1 max-md:px-5 max-md:text-xs max-sm:mt-0 max-sm:rounded-lg max-sm:px-4 max-sm:py-2 ltr:right-2 rtl:left-2">
+                                class="absolute top-1.5 flex w-max items-center rounded-xl bg-gold px-7 py-2.5 font-medium text-brandBlack hover:bg-gold-light max-md:top-1 max-md:px-5 max-md:text-xs max-sm:mt-0 max-sm:rounded-lg max-sm:px-3 max-sm:py-1.5 max-sm:top-2 max-sm:text-xs ltr:right-2 rtl:left-2">
                                 @lang('shop::app.components.layouts.footer.subscribe')
                             </button>
                         </div>

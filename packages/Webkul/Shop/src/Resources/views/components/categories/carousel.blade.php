@@ -18,7 +18,7 @@
                     <span
                         class="text-gold/60 text-sm uppercase tracking-[0.3em] font-medium">@lang('shop::app.home.index.categories-carousel')</span>
                     <h2 class="font-dmserif text-3xl text-white mt-2 max-md:text-2xl max-sm:text-xl">
-                        @{{ title || '@lang("shop::app.home.index.shop-by-category")' }}
+                        @{{ title || '@lang('shop::app.home.index.shop-by-category')' }}
                     </h2>
                     <div class="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent"></div>
                 </div>
@@ -27,8 +27,8 @@
             <div class="relative">
                 <!-- Categories Carousel -->
                 <div ref="swiperContainer"
-                    class="scrollbar-hide flex gap-8 overflow-auto scroll-smooth px-4 max-lg:gap-6 max-sm:gap-4">
-                    <div class="group grid min-w-[130px] max-w-[130px] grid-cols-1 justify-items-center gap-4 font-medium max-md:min-w-[100px] max-md:max-w-[100px] max-md:gap-3 max-md:first:ml-4 max-sm:min-w-[80px] max-sm:max-w-[80px] max-sm:gap-2"
+                    class="scrollbar-hide flex gap-6 overflow-auto scroll-smooth px-4 max-lg:gap-5 max-md:gap-4 max-sm:gap-3">
+                    <div class="group grid min-w-[130px] max-w-[130px] grid-cols-1 justify-items-center gap-4 font-medium max-md:min-w-[100px] max-md:max-w-[100px] max-md:gap-3 max-md:first:ml-4 max-sm:min-w-[80px] max-sm:max-w-[80px] max-sm:gap-2 max-sm:first:ml-3"
                         v-for="category in categories">
                         <a :href="category.slug"
                             class="relative h-[120px] w-[120px] rounded-full bg-brandBlack-muted border-2 border-gold/30 overflow-hidden transition-all duration-300 group-hover:border-gold group-hover:shadow-[0_0_20px_rgba(196,163,90,0.3)] max-md:h-[90px] max-md:w-[90px] max-sm:h-[70px] max-sm:w-[70px]"
@@ -45,7 +45,7 @@
                         </a>
 
                         <a :href="category.slug" class="text-center transition-colors duration-300">
-                            <p class="text-white/80 text-base font-medium group-hover:text-gold transition-colors duration-300 max-md:text-sm max-sm:text-xs"
+                            <p class="text-white/80 text-sm font-medium group-hover:text-gold transition-colors duration-300 max-md:text-sm max-sm:text-xs leading-tight"
                                 v-text="category.name">
                             </p>
                         </a>
@@ -55,14 +55,14 @@
                 <!-- Navigation Arrows -->
                 <button
                     class="absolute -left-5 top-[50px] flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-gold/50 bg-brandBlack text-gold text-2xl transition-all duration-300 hover:bg-gold hover:text-brandBlack hover:border-gold hover:shadow-[0_0_15px_rgba(196,163,90,0.4)] max-lg:-left-3 max-md:hidden"
-                    role="button" aria-label="@lang('shop::components.carousel.previous')" tabindex="0" @click="swipeLeft">
-                    <span class="icon-arrow-left-stylish rtl:icon-arrow-right-stylish"></span>
+                    role="button" aria-label="@lang('shop::components.carousel.previous')" tabindex="0" @click="navigate('left')">
+                    <span class="icon-arrow-left-stylish"></span>
                 </button>
 
                 <button
                     class="absolute -right-5 top-[50px] flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-gold/50 bg-brandBlack text-gold text-2xl transition-all duration-300 hover:bg-gold hover:text-brandBlack hover:border-gold hover:shadow-[0_0_15px_rgba(196,163,90,0.4)] max-lg:-right-3 max-md:hidden"
-                    role="button" aria-label="@lang('shop::components.carousel.next')" tabindex="0" @click="swipeRight">
-                    <span class="icon-arrow-right-stylish rtl:icon-arrow-left-stylish"></span>
+                    role="button" aria-label="@lang('shop::components.carousel.next')" tabindex="0" @click="navigate('right')">
+                    <span class="icon-arrow-right-stylish"></span>
                 </button>
             </div>
         </div>
@@ -115,16 +115,14 @@
                         });
                 },
 
-                swipeLeft() {
+                navigate(dir) {
                     const container = this.$refs.swiperContainer;
 
-                    container.scrollLeft -= this.offset;
-                },
-
-                swipeRight() {
-                    const container = this.$refs.swiperContainer;
-
-                    container.scrollLeft += this.offset;
+                    if (dir === 'left') {
+                        container.scrollLeft -= this.offset;
+                    } else {
+                        container.scrollLeft += this.offset;
+                    }
                 },
             },
         });

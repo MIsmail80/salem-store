@@ -198,6 +198,7 @@
                             image_carousel: "@lang('admin::app.settings.themes.create.type.image-carousel')",
                             footer_links: "@lang('admin::app.settings.themes.create.type.footer-links')",
                             services_content: "@lang('admin::app.settings.themes.create.type.services-content')",
+                            brand_showcase: "@lang('admin::app.settings.themes.create.type.brand-showcase')",
                         },
 
                         isLoading: false,

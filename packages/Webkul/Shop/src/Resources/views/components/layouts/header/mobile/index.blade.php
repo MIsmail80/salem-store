@@ -8,10 +8,10 @@
     $showWishlist = (bool) core()->getConfigData('customer.settings.wishlist.wishlist_option');
 @endphp
 
-<div class="flex flex-wrap gap-4 px-4 pb-4 pt-6 shadow-sm lg:hidden">
+<div class="flex flex-wrap gap-4 px-4 pb-4 pt-4 shadow-sm lg:hidden">
     <div class="flex w-full items-center justify-between">
         <!-- Left Navigation -->
-        <div class="flex items-center gap-x-1.5">
+        <div class="flex items-center gap-x-2 min-w-0">
             {!! view_render_event('bagisto.shop.components.layouts.header.mobile.drawer.before') !!}
 
             <!-- Drawer -->
@@ -23,12 +23,13 @@
 
             <a
                 href="{{ route('shop.home.index') }}"
-                class="max-h-[30px]"
+                class="flex items-center min-w-0"
                 aria-label="@lang('shop::app.components.layouts.header.mobile.bagisto')"
             >
                 <img
                     src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
                     alt="{{ config('app.name') }}"
+                    class="max-h-[30px] max-w-[120px] w-auto object-contain max-sm:max-w-[100px]"
                     width="131"
                     height="29"
                 >
@@ -47,7 +48,7 @@
                         href="{{ route('shop.compare.index') }}"
                         aria-label="@lang('shop::app.components.layouts.header.mobile.compare')"
                     >
-                        <span class="icon-compare cursor-pointer text-2xl"></span>
+                        <span class="icon-compare cursor-pointer text-2xl text-gold hover:text-white"></span>
                     </a>
                 @endif
 
@@ -65,7 +66,7 @@
                 <div class="max-md:hidden">
                     <x-shop::dropdown position="bottom-{{ core()->getCurrentLocale()->direction === 'ltr' ? 'right' : 'left' }}">
                         <x-slot:toggle>
-                            <span class="icon-users cursor-pointer text-2xl"></span>
+                            <span class="icon-users cursor-pointer text-2xl text-gold hover:text-white"></span>
                         </x-slot>
 
                         <!-- Guest Dropdown -->
@@ -182,7 +183,7 @@
                             href="{{ route('shop.customer.session.create') }}"
                             aria-label="@lang('shop::app.components.layouts.header.mobile.account')"
                         >
-                            <span class="icon-users cursor-pointer text-2xl"></span>
+                            <span class="icon-users cursor-pointer text-2xl text-gold hover:text-white"></span>
                         </a>
                     @endguest
 
@@ -192,7 +193,7 @@
                             href="{{ route('shop.customers.account.index') }}"
                             aria-label="@lang('shop::app.components.layouts.header.mobile.account')"
                         >
-                            <span class="icon-users cursor-pointer text-2xl"></span>
+                            <span class="icon-users cursor-pointer text-2xl text-gold hover:text-white"></span>
                         </a>
                     @endauth
                 </div>
@@ -212,11 +213,11 @@
         </label>
 
         <div class="relative w-full">
-            <div class="icon-search pointer-events-none absolute top-3 flex items-center text-2xl max-md:text-xl max-sm:top-2.5 ltr:left-3 rtl:right-3"></div>
+            <div class="icon-search pointer-events-none absolute top-3 flex items-center text-2xl text-gold max-md:text-xl max-sm:top-2.5 ltr:left-3 rtl:right-3"></div>
 
             <input
                 type="text"
-                class="block w-full rounded-xl border border-['#E3E3E3'] px-11 py-3.5 text-sm font-medium text-gray-900 max-md:rounded-lg max-md:px-10 max-md:py-3 max-md:font-normal max-sm:text-xs"
+                class="block w-full rounded-xl border border-gold/30 bg-brandBlack-light px-11 py-3.5 text-sm font-medium text-gold placeholder:text-gold/50 focus:border-gold hover:border-gold transition-colors max-md:rounded-lg max-md:px-10 max-md:py-3 max-md:font-normal max-sm:text-xs"
                 name="query"
                 value="{{ request('query') }}"
                 placeholder="@lang('shop::app.components.layouts.header.mobile.search-text')"
@@ -240,7 +241,7 @@
             @close="onDrawerClose"
         >
             <x-slot:toggle>
-                <span class="icon-hamburger cursor-pointer text-2xl"></span>
+                <span class="icon-hamburger cursor-pointer text-2xl text-gold hover:text-white"></span>
             </x-slot>
 
             <x-slot:header>

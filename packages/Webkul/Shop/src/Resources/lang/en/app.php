@@ -1102,11 +1102,13 @@ return [
         ],
 
         'index' => [
+            'brand-showcase' => 'Brand Showcase',
             'categories-carousel' => 'Categories Carousel',
             'image-carousel' => 'Image Carousel',
             'offer' => 'Get UPTO 40% OFF on your 1st order SHOP NOW',
             'product-carousel' => 'Product Carousel',
             'resend-verify-email' => 'Resend Verification Email',
+            'shop-by-category' => 'Shop By Category',
             'verify-email' => 'Verify your email account',
         ],
 

@@ -34,13 +34,22 @@ class CategoryController extends APIController
         /**
          * These are the default parameters. By default, only the enabled category
          * will be shown in the current locale.
+         *
+         * When `include_all_statuses=1` is passed (e.g. from the category_carousel
+         * theme section), the status filter is omitted so that categories hidden
+         * from the header menu are still shown on the homepage carousel.
          */
         $defaultParams = [
-            'status' => 1,
             'locale' => app()->getLocale(),
         ];
 
-        $categories = $this->categoryRepository->getAll(array_merge($defaultParams, request()->all()));
+        if (! request()->boolean('include_all_statuses')) {
+            $defaultParams['status'] = 1;
+        }
+
+        $requestParams = collect(request()->all())->except('include_all_statuses')->all();
+
+        $categories = $this->categoryRepository->getAll(array_merge($defaultParams, $requestParams));
 
         return CategoryResource::collection($categories);
     }

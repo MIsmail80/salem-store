@@ -62,7 +62,7 @@
             <!-- Products Grid -->
             <div ref="swiperContainer"
                 class="flex gap-6 pb-4 [&>*]:flex-[0] overflow-auto scroll-smooth scrollbar-hide max-md:gap-5 max-sm:gap-4">
-                <x-shop::products.card class="min-w-[291px] max-md:h-fit max-md:min-w-56 max-sm:min-w-[192px]"
+                <x-shop::products.card class="min-w-[291px] max-md:h-fit max-md:min-w-[220px] max-sm:min-w-[165px]"
                     v-for="product in products" />
             </div>
 

@@ -7,16 +7,26 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
 use Webkul\SmsOtp\Models\Otp;
+use Webkul\SmsOtp\Services\SmsMisrService;
 use Webkul\SmsOtp\Services\SmsalaService;
 
 class OtpController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * The resolved SMS service instance.
      */
-    public function __construct(
-        protected SmsalaService $smsService
-    ) {
+    protected SmsMisrService|SmsalaService $smsService;
+
+    /**
+     * Create a new controller instance.
+     * The active service is resolved from config('smsotp.driver').
+     */
+    public function __construct()
+    {
+        $this->smsService = match (config('smsotp.driver', 'smsmisr')) {
+            'smsala' => app(SmsalaService::class),
+            default  => app(SmsMisrService::class),
+        };
     }
 
     /**
@@ -37,7 +47,7 @@ class OtpController extends Controller
 
         $phone = $request->input('phone');
 
-        // Rate limiting: Check if OTP was sent recently
+        // Rate limiting: check if an OTP was sent in the last minute
         $recentOtp = Otp::where('phone', $phone)
             ->where('created_at', '>', now()->subMinutes(1))
             ->first();
@@ -49,10 +59,10 @@ class OtpController extends Controller
             ], 429);
         }
 
-        // Create new OTP
-        $otp = Otp::createForPhone($phone);
+        // Generate & persist a new OTP
+        $otp = Otp::createForPhone($phone, config('smsotp.otp.expiry_minutes', 10));
 
-        // Send via SMS
+        // Dispatch via the active SMS service
         $result = $this->smsService->sendOtp($phone, $otp->code);
 
         if ($result['success']) {
@@ -75,7 +85,7 @@ class OtpController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'phone' => 'required|string|min:10|max:20',
-            'code' => 'required|string|size:6',
+            'code'  => 'required|string|size:6',
         ]);
 
         if ($validator->fails()) {
@@ -86,7 +96,7 @@ class OtpController extends Controller
         }
 
         $phone = $request->input('phone');
-        $code = $request->input('code');
+        $code  = $request->input('code');
 
         $otp = Otp::verify($phone, $code);
 

@@ -136,57 +136,9 @@
 
             {!! view_render_event('bagisto.shop.customers.account.profile.edit_form_controls.phone.after') !!}
 
-            <!-- Gender -->
-            <x-shop::form.control-group>
-                <x-shop::form.control-group.label class="required">
-                    @lang('shop::app.customers.account.profile.edit.gender')
-                </x-shop::form.control-group.label>
 
-                <x-shop::form.control-group.control
-                    type="select"
-                    class="mb-3"
-                    name="gender"
-                    rules="required"
-                    :value="old('gender') ?? $customer->gender"
-                    :aria-label="trans('shop::app.customers.account.profile.edit.select-gender')"
-                    :label="trans('shop::app.customers.account.profile.edit.gender')"
-                >
-                    <option value="Other">
-                        @lang('shop::app.customers.account.profile.edit.other')
-                    </option>
 
-                    <option value="Male">
-                        @lang('shop::app.customers.account.profile.edit.male')
-                    </option>
 
-                    <option value="Female">
-                        @lang('shop::app.customers.account.profile.edit.female')
-                    </option>
-                </x-shop::form.control-group.control>
-
-                <x-shop::form.control-group.error control-name="gender" />
-            </x-shop::form.control-group>
-
-            {!! view_render_event('bagisto.shop.customers.account.profile.edit_form_controls.gender.after') !!}
-
-            <!-- DOB -->
-            <x-shop::form.control-group>
-                <x-shop::form.control-group.label>
-                    @lang('shop::app.customers.account.profile.edit.dob')
-                </x-shop::form.control-group.label>
-
-                <x-shop::form.control-group.control
-                    type="date"
-                    name="date_of_birth"
-                    :value="old('date_of_birth') ?? $customer->date_of_birth"
-                    :label="trans('shop::app.customers.account.profile.edit.dob')"
-                    :placeholder="trans('shop::app.customers.account.profile.edit.dob')"
-                />
-
-                <x-shop::form.control-group.error control-name="date_of_birth" />
-            </x-shop::form.control-group>
-
-            {!! view_render_event('bagisto.shop.customers.account.profile.edit_form_controls.date_of_birth.after') !!}
 
             <!-- Current Password -->
             <x-shop::form.control-group>

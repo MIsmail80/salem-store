@@ -3459,6 +3459,7 @@ return [
                 'title' => 'Create Theme',
 
                 'type' => [
+                    'brand-showcase' => 'Brand Showcase',
                     'category-carousel' => 'Category Carousel',
                     'footer-links' => 'Footer Links',
                     'image-carousel' => 'Image Carousel',
@@ -3549,6 +3550,12 @@ return [
                     'title' => 'Title',
                     'update-service' => 'Update Services',
                 ],
+                'brand-showcase' => 'Brand Showcase',
+                'brand-showcase-description' => 'Showcase a specific brand section with a styled header and category cards.',
+                'brand-name' => 'Brand Name',
+                'brand-subtitle' => 'Brand Subtitle',
+                'brand-color' => 'Brand Accent Color',
+                'brand-color-hint' => 'Choose the color used for the brand name text.',
                 'yes' => 'Yes',
             ],
 

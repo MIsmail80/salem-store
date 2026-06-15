@@ -13,6 +13,8 @@ use Webkul\Shop\Http\Controllers\Controller;
 use Webkul\Shop\Http\Requests\Customer\RegistrationRequest;
 use Webkul\Shop\Mail\Customer\EmailVerificationNotification;
 use Webkul\Shop\Mail\Customer\RegistrationNotification;
+use Webkul\SmsOtp\Services\SmsMisrService;
+use Webkul\SmsOtp\Services\SmsalaService;
 
 class RegistrationController extends Controller
 {
@@ -78,7 +80,7 @@ class RegistrationController extends Controller
         // Send OTP for phone verification
         try {
             $otp = \Webkul\SmsOtp\Models\Otp::createForPhone($customer->phone);
-            $smsService = app(\Webkul\SmsOtp\Services\SmsalaService::class);
+            $smsService = $this->resolveSmsService();
             $smsService->sendOtp($customer->phone, $otp->code);
         } catch (\Exception $e) {
             report($e);
@@ -247,7 +249,7 @@ class RegistrationController extends Controller
 
         try {
             $otp = \Webkul\SmsOtp\Models\Otp::createForPhone($phone);
-            $smsService = app(\Webkul\SmsOtp\Services\SmsalaService::class);
+            $smsService = $this->resolveSmsService();
             $smsService->sendOtp($phone, $otp->code);
 
             session()->flash('success', trans('smsotp::app.otp-sent'));
@@ -257,5 +259,16 @@ class RegistrationController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    /**
+     * Resolve the active SMS service based on the configured driver.
+     */
+    protected function resolveSmsService(): SmsMisrService|SmsalaService
+    {
+        return match (config('smsotp.driver', 'smsmisr')) {
+            'smsala' => app(SmsalaService::class),
+            default  => app(SmsMisrService::class),
+        };
     }
 }

@@ -3459,6 +3459,7 @@ return [
                 'title' => 'إنشاء موضوع',
 
                 'type' => [
+                    'brand-showcase' => 'عرض العلامة التجارية',
                     'category-carousel' => 'شريط الفئات',
                     'footer-links' => 'روابط التذييل',
                     'image-carousel' => 'عرض الصور',
@@ -3549,6 +3550,12 @@ return [
                     'title' => 'عنوان',
                     'update-service' => 'خدمات التحديث',
                 ],
+                'brand-showcase' => 'عرض العلامة التجارية',
+                'brand-showcase-description' => 'اعرض قسم علامة تجارية محددة مع رأس مميز وبطاقات الفئات.',
+                'brand-name' => 'اسم العلامة التجارية',
+                'brand-subtitle' => 'العنوان الفرعي للعلامة التجارية',
+                'brand-color' => 'لون العلامة التجارية',
+                'brand-color-hint' => 'اختر اللون المستخدم لنص العلامة التجارية.',
                 'yes' => 'نعم',
             ],
 

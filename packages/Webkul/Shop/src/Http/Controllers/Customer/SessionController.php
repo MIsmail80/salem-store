@@ -5,6 +5,8 @@ namespace Webkul\Shop\Http\Controllers\Customer;
 use Illuminate\Support\Facades\Event;
 use Webkul\Shop\Http\Controllers\Controller;
 use Webkul\Shop\Http\Requests\Customer\LoginRequest;
+use Webkul\SmsOtp\Services\SmsMisrService;
+use Webkul\SmsOtp\Services\SmsalaService;
 
 class SessionController extends Controller
 {
@@ -52,7 +54,7 @@ class SessionController extends Controller
             // Send OTP for verification
             try {
                 $otp = \Webkul\SmsOtp\Models\Otp::createForPhone($customer->phone);
-                $smsService = app(\Webkul\SmsOtp\Services\SmsalaService::class);
+                $smsService = $this->resolveSmsService();
                 $smsService->sendOtp($customer->phone, $otp->code);
             } catch (\Exception $e) {
                 report($e);
@@ -93,5 +95,16 @@ class SessionController extends Controller
         Event::dispatch('customer.after.logout', $id);
 
         return redirect()->route('shop.home.index');
+    }
+
+    /**
+     * Resolve the active SMS service based on the configured driver.
+     */
+    protected function resolveSmsService(): SmsMisrService|SmsalaService
+    {
+        return match (config('smsotp.driver', 'smsmisr')) {
+            'smsala' => app(SmsalaService::class),
+            default  => app(SmsMisrService::class),
+        };
     }
 }
