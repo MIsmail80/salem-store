@@ -134,7 +134,7 @@ class ThemeController extends Controller
 
         $this->themeCustomizationRepository->delete($id);
 
-        Storage::deleteDirectory('theme/'.$id);
+        Storage::disk('spaces')->deleteDirectory('theme/'.$id);
 
         Event::dispatch('theme_customization.delete.after', $id);
 
@@ -162,6 +162,8 @@ class ThemeController extends Controller
 
         foreach ($selectedThemeIds as $themeId) {
             $this->themeCustomizationRepository->delete($themeId);
+
+            Storage::disk('spaces')->deleteDirectory('theme/'.$themeId);
         }
 
         return new JsonResponse([

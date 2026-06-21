@@ -72,7 +72,17 @@ class ThemeCustomizationRepository extends Repository
 
         if (isset($data[$locale]['deleted_sliders'])) {
             foreach ($data[$locale]['deleted_sliders'] as $slider) {
-                Storage::delete(str_replace('storage/', '', $slider['image']));
+                $imageUrl  = $slider['image'];
+                $spacesUrl = config('filesystems.disks.spaces.url');
+
+                // Derive the storage key from the full Spaces URL or legacy 'storage/' path
+                if ($spacesUrl && str_starts_with($imageUrl, $spacesUrl)) {
+                    $path = ltrim(str_replace($spacesUrl, '', $imageUrl), '/');
+                } else {
+                    $path = ltrim(str_replace('storage/', '', $imageUrl), '/');
+                }
+
+                Storage::disk('spaces')->delete($path);
             }
         }
 
@@ -95,19 +105,21 @@ class ThemeCustomizationRepository extends Repository
 
                     $path = 'theme/'.$theme->id.'/'.Str::random(40).'.webp';
 
-                    Storage::put($path, $manager->make($image['image'])->encode('webp'));
+                    Storage::disk('spaces')->put($path, $manager->make($image['image'])->encode('webp'));
                 } catch (\Exception $e) {
                     session()->flash('error', $e->getMessage());
 
                     return redirect()->back();
                 }
 
+                $imageUrl = Storage::disk('spaces')->url($path);
+
                 if (($data['type'] ?? '') == 'static_content') {
-                    return Storage::url($path);
+                    return $imageUrl;
                 }
 
                 $options['images'][] = [
-                    'image' => 'storage/'.$path,
+                    'image' => $imageUrl,
                     'link'  => $image['link'],
                     'title' => $image['title'],
                 ];
