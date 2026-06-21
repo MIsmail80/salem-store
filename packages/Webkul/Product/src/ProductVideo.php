@@ -21,13 +21,13 @@ class ProductVideo
         $videos = [];
 
         foreach ($product->videos as $video) {
-            if (! Storage::has($video->path)) {
+            if (! Storage::disk('spaces')->exists($video->path)) {
                 continue;
             }
 
             $videos[] = [
                 'type'      => $video->type,
-                'video_url' => Storage::url($video->path),
+                'video_url' => Storage::disk('spaces')->url($video->path),
             ];
         }
 

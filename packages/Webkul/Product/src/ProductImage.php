@@ -31,7 +31,7 @@ class ProductImage
         $images = [];
 
         foreach ($product->images as $image) {
-            if (! Storage::has($image->path)) {
+            if (! Storage::disk('spaces')->exists($image->path)) {
                 continue;
             }
 

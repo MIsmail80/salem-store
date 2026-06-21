@@ -61,9 +61,9 @@ class ProductMediaRepository extends Repository
 
                         $path = $this->getProductDirectory($product).'/'.Str::random(40).'.webp';
 
-                        Storage::put($path, $image);
+                        Storage::disk('spaces')->put($path, $image);
                     } else {
-                        $path = $file->store($this->getProductDirectory($product));
+                        $path = Storage::disk('spaces')->putFile($this->getProductDirectory($product), $file);
                     }
 
                     $this->create([
@@ -89,7 +89,7 @@ class ProductMediaRepository extends Repository
                 continue;
             }
 
-            Storage::delete($model->path);
+            Storage::disk('spaces')->delete($model->path);
 
             $this->delete($indexOrModelId);
         }
