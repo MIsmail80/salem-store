@@ -44,25 +44,38 @@
                         <div class="mt-14 rounded max-sm:mt-8">
                             <!-- Form Container-->
                             <x-shop::form :action="route('shop.customers.reset_password.store')">
-                                <x-shop::form.control-group.control type="hidden" name="token" :value="$token" />
-
-                                {!! view_render_event('bagisto.shop.customers.reset_password_form_controls.before') !!}
-
-                                <!-- Email -->
+                                <!-- Phone Number (Hidden or Read-only) -->
                                 <x-shop::form.control-group>
                                     <x-shop::form.control-group.label class="required">
-                                        @lang('shop::app.customers.reset-password.email')
+                                        @lang('smsotp::app.phone')
                                     </x-shop::form.control-group.label>
 
-                                    <x-shop::form.control-group.control type="email"
-                                        class="px-6 py-4 max-md:py-3 max-sm:py-1.5" id="email" name="email"
-                                        rules="required|email" :value="old('email')"
-                                        :label="trans('shop::app.customers.reset-password.email')"
-                                        placeholder="email@example.com"
-                                        :aria-label="trans('shop::app.customers.reset-password.email')"
+                                    <x-shop::form.control-group.control type="tel"
+                                        class="px-6 py-4 max-md:py-3 max-sm:py-1.5 bg-gray-100" id="phone" name="phone"
+                                        rules="required" :value="session('reset_phone', old('phone'))"
+                                        :label="trans('smsotp::app.phone')"
+                                        readonly
+                                        :aria-label="trans('smsotp::app.phone')"
                                         aria-required="true" />
 
-                                    <x-shop::form.control-group.error control-name="email" />
+                                    <x-shop::form.control-group.error control-name="phone" />
+                                </x-shop::form.control-group>
+
+                                <!-- OTP Code -->
+                                <x-shop::form.control-group class="mb-6">
+                                    <x-shop::form.control-group.label class="required">
+                                        @lang('smsotp::app.otp-code')
+                                    </x-shop::form.control-group.label>
+
+                                    <x-shop::form.control-group.control type="text"
+                                        class="px-6 py-4 max-md:py-3 max-sm:py-1.5" name="otp_code"
+                                        rules="required|length:6" value=""
+                                        :label="trans('smsotp::app.otp-code')"
+                                        :placeholder="trans('smsotp::app.otp-code')"
+                                        :aria-label="trans('smsotp::app.otp-code')"
+                                        aria-required="true" />
+
+                                    <x-shop::form.control-group.error control-name="otp_code" />
                                 </x-shop::form.control-group>
 
                                 <!-- Password -->

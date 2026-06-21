@@ -28,7 +28,7 @@ Route::prefix('customer')->group(function () {
      * Reset password routes.
      */
     Route::controller(ResetPasswordController::class)->prefix('reset-password')->group(function () {
-        Route::get('{token}', 'create')->name('shop.customers.reset_password.create');
+        Route::get('', 'create')->name('shop.customers.reset_password.create');
 
         Route::post('', 'store')->name('shop.customers.reset_password.store');
     });

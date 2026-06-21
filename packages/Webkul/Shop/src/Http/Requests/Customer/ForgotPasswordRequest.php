@@ -13,7 +13,7 @@ class ForgotPasswordRequest extends FormRequest
      * @var array
      */
     private $rules = [
-        'email'    => 'required|email',
+        'phone'    => 'required|min:10|max:20',
     ];
 
     /**

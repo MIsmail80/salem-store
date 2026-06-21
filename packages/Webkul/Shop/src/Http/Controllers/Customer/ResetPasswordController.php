@@ -2,19 +2,15 @@
 
 namespace Webkul\Shop\Http\Controllers\Customer;
 
-use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Webkul\Customer\Repositories\CustomerRepository;
 use Webkul\Shop\Http\Controllers\Controller;
+use Webkul\SmsOtp\Models\Otp;
 
 class ResetPasswordController extends Controller
 {
-    use ResetsPasswords;
-
     /**
      * Create a new controller instance.
      *
@@ -23,86 +19,77 @@ class ResetPasswordController extends Controller
     public function __construct(protected CustomerRepository $customerRepository) {}
 
     /**
-     * Display the password reset view for the given token.
+     * Display the password reset view.
      *
-     * If no token is present, display the link request form.
-     *
-     * @param  string|null  $token
-     * @return \Illuminate\View\View
+     * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse
      */
-    public function create($token = null)
+    public function create()
     {
-        return view('shop::customers.reset-password')->with([
-            'token' => $token,
-            'email' => request('email'),
-        ]);
+        if (! session()->has('reset_phone')) {
+            return redirect()->route('shop.customers.forgot_password.create');
+        }
+
+        return view('shop::customers.reset-password');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
     {
         try {
             $this->validate(request(), [
-                'token'    => 'required',
-                'email'    => 'required|email',
-                'password' => 'required|confirmed|min:6',
+                'phone'                 => 'required',
+                'otp_code'              => 'required|string|size:6',
+                'password'              => 'required|confirmed|min:6',
             ]);
 
-            $response = $this->broker()->reset(
-                request(['email', 'password', 'password_confirmation', 'token']), function ($customer, $password) {
-                    $this->resetPassword($customer, $password);
-                }
-            );
+            $phone = request('phone');
+            $otpCode = request('otp_code');
 
-            if ($response == Password::PASSWORD_RESET) {
-                $customer = $this->customerRepository->findOneByField('email', request('email'));
+            $otp = Otp::verify($phone, $otpCode);
 
-                Event::dispatch('customer.password.update.after', $customer);
-
-                return redirect()->route('shop.customers.account.profile.index');
+            if (! $otp) {
+                return back()
+                    ->withInput(request(['phone']))
+                    ->withErrors([
+                        'otp_code' => trans('smsotp::app.otp-invalid'),
+                    ]);
             }
 
-            return back()
-                ->withInput(request(['email']))
-                ->withErrors([
-                    'email' => trans($response),
-                ]);
+            $customer = $this->customerRepository->findOneByField('phone', $phone);
+
+            if (! $customer) {
+                return back()
+                    ->withInput(request(['phone']))
+                    ->withErrors([
+                        'phone' => trans('shop::app.customers.forgot-password.email-not-exist'),
+                    ]);
+            }
+
+            $customer->password = Hash::make(request('password'));
+            $customer->setRememberToken(Str::random(60));
+            $customer->save();
+
+            Event::dispatch('customer.password.update.after', $customer);
+
+            // Log the user in
+            auth()->guard('customer')->login($customer);
+            
+            // Forget the reset phone session
+            session()->forget('reset_phone');
+
+            // Set success flash message
+            session()->flash('success', trans('shop::app.customers.reset-password.success') ?? 'Password has been reset successfully.');
+
+            return redirect()->route('shop.customers.account.profile.index');
+
         } catch (\Exception $e) {
             session()->flash('error', trans($e->getMessage()));
 
             return redirect()->back();
         }
-    }
-
-    /**
-     * Reset the given customer password.
-     *
-     * @param  \Illuminate\Contracts\Auth\CanResetPassword  $customer
-     * @param  string  $password
-     * @return void
-     */
-    protected function resetPassword($customer, $password)
-    {
-        $customer->password = Hash::make($password);
-
-        $customer->setRememberToken(Str::random(60));
-
-        $customer->save();
-
-        event(new PasswordReset($customer));
-    }
-
-    /**
-     * Get the broker to be used during password reset.
-     *
-     * @return \Illuminate\Contracts\Auth\PasswordBroker
-     */
-    public function broker()
-    {
-        return Password::broker('customers');
     }
 }

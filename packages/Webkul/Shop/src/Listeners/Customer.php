@@ -59,6 +59,11 @@ class Customer extends Base
      */
     public function afterPasswordUpdated($customer)
     {
+        // Skip email notification if customer has no email (phone-based accounts)
+        if (empty($customer->email)) {
+            return;
+        }
+
         try {
             Mail::queue(new UpdatePasswordNotification($customer));
         } catch (\Exception $e) {

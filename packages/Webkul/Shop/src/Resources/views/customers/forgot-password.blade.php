@@ -49,23 +49,23 @@
                             <x-shop::form :action="route('shop.customers.forgot_password.store')">
                                 {!! view_render_event('bagisto.shop.customers.forget_password_form_controls.before') !!}
 
-                                <!-- Email -->
+                                <!-- Phone Number -->
                                 <x-shop::form.control-group class="max-sm:mb-1.5">
                                     <x-shop::form.control-group.label class="required">
-                                        @lang('shop::app.customers.login-form.email')
+                                        @lang('smsotp::app.phone')
                                     </x-shop::form.control-group.label>
 
-                                    <x-shop::form.control-group.control type="email" class="px-6 py-4 max-sm:py-1.5"
-                                        name="email" rules="required|email" value=""
-                                        :label="trans('shop::app.customers.login-form.email')"
-                                        placeholder="email@example.com"
-                                        :aria-label="trans('shop::app.customers.login-form.email')"
+                                    <x-shop::form.control-group.control type="tel" class="px-6 py-4 max-sm:py-1.5"
+                                        name="phone" rules="required|min:10|max:20" value=""
+                                        :label="trans('smsotp::app.phone')"
+                                        placeholder="01xxxxxxxxx"
+                                        :aria-label="trans('smsotp::app.phone')"
                                         aria-required="true" />
 
-                                    <x-shop::form.control-group.error control-name="email" />
+                                    <x-shop::form.control-group.error control-name="phone" />
                                 </x-shop::form.control-group>
 
-                                {!! view_render_event('bagisto.shop.customers.forget_password_form_controls.email.after') !!}
+                                {!! view_render_event('bagisto.shop.customers.forget_password_form_controls.phone.after') !!}
 
                                 <div>
 

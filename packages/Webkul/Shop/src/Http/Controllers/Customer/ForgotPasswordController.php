@@ -2,15 +2,15 @@
 
 namespace Webkul\Shop\Http\Controllers\Customer;
 
-use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
-use Illuminate\Support\Facades\Password;
 use Webkul\Shop\Http\Controllers\Controller;
 use Webkul\Shop\Http\Requests\Customer\ForgotPasswordRequest;
+use Webkul\Customer\Models\Customer;
+use Webkul\SmsOtp\Models\Otp;
+use Webkul\SmsOtp\Services\SmsMisrService;
+use Webkul\SmsOtp\Services\SmsalaService;
 
 class ForgotPasswordController extends Controller
 {
-    use SendsPasswordResetEmails;
-
     /**
      * Show the form for creating a new resource.
      *
@@ -24,36 +24,35 @@ class ForgotPasswordController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(ForgotPasswordRequest $request)
     {
         $request->validated();
 
         try {
-            $response = $this->broker()->sendResetLink($request->only(['email']));
+            $customer = Customer::where('phone', $request->phone)->first();
 
-            if ($response == Password::RESET_LINK_SENT) {
-                session()->flash('success', trans('shop::app.customers.forgot-password.reset-link-sent'));
-
-                return redirect()->route('shop.customers.forgot_password.create');
+            if (! $customer) {
+                return redirect()->route('shop.customers.forgot_password.create')
+                    ->withInput($request->only(['phone']))
+                    ->withErrors([
+                        'phone' => trans('shop::app.customers.forgot-password.email-not-exist'),
+                    ]);
             }
 
-            if ($response == Password::RESET_THROTTLED) {
-                session()->flash('warning', trans('shop::app.customers.forgot-password.already-sent'));
+            // Generate OTP
+            $otp = Otp::createForPhone($customer->phone);
+            
+            // Send OTP
+            $smsService = $this->resolveSmsService();
+            $smsService->sendOtp($customer->phone, $otp->code);
 
-                return redirect()->route('shop.customers.forgot_password.create');
-            }
+            session()->put('reset_phone', $customer->phone);
+            session()->flash('success', trans('smsotp::app.otp-sent'));
 
-            return redirect()->route('shop.customers.forgot_password.create')
-                ->withInput($request->only(['email']))
-                ->withErrors([
-                    'email' => trans('shop::app.customers.forgot-password.email-not-exist'),
-                ]);
-        } catch (\Swift_RfcComplianceException $e) {
-            session()->flash('success', trans('shop::app.customers.forgot-password.reset-link-sent'));
+            return redirect()->route('shop.customers.reset_password.create');
 
-            return redirect()->route('shop.customers.forgot_password.create');
         } catch (\Exception $e) {
             report($e);
 
@@ -64,12 +63,13 @@ class ForgotPasswordController extends Controller
     }
 
     /**
-     * Get the broker to be used during password reset.
-     *
-     * @return \Illuminate\Contracts\Auth\PasswordBroker
+     * Resolve the active SMS service based on the configured driver.
      */
-    public function broker()
+    protected function resolveSmsService()
     {
-        return Password::broker('customers');
+        return match (config('smsotp.driver', 'smsmisr')) {
+            'smsala' => app(SmsalaService::class),
+            default  => app(SmsMisrService::class),
+        };
     }
 }

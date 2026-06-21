@@ -3,6 +3,7 @@
 return [
     'phone' => 'Phone Number',
     'otp-code' => 'OTP Code',
+    'otp' => 'OTP Code',
     'send-otp' => 'Send OTP',
     'resend-otp' => 'Resend OTP',
     'verify-otp' => 'Verify',
