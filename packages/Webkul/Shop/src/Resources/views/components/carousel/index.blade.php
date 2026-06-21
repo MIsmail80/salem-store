@@ -24,7 +24,7 @@
                     class="aspect-[2.743/1] max-h-full w-full max-w-full select-none transition-transform duration-300 ease-in-out"
                     ::lazy="false"
                     ::src="image.image"
-                    ::srcset="image.image + ' 1920w, ' + image.image.replace('storage', 'cache/large') + ' 1280w,' + image.image.replace('storage', 'cache/medium') + ' 1024w, ' + image.image.replace('storage', 'cache/small') + ' 525w'"
+                    ::srcset="(function(img) { var isCloud = img.startsWith('http'); return isCloud ? (img + ' 1920w, ' + img + ' 1280w, ' + img + ' 1024w, ' + img + ' 525w') : (img + ' 1920w, ' + img.replace('storage', 'cache/large') + ' 1280w, ' + img.replace('storage', 'cache/medium') + ' 1024w, ' + img.replace('storage', 'cache/small') + ' 525w'); })(image.image)"
                     ::alt="image?.title"
                     tabindex="0"
                     fetchpriority="high"

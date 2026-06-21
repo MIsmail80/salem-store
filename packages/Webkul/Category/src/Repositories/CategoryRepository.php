@@ -242,7 +242,7 @@ class CategoryRepository extends Repository
 
                 if (request()->hasFile($file)) {
                     if ($category->{$type}) {
-                        Storage::delete($category->{$type});
+                        Storage::disk('spaces')->delete($category->{$type});
                     }
 
                     $manager = new ImageManager;
@@ -251,14 +251,14 @@ class CategoryRepository extends Repository
 
                     $category->{$type} = 'category/'.$category->id.'/'.Str::random(40).'.webp';
 
-                    Storage::put($category->{$type}, $image);
+                    Storage::disk('spaces')->put($category->{$type}, $image);
 
                     $category->save();
                 }
             }
         } else {
             if ($category->{$type}) {
-                Storage::delete($category->{$type});
+                Storage::disk('spaces')->delete($category->{$type});
             }
 
             $category->{$type} = null;

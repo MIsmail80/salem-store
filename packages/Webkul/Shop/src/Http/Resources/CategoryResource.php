@@ -3,6 +3,8 @@
 namespace Webkul\Shop\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
+use League\Flysystem\Local\LocalFilesystemAdapter;
 
 class CategoryResource extends JsonResource
 {
@@ -23,18 +25,8 @@ class CategoryResource extends JsonResource
             'position'     => $this->position,
             'display_mode' => $this->display_mode,
             'description'  => $this->description,
-            'logo'         => $this->when($this->logo_path, [
-                'small_image_url'    => url('cache/small/'.$this->logo_path),
-                'medium_image_url'   => url('cache/medium/'.$this->logo_path),
-                'large_image_url'    => url('cache/large/'.$this->logo_path),
-                'original_image_url' => url('cache/original/'.$this->logo_path),
-            ]),
-            'banner'       => $this->when($this->banner_path, [
-                'small_image_url'    => url('cache/small/'.$this->banner_path),
-                'medium_image_url'   => url('cache/medium/'.$this->banner_path),
-                'large_image_url'    => url('cache/large/'.$this->banner_path),
-                'original_image_url' => url('cache/original/'.$this->banner_path),
-            ]),
+            'logo'         => $this->when($this->logo_path, fn () => $this->resolveImageUrls($this->logo_path)),
+            'banner'       => $this->when($this->banner_path, fn () => $this->resolveImageUrls($this->banner_path)),
             'meta'         => [
                 'title'       => $this->meta_title,
                 'keywords'    => $this->meta_keywords,
@@ -42,6 +34,32 @@ class CategoryResource extends JsonResource
             ],
             'translations' => $this->translations,
             'additional'   => $this->additional,
+        ];
+    }
+
+    /**
+     * Resolve image URLs based on the current storage driver.
+     * For cloud storage (DO Spaces / S3) the original URL is used for all sizes
+     * since local image-cache resizing is not available.
+     */
+    private function resolveImageUrls(string $path): array
+    {
+        if (Storage::getAdapter() instanceof LocalFilesystemAdapter) {
+            return [
+                'small_image_url'    => url('cache/small/'.$path),
+                'medium_image_url'   => url('cache/medium/'.$path),
+                'large_image_url'    => url('cache/large/'.$path),
+                'original_image_url' => url('cache/original/'.$path),
+            ];
+        }
+
+        $url = Storage::url($path);
+
+        return [
+            'small_image_url'    => $url,
+            'medium_image_url'   => $url,
+            'large_image_url'    => $url,
+            'original_image_url' => $url,
         ];
     }
 }
