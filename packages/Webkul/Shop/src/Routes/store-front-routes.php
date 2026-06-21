@@ -13,14 +13,14 @@ use Webkul\Shop\Http\Controllers\SubscriptionController;
 /**
  * CMS pages.
  */
-Route::get('page/{slug}', [PageController::class, 'view'])
-    ->name('shop.cms.page')
-    ->middleware('cache.response');
+// Route::get('page/{slug}', [PageController::class, 'view'])
+//     ->name('shop.cms.page')
+//     ->middleware('cache.response');
 
 /**
  * Fallback route.
  */
-Route::fallback(ProductsCategoriesProxyController::class.'@index')
+Route::fallback(ProductsCategoriesProxyController::class . '@index')
     ->name('shop.product_or_category.index')
     ->middleware('cache.response');
 
@@ -78,3 +78,7 @@ Route::controller(ProductController::class)->group(function () {
  */
 Route::get('booking-slots/{id}', [BookingProductController::class, 'index'])
     ->name('shop.booking-product.slots.index');
+
+Route::get('{slug}', [ProductsCategoriesProxyController::class, 'index'])
+    ->name('shop.cms.page')
+    ->middleware('cache.response');

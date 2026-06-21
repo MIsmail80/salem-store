@@ -71,6 +71,13 @@ class ThemeCustomization extends TranslatableModel implements ThemeCustomization
     public const SERVICES_CONTENT = 'services_content';
 
     /**
+     * Brand Showcase.
+     *
+     * @var string
+     */
+    public const BRAND_SHOWCASE = 'brand_showcase';
+
+    /**
      * Cast options field to array.
      *
      * @var array

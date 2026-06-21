@@ -11,12 +11,12 @@
 }
 
 img.lazy {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 @layer components {
     ::selection {
-        background-color: rgba(6, 12, 59, .2);
+        background-color: rgba(196, 163, 90, 0.3);
     }
 
     input {
@@ -328,7 +328,7 @@ img.lazy {
     .icon-users:before {
         content: "\e942";
     }
-      
+
 
     .journal-scroll::-webkit-scrollbar {
         width: 14px;
@@ -351,11 +351,11 @@ img.lazy {
     }
 
     .scrollbar-width-hidden {
-        -ms-overflow-style: none; 
+        -ms-overflow-style: none;
         scrollbar-width: none;
     }
 
-    .scrollbar-width-hidden::-webkit-scrollbar { 
+    .scrollbar-width-hidden::-webkit-scrollbar {
         display: none;
     }
 
@@ -396,7 +396,7 @@ img.lazy {
     .direction-rtl {
         direction: rtl;
     }
-    
+
     .label-pending,
     .label-processing,
     .label-closed,
@@ -407,22 +407,22 @@ img.lazy {
         @apply text-[12px] text-white font-semibold py-px px-1.5 max-w-max rounded-[35px];
     }
 
-	.label-pending {
-		@apply bg-yellow-500;
-	}
-
-	.label-processing{
-		@apply bg-cyan-600;
+    .label-pending {
+        @apply bg-yellow-500;
     }
 
-	.label-completed,
-    .label-active {
-		@apply bg-green-600;
-	}
+    .label-processing {
+        @apply bg-cyan-600;
+    }
 
-	.label-closed {
-		@apply bg-indigo-600;
-	}
+    .label-completed,
+    .label-active {
+        @apply bg-green-600;
+    }
+
+    .label-closed {
+        @apply bg-indigo-600;
+    }
 
     .label-canceled {
         @apply bg-rose-600;
@@ -433,11 +433,11 @@ img.lazy {
     }
 
     .primary-button {
-        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl text-white bg-navyBlue border border-navyBlue px-8 py-4 max-w-max cursor-pointer transition-all hover:opacity-[0.9];
+        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl text-brandBlack bg-gold border border-gold px-8 py-4 max-w-max cursor-pointer transition-all hover:bg-gold-light;
     }
-    
+
     .secondary-button {
-        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl bg-white text-navyBlue border border-navyBlue px-8 py-4 max-w-max cursor-pointer transition-all hover:bg-[#050e3a0d];
+        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl bg-brandBlack text-gold border border-gold px-8 py-4 max-w-max cursor-pointer transition-all hover:bg-brandBlack-light;
     }
 
     .shimmer {
@@ -464,7 +464,7 @@ img.lazy {
         0% {
             opacity: 0;
         }
-        
+
         100% {
             opacity: 1;
         }
@@ -511,7 +511,7 @@ img.lazy {
     html {
         margin-top: 0px !important;
     }
-    
+
     .break-word-custom {
         word-break: break-word;
     }
@@ -526,5 +526,200 @@ img.lazy {
 
     .skip-to-main-content-link:focus {
         @apply ltr:left-1/2 rtl:right-1/2 ltr:translate-x-1/2 rtl:translate-x-[-50%] opacity-100;
+    }
+
+    /* ============================================
+       Salem Store Premium Theme Utilities
+       ============================================ */
+
+    /* Section Divider with Gold Accent */
+    .section-divider {
+        @apply relative;
+    }
+
+    .section-divider::before {
+        content: '';
+        @apply absolute left-1/2 -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent;
+    }
+
+    .section-divider-top::before {
+        @apply top-0;
+    }
+
+    .section-divider-bottom::before {
+        @apply bottom-0;
+    }
+
+    /* Gold Glow Effect for Cards and Buttons */
+    .gold-glow {
+        box-shadow: 0 0 20px rgba(196, 163, 90, 0.3);
+    }
+
+    .gold-glow-hover:hover {
+        box-shadow: 0 0 30px rgba(196, 163, 90, 0.4);
+    }
+
+    /* Premium Section Header Styling */
+    .section-header {
+        @apply relative text-center mb-10;
+    }
+
+    .section-header::after {
+        content: '';
+        @apply block mt-4 mx-auto w-16 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent;
+    }
+
+    /* Premium Price Styling */
+    .premium-price {
+        @apply text-gold font-bold;
+    }
+
+    .premium-price-strikethrough {
+        @apply text-zinc-400 line-through text-sm;
+    }
+
+    /* Premium Card Hover Effects */
+    .premium-card {
+        @apply relative overflow-hidden transition-all duration-300;
+    }
+
+    .premium-card::before {
+        content: '';
+        @apply absolute inset-0 bg-gradient-to-tr from-gold/0 to-gold/5 opacity-0 transition-opacity duration-300;
+    }
+
+    .premium-card:hover::before {
+        @apply opacity-100;
+    }
+
+    .premium-card:hover {
+        box-shadow: 0 8px 30px rgba(196, 163, 90, 0.15);
+    }
+
+    /* Gold Border Animation */
+    .gold-border-animated {
+        @apply relative;
+    }
+
+    .gold-border-animated::after {
+        content: '';
+        @apply absolute inset-0 border-2 border-gold/0 rounded-lg transition-all duration-300;
+    }
+
+    .gold-border-animated:hover::after {
+        @apply border-gold/30;
+    }
+
+    /* RTL Support Utilities */
+    [dir="rtl"] .rtl\:gradient-reverse {
+        background-image: linear-gradient(to left, var(--tw-gradient-stops));
+    }
+
+    [dir="rtl"] .rtl\:text-right {
+        text-align: right;
+    }
+
+    [dir="rtl"] .rtl\:flex-row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    /* Premium Button Shine Effect */
+    .btn-shine {
+        @apply relative overflow-hidden;
+    }
+
+    .btn-shine::before {
+        content: '';
+        @apply absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/20 to-gold/0;
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+    }
+
+    .btn-shine:hover::before {
+        transform: translateX(100%);
+    }
+
+    /* Premium Dark Section */
+    .section-dark {
+        @apply bg-brandBlack text-white;
+    }
+
+    .section-dark h1,
+    .section-dark h2,
+    .section-dark h3 {
+        @apply text-white;
+    }
+
+    .section-dark .text-muted {
+        @apply text-white/60;
+    }
+
+    /* Premium Light Section */
+    .section-light {
+        @apply bg-gray-50;
+    }
+
+    .section-light-gradient {
+        background: linear-gradient(to bottom, #f9fafb, #ffffff, #f9fafb);
+    }
+
+    /* Loading Shimmer with Gold Tint */
+    .shimmer-gold {
+        animation-duration: 2.2s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: skeleton-gold;
+        animation-timing-function: linear;
+        background: linear-gradient(to right, rgba(196, 163, 90, 0.05) 8%, rgba(196, 163, 90, 0.1) 18%, rgba(196, 163, 90, 0.05) 33%);
+        background-size: 1250px 100%;
+    }
+
+    @keyframes skeleton-gold {
+        0% {
+            background-position: -1250px 0;
+        }
+
+        100% {
+            background-position: 1250px 0;
+        }
+    }
+
+    /* Category Circle Styles */
+    .category-circle {
+        @apply relative rounded-full overflow-hidden border-2 border-gold/30 transition-all duration-300;
+    }
+
+    .category-circle:hover {
+        @apply border-gold shadow-[0_0_20px_rgba(196, 163, 90, 0.3)];
+    }
+
+    .category-circle img {
+        @apply transition-transform duration-500;
+    }
+
+    .category-circle:hover img {
+        @apply scale-110;
+    }
+
+    /* Product Card Premium Styles */
+    .product-badge {
+        @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold shadow-lg;
+    }
+
+    .product-badge-sale {
+        @apply bg-gradient-to-r from-red-600 to-red-500 text-white shadow-red-600/30;
+    }
+
+    .product-badge-new {
+        @apply bg-gradient-to-r from-gold to-gold-light text-brandBlack shadow-gold/30;
+    }
+
+    /* Focus States for Accessibility */
+    .gold-focus:focus-visible {
+        @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-white;
+    }
+
+    .gold-focus-dark:focus-visible {
+        @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-brandBlack;
     }
 }

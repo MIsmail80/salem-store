@@ -1,0 +1,3122 @@
+<!-- SEO Meta Content -->
+
+<!-- Page Layout -->
+<!DOCTYPE html>
+
+<html
+    lang="ar"
+    dir="rtl"
+>
+    <head>
+
+        
+
+        <title>اتصل بنا</title>
+
+        <meta charset="UTF-8">
+
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        >
+        <meta
+            http-equiv="content-language"
+            content="ar"
+        >
+
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+        >
+        <meta
+            name="base-url"
+            content="https://salem-store.test"
+        >
+        <meta
+            name="currency"
+            content="{&quot;id&quot;:1,&quot;code&quot;:&quot;EGP&quot;,&quot;name&quot;:&quot;\u0627\u0644\u062c\u0646\u064a\u0647 \u0627\u0644\u0645\u0635\u0631\u064a&quot;,&quot;symbol&quot;:&quot;E\u00a3&quot;,&quot;decimal&quot;:2,&quot;group_separator&quot;:&quot;,&quot;,&quot;decimal_separator&quot;:&quot;.&quot;,&quot;currency_position&quot;:null,&quot;created_at&quot;:null,&quot;updated_at&quot;:null}"
+        >
+
+            <meta name="title" content="اتصل بنا" />
+
+    <meta name="description" content="اتصل بنا - متجر سالم" />
+
+    <meta name="keywords" content="اتصل بنا, متجر سالم, تواصل معنا" />
+
+        <link
+            rel="icon"
+            sizes="16x16"
+            href="https://salem-store.test/storage/channel/1/Kyftf2SpdCc8xd65IZC6kvyfbrPC1oJZ6wK0ZZcu.png"
+        />
+
+        <link rel="preload" as="style" href="https://salem-store.test/themes/shop/default/build/assets/app-Bj6CmTrS.css" /><link rel="preload" as="style" href="https://salem-store.test/themes/shop/default/build/assets/app-DsP8OK1c.css" /><link rel="modulepreload" href="https://salem-store.test/themes/shop/default/build/assets/app-DqLlf3Iu.js" /><link rel="stylesheet" href="https://salem-store.test/themes/shop/default/build/assets/app-Bj6CmTrS.css" /><link rel="stylesheet" href="https://salem-store.test/themes/shop/default/build/assets/app-DsP8OK1c.css" /><script type="module" src="https://salem-store.test/themes/shop/default/build/assets/app-DqLlf3Iu.js"></script>
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+            as="style"
+        >
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        >
+
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+            as="style"
+        >
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+        >
+
+        
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+            as="style"
+        >
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+        >
+
+        
+        <style>
+            
+
+            /* Apply Cairo font for Arabic/RTL content */
+            html[dir="rtl"] {
+                font-family: 'Cairo', sans-serif;
+            }
+
+            html[dir="rtl"] body,
+            html[dir="rtl"] * {
+                font-family: 'Cairo', sans-serif;
+            }
+        </style>
+
+                    <script type="speculationrules">
+                {"prerender":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"account"}},{"not":{"href_matches":"checkout"}},{"not":{"href_matches":"onepage"}},{"not":{"href_matches":"cart"}}]},"eagerness":"moderate"}]}            </script>
+        
+        
+
+    <script id="browser-logger-active">
+(function() {
+    const ENDPOINT = 'https://salem-store.test/_boost/browser-logs';
+    const logQueue = [];
+    let flushTimeout = null;
+
+    console.log('🔍 Browser logger active (MCP server detected). Posting to: ' + ENDPOINT);
+
+    // Store original console methods
+    const originalConsole = {
+        log: console.log,
+        info: console.info,
+        error: console.error,
+        warn: console.warn,
+        table: console.table
+    };
+
+    // Helper to safely stringify values
+    function safeStringify(obj) {
+        const seen = new WeakSet();
+        return JSON.stringify(obj, (key, value) => {
+            if (typeof value === 'object' && value !== null) {
+                if (seen.has(value)) return '[Circular]';
+                seen.add(value);
+            }
+            if (value instanceof Error) {
+                return {
+                    name: value.name,
+                    message: value.message,
+                    stack: value.stack
+                };
+            }
+            return value;
+        });
+    }
+
+    // Batch and send logs
+    function flushLogs() {
+        if (logQueue.length === 0) return;
+
+        const batch = logQueue.splice(0, logQueue.length);
+
+        fetch(ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify({ logs: batch })
+        }).catch(err => {
+            // Silently fail to avoid infinite loops
+            originalConsole.error('Failed to send logs:', err);
+        });
+    }
+
+    // Debounced flush (100ms)
+    function scheduleFlush() {
+        if (flushTimeout) clearTimeout(flushTimeout);
+        flushTimeout = setTimeout(flushLogs, 100);
+    }
+
+    // Intercept console methods
+    ['log', 'info', 'error', 'warn', 'table'].forEach(method => {
+        console[method] = function(...args) {
+            // Call original method
+            originalConsole[method].apply(console, args);
+
+            // Capture log data
+            try {
+                logQueue.push({
+                    type: method,
+                    timestamp: new Date().toISOString(),
+                    data: args.map(arg => {
+                        try {
+                            return typeof arg === 'object' ? JSON.parse(safeStringify(arg)) : arg;
+                        } catch (e) {
+                            return String(arg);
+                        }
+                    }),
+                    url: window.location.href,
+                    userAgent: navigator.userAgent
+                });
+
+                scheduleFlush();
+            } catch (e) {
+                // Fail silently
+            }
+        };
+    });
+
+    // Global error handlers for uncaught errors
+    const originalOnError = window.onerror;
+    window.onerror = function boostErrorHandler(errorMsg, url, lineNumber, colNumber, error) {
+        try {
+            logQueue.push({
+                type: 'uncaught_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: errorMsg,
+                    filename: url,
+                    lineno: lineNumber,
+                    colno: colNumber,
+                    error: error ? {
+                        name: error.name,
+                        message: error.message,
+                        stack: error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Call original handler if it exists
+        if (originalOnError && typeof originalOnError === 'function') {
+            return originalOnError(errorMsg, url, lineNumber, colNumber, error);
+        }
+
+        // Let the error continue to propagate
+        return false;
+    }
+    window.addEventListener('error', (event) => {
+        try {
+            logQueue.push({
+                type: 'window_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: event.message,
+                    filename: event.filename,
+                    lineno: event.lineno,
+                    colno: event.colno,
+                    error: event.error ? {
+                        name: event.error.name,
+                        message: event.error.message,
+                        stack: event.error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the error continue to propagate
+        return false;
+    });
+    window.addEventListener('unhandledrejection', (event) => {
+        try {
+            logQueue.push({
+                type: 'error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: 'Unhandled Promise Rejection',
+                    reason: event.reason instanceof Error ? {
+                        name: event.reason.name,
+                        message: event.reason.message,
+                        stack: event.reason.stack
+                    } : event.reason
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the rejection continue to propagate
+        return false;
+    });
+
+    // Flush on page unload
+    window.addEventListener('beforeunload', () => {
+        if (logQueue.length > 0) {
+            navigator.sendBeacon(ENDPOINT, JSON.stringify({ logs: logQueue }));
+        }
+    });
+})();
+</script>
+<link rel='stylesheet' type='text/css' property='stylesheet' href='/_debugbar/assets/stylesheets?v=1769180602' data-turbolinks-eval='false' data-turbo-eval='false'><script src='/_debugbar/assets/javascript?v=1769180602' data-turbolinks-eval='false' data-turbo-eval='false'></script><script data-turbo-eval='false'>jQuery.noConflict(true);</script>
+<script> Sfdump = window.Sfdump || (function (doc) { doc.documentElement.classList.add('sf-js-enabled'); var rxEsc = /([.*+?^${}()|\[\]\/\\])/g, idRx = /\bsf-dump-\d+-ref[012]\w+\b/, keyHint = 0 <= navigator.platform.toUpperCase().indexOf('MAC') ? 'Cmd' : 'Ctrl', addEventListener = function (e, n, cb) { e.addEventListener(n, cb, false); }; if (!doc.addEventListener) { addEventListener = function (element, eventName, callback) { element.attachEvent('on' + eventName, function (e) { e.preventDefault = function () {e.returnValue = false;}; e.target = e.srcElement; callback(e); }); }; } function toggle(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className, arrow, newClass; if (/\bsf-dump-compact\b/.test(oldClass)) { arrow = '▼'; newClass = 'sf-dump-expanded'; } else if (/\bsf-dump-expanded\b/.test(oldClass)) { arrow = '▶'; newClass = 'sf-dump-compact'; } else { return false; } if (doc.createEvent && s.dispatchEvent) { var event = doc.createEvent('Event'); event.initEvent('sf-dump-expanded' === newClass ? 'sfbeforedumpexpand' : 'sfbeforedumpcollapse', true, false); s.dispatchEvent(event); } a.lastChild.innerHTML = arrow; s.className = s.className.replace(/\bsf-dump-(compact|expanded)\b/, newClass); if (recursive) { try { a = s.querySelectorAll('.'+oldClass); for (s = 0; s < a.length; ++s) { if (-1 == a[s].className.indexOf(newClass)) { a[s].className = newClass; a[s].previousSibling.lastChild.innerHTML = arrow; } } } catch (e) { } } return true; }; function collapse(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-expanded\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function expand(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-compact\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function collapseAll(root) { var a = root.querySelector('a.sf-dump-toggle'); if (a) { collapse(a, true); expand(a); return true; } return false; } function reveal(node) { var previous, parents = []; while ((node = node.parentNode || {}) && (previous = node.previousSibling) && 'A' === previous.tagName) { parents.push(previous); } if (0 !== parents.length) { parents.forEach(function (parent) { expand(parent); }); return true; } return false; } function highlight(root, activeNode, nodes) { resetHighlightedNodes(root); Array.from(nodes||[]).forEach(function (node) { if (!/\bsf-dump-highlight\b/.test(node.className)) { node.className = node.className + ' sf-dump-highlight'; } }); if (!/\bsf-dump-highlight-active\b/.test(activeNode.className)) { activeNode.className = activeNode.className + ' sf-dump-highlight-active'; } } function resetHighlightedNodes(root) { Array.from(root.querySelectorAll('.sf-dump-str, .sf-dump-key, .sf-dump-public, .sf-dump-protected, .sf-dump-private')).forEach(function (strNode) { strNode.className = strNode.className.replace(/\bsf-dump-highlight\b/, ''); strNode.className = strNode.className.replace(/\bsf-dump-highlight-active\b/, ''); }); } return function (root, x) { root = doc.getElementById(root); var indentRx = new RegExp('^('+(root.getAttribute('data-indent-pad') || ' ').replace(rxEsc, '\\$1')+')+', 'm'), options = {"maxDepth":1,"maxStringLength":160,"fileLinkFormat":false}, elt = root.getElementsByTagName('A'), len = elt.length, i = 0, s, h, t = []; while (i < len) t.push(elt[i++]); for (i in x) { options[i] = x[i]; } function a(e, f) { addEventListener(root, e, function (e, n) { if ('A' == e.target.tagName) { f(e.target, e); } else if ('A' == e.target.parentNode.tagName) { f(e.target.parentNode, e); } else { n = /\bsf-dump-ellipsis\b/.test(e.target.className) ? e.target.parentNode : e.target; if ((n = n.nextElementSibling) && 'A' == n.tagName) { if (!/\bsf-dump-toggle\b/.test(n.className)) { n = n.nextElementSibling || n; } f(n, e, true); } } }); }; function isCtrlKey(e) { return e.ctrlKey || e.metaKey; } function xpathString(str) { var parts = str.match(/[^'"]+|['"]/g).map(function (part) { if ("'" == part) { return '"\'"'; } if ('"' == part) { return "'\"'"; } return "'" + part + "'"; }); return "concat(" + parts.join(",") + ", '')"; } function xpathHasClass(className) { return "contains(concat(' ', normalize-space(@class), ' '), ' " + className +" ')"; } a('mouseover', function (a, e, c) { if (c) { e.target.style.cursor = "pointer"; } }); a('click', function (a, e, c) { if (/\bsf-dump-toggle\b/.test(a.className)) { e.preventDefault(); if (!toggle(a, isCtrlKey(e))) { var r = doc.getElementById(a.getAttribute('href').slice(1)), s = r.previousSibling, f = r.parentNode, t = a.parentNode; t.replaceChild(r, a); f.replaceChild(a, s); t.insertBefore(s, r); f = f.firstChild.nodeValue.match(indentRx); t = t.firstChild.nodeValue.match(indentRx); if (f && t && f[0] !== t[0]) { r.innerHTML = r.innerHTML.replace(new RegExp('^'+f[0].replace(rxEsc, '\\$1'), 'mg'), t[0]); } if (/\bsf-dump-compact\b/.test(r.className)) { toggle(s, isCtrlKey(e)); } } if (c) { } else if (doc.getSelection) { try { doc.getSelection().removeAllRanges(); } catch (e) { doc.getSelection().empty(); } } else { doc.selection.empty(); } } else if (/\bsf-dump-str-toggle\b/.test(a.className)) { e.preventDefault(); e = a.parentNode.parentNode; e.className = e.className.replace(/\bsf-dump-str-(expand|collapse)\b/, a.parentNode.className); } }); elt = root.getElementsByTagName('SAMP'); len = elt.length; i = 0; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; if ('SAMP' == elt.tagName) { a = elt.previousSibling || {}; if ('A' != a.tagName) { a = doc.createElement('A'); a.className = 'sf-dump-ref'; elt.parentNode.insertBefore(a, elt); } else { a.innerHTML += ' '; } a.title = (a.title ? a.title+'\n[' : '[')+keyHint+'+click] Expand all children'; a.innerHTML += elt.className == 'sf-dump-compact' ? '<span>▶</span>' : '<span>▼</span>'; a.className += ' sf-dump-toggle'; x = 1; if ('sf-dump' != elt.parentNode.className) { x += elt.parentNode.getAttribute('data-depth')/1; } } else if (/\bsf-dump-ref\b/.test(elt.className) && (a = elt.getAttribute('href'))) { a = a.slice(1); elt.className += ' sf-dump-hover'; elt.className += ' '+a; if (/[\[{]$/.test(elt.previousSibling.nodeValue)) { a = a != elt.nextSibling.id && doc.getElementById(a); try { s = a.nextSibling; elt.appendChild(a); s.parentNode.insertBefore(a, s); if (/^[@#]/.test(elt.innerHTML)) { elt.innerHTML += ' <span>▶</span>'; } else { elt.innerHTML = '<span>▶</span>'; elt.className = 'sf-dump-ref'; } elt.className += ' sf-dump-toggle'; } catch (e) { if ('&' == elt.innerHTML.charAt(0)) { elt.innerHTML = '…'; elt.className = 'sf-dump-ref'; } } } } } if (doc.evaluate && Array.from && root.children.length > 1) { root.setAttribute('tabindex', 0); SearchState = function () { this.nodes = []; this.idx = 0; }; SearchState.prototype = { next: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx < (this.nodes.length - 1) ? this.idx + 1 : 0; return this.current(); }, previous: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx > 0 ? this.idx - 1 : (this.nodes.length - 1); return this.current(); }, isEmpty: function () { return 0 === this.count(); }, current: function () { if (this.isEmpty()) { return null; } return this.nodes[this.idx]; }, reset: function () { this.nodes = []; this.idx = 0; }, count: function () { return this.nodes.length; }, }; function showCurrent(state) { var currentNode = state.current(), currentRect, searchRect; if (currentNode) { reveal(currentNode); highlight(root, currentNode, state.nodes); if ('scrollIntoView' in currentNode) { currentNode.scrollIntoView(true); currentRect = currentNode.getBoundingClientRect(); searchRect = search.getBoundingClientRect(); if (currentRect.top < (searchRect.top + searchRect.height)) { window.scrollBy(0, -(searchRect.top + searchRect.height + 5)); } } } counter.textContent = (state.isEmpty() ? 0 : state.idx + 1) + ' of ' + state.count(); } var search = doc.createElement('div'); search.className = 'sf-dump-search-wrapper sf-dump-search-hidden'; search.innerHTML = ' <input type="text" class="sf-dump-search-input"> <span class="sf-dump-search-count">0 of 0<\/span> <button type="button" class="sf-dump-search-input-previous" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 1331l-166 165q-19 19-45 19t-45-19L896 965l-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> <button type="button" class="sf-dump-search-input-next" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19L109 808q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> '; root.insertBefore(search, root.firstChild); var state = new SearchState(); var searchInput = search.querySelector('.sf-dump-search-input'); var counter = search.querySelector('.sf-dump-search-count'); var searchInputTimer = 0; var previousSearchQuery = ''; addEventListener(searchInput, 'keyup', function (e) { var searchQuery = e.target.value; /* Don't perform anything if the pressed key didn't change the query */ if (searchQuery === previousSearchQuery) { return; } previousSearchQuery = searchQuery; clearTimeout(searchInputTimer); searchInputTimer = setTimeout(function () { state.reset(); collapseAll(root); resetHighlightedNodes(root); if ('' === searchQuery) { counter.textContent = '0 of 0'; return; } var classMatches = [ "sf-dump-str", "sf-dump-key", "sf-dump-public", "sf-dump-protected", "sf-dump-private", ].map(xpathHasClass).join(' or '); var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(searchQuery.toUpperCase()) + ', ' + xpathString(searchQuery.toLowerCase()) + '), ' + xpathString(searchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null); while (node = xpathResult.iterateNext()) state.nodes.push(node); showCurrent(state); }, 400); }); Array.from(search.querySelectorAll('.sf-dump-search-input-next, .sf-dump-search-input-previous')).forEach(function (btn) { addEventListener(btn, 'click', function (e) { e.preventDefault(); -1 !== e.target.className.indexOf('next') ? state.next() : state.previous(); searchInput.focus(); collapseAll(root); showCurrent(state); }) }); addEventListener(root, 'keydown', function (e) { var isSearchActive = !/\bsf-dump-search-hidden\b/.test(search.className); if ((114 === e.keyCode && !isSearchActive) || (isCtrlKey(e) && 70 === e.keyCode)) { /* F3 or CMD/CTRL + F */ if (70 === e.keyCode && document.activeElement === searchInput) { /* * If CMD/CTRL + F is hit while having focus on search input, * the user probably meant to trigger browser search instead. * Let the browser execute its behavior: */ return; } e.preventDefault(); search.className = search.className.replace(/\bsf-dump-search-hidden\b/, ''); searchInput.focus(); } else if (isSearchActive) { if (27 === e.keyCode) { /* ESC key */ search.className += ' sf-dump-search-hidden'; e.preventDefault(); resetHighlightedNodes(root); searchInput.value = ''; } else if ( (isCtrlKey(e) && 71 === e.keyCode) /* CMD/CTRL + G */ || 13 === e.keyCode /* Enter */ || 114 === e.keyCode /* F3 */ ) { e.preventDefault(); e.shiftKey ? state.previous() : state.next(); collapseAll(root); showCurrent(state); } } }); } if (0 >= options.maxStringLength) { return; } try { elt = root.querySelectorAll('.sf-dump-str'); len = elt.length; i = 0; t = []; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; s = elt.innerText || elt.textContent; x = s.length - options.maxStringLength; if (0 < x) { h = elt.innerHTML; elt[elt.innerText ? 'innerText' : 'textContent'] = s.substring(0, options.maxStringLength); elt.className += ' sf-dump-str-collapse'; elt.innerHTML = '<span class=sf-dump-str-collapse>'+h+'<a class="sf-dump-ref sf-dump-str-toggle" title="Collapse"> ◀</a></span>'+ '<span class=sf-dump-str-expand>'+elt.innerHTML+'<a class="sf-dump-ref sf-dump-str-toggle" title="'+x+' remaining characters"> ▶</a></span>'; } } } catch (e) { } }; })(document); </script><style> .sf-js-enabled .phpdebugbar pre.sf-dump .sf-dump-compact, .sf-js-enabled .sf-dump-str-collapse .sf-dump-str-collapse, .sf-js-enabled .sf-dump-str-expand .sf-dump-str-expand { display: none; } .sf-dump-hover:hover { background-color: #B729D9; color: #FFF !important; border-radius: 2px; } .phpdebugbar pre.sf-dump { display: block; white-space: pre; padding: 5px; overflow: initial !important; } .phpdebugbar pre.sf-dump:after { content: ""; visibility: hidden; display: block; height: 0; clear: both; } .phpdebugbar pre.sf-dump .sf-dump-ellipsization { display: inline-flex; } .phpdebugbar pre.sf-dump a { text-decoration: none; cursor: pointer; border: 0; outline: none; color: inherit; } .phpdebugbar pre.sf-dump img { max-width: 50em; max-height: 50em; margin: .5em 0 0 0; padding: 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAHUlEQVQY02O8zAABilCaiQEN0EeA8QuUcX9g3QEAAjcC5piyhyEAAAAASUVORK5CYII=) #D3D3D3; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis-tail { flex-shrink: 0; } .phpdebugbar pre.sf-dump code { display:inline; padding:0; background:none; } .sf-dump-public.sf-dump-highlight, .sf-dump-protected.sf-dump-highlight, .sf-dump-private.sf-dump-highlight, .sf-dump-str.sf-dump-highlight, .sf-dump-key.sf-dump-highlight { background: rgba(111, 172, 204, 0.3); border: 1px solid #7DA0B1; border-radius: 3px; } .sf-dump-public.sf-dump-highlight-active, .sf-dump-protected.sf-dump-highlight-active, .sf-dump-private.sf-dump-highlight-active, .sf-dump-str.sf-dump-highlight-active, .sf-dump-key.sf-dump-highlight-active { background: rgba(253, 175, 0, 0.4); border: 1px solid #ffa500; border-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-hidden { display: none !important; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper { font-size: 0; white-space: nowrap; margin-bottom: 5px; display: flex; position: -webkit-sticky; position: sticky; top: 5px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > * { vertical-align: top; box-sizing: border-box; height: 21px; font-weight: normal; border-radius: 0; background: #FFF; color: #757575; border: 1px solid #BBB; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > input.sf-dump-search-input { padding: 3px; height: 21px; font-size: 12px; border-right: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px; color: #000; min-width: 15px; width: 100%; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous { background: #F2F2F2; outline: none; border-left: none; font-size: 0; line-height: 0; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next { border-top-right-radius: 3px; border-bottom-right-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next > svg, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous > svg { pointer-events: none; width: 12px; height: 12px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-count { display: inline-block; padding: 0 5px; margin: 0; border-left: none; line-height: 21px; font-size: 12px; }.phpdebugbar pre.sf-dump, .phpdebugbar pre.sf-dump .sf-dump-default{word-wrap: break-word; white-space: pre-wrap; word-break: normal}.phpdebugbar pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar pre.sf-dump .sf-dump-str{font-weight:bold; color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ref{color:#7B7B7B}.phpdebugbar pre.sf-dump .sf-dump-public{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-protected{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-private{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar pre.sf-dump .sf-dump-key{color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ellipsis{color:#A0A000}.phpdebugbar pre.sf-dump .sf-dump-virtual{font-style:italic}.phpdebugbar pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump, pre.sf-dump .sf-dump-default{background-color:#18171B; color:#FF8400; line-height:1.2em; font:12px Menlo, Monaco, Consolas, monospace; word-wrap: break-word; white-space: pre-wrap; position:relative; z-index:99999; word-break: break-all}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-virtual{font-style:italic}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-str{font-weight:bold; color:#56DB3A}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ref{color:#A0A0A0}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-public{color:#FFFFFF}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-protected{color:#FFFFFF}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-private{color:#FFFFFF}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-key{color:#56DB3A}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ellipsis{color:#FF8400}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}</style>
+</head>
+
+    <body>
+        
+
+        <a
+            href="#main"
+            class="skip-to-main-content-link"
+        >
+            Skip to main content
+        </a>
+
+        <div id="app">
+            <!-- Flash Message Blade Component -->
+            <v-flash-group ref='flashes'></v-flash-group>
+
+
+            <!-- Confirm Modal Blade Component -->
+            <v-modal-confirm ref="confirmModal"></v-modal-confirm>
+
+
+            <!-- Page Header Blade Component -->
+                            <header
+    class="shadow-gray sticky top-0 z-10 bg-brandBlack shadow-[0_5px_20px_rgba(196,163,90,0.25)] max-lg:shadow-none">
+    <div class="flex flex-wrap max-lg:hidden">
+    <div
+    class="flex min-h-[100px] w-full justify-between border border-b border-l-0 border-r-0 border-t-0 border-gold/20 px-[60px] max-1180:px-8">
+    <!--
+        This section will provide categories for the first, second, and third levels. If
+        additional levels are required, users can customize them according to their needs.
+    -->
+    <!-- Left Nagivation Section -->
+    <div class="flex items-center gap-x-10 max-[1180px]:gap-x-5">
+        
+
+        <a href="https://salem-store.test"
+            aria-label="باجيستو">
+            <img src="https://salem-store.test/storage/channel/1/freNH5UTTHFFQUgAI6JkbjqAtWfJtYUgWObRoYYo.jpg" width="131"
+                height="29" alt="Salem Store">
+        </a>
+
+        
+
+        
+
+        <v-desktop-category>
+            <div class="flex items-center gap-5">
+                <span class="shimmer h-6 w-20 rounded" role="presentation"></span>
+
+                <span class="shimmer h-6 w-20 rounded" role="presentation"></span>
+
+                <span class="shimmer h-6 w-20 rounded" role="presentation"></span>
+            </div>
+        </v-desktop-category>
+
+        
+    </div>
+
+    <!-- Right Nagivation Section -->
+    <div class="flex items-center gap-x-9 max-[1100px]:gap-x-6 max-lg:gap-x-8">
+
+        
+
+        <!-- Search Bar Container -->
+        <div class="relative w-full">
+            <form action="https://salem-store.test/search" class="flex max-w-[445px] items-center" role="search">
+                <label for="organic-search" class="sr-only">
+                    بحث                </label>
+
+                <div
+                    class="icon-search pointer-events-none absolute top-2.5 flex items-center text-xl text-gold ltr:left-3 rtl:right-3">
+                </div>
+
+                <input type="text" name="query" value=""
+                    class="block w-full rounded-lg border border-gold/30 bg-brandBlack-light px-11 py-3 text-xs font-medium text-gold transition-all placeholder:text-gold/60 hover:border-gold focus:border-gold"
+                    minlength="0"
+                    maxlength="1000"
+                    placeholder="ابحث عن المنتجات هنا"
+                    aria-label="ابحث عن المنتجات هنا"
+                    aria-required="true" pattern="[^\\]+" required>
+
+                <button type="submit" class="hidden"
+                    aria-label="إرسال">
+                </button>
+
+                                    <v-image-search>
+    <button type="button"
+        class="icon-camera absolute top-3 flex items-center text-xl text-gold max-sm:top-2.5 ltr:right-3 ltr:pr-3 max-md:ltr:right-1.5 rtl:left-3 rtl:pl-3 max-md:rtl:left-1.5"
+        aria-label="بحث">
+    </button>
+</v-image-search>
+
+                            </form>
+        </div>
+
+        
+
+        <!-- Right Navigation Links -->
+        <div class="mt-1.5 flex gap-x-8 max-[1100px]:gap-x-6 max-lg:gap-x-8">
+
+            
+
+            <!-- Compare -->
+                            <a href="https://salem-store.test/compare"
+                    aria-label="مقارنة">
+                    <span class="icon-compare inline-block cursor-pointer text-2xl text-gold hover:text-white"
+                        role="presentation"></span>
+                </a>
+            
+            
+
+            
+
+            <!-- Mini cart -->
+                            <!-- Mini Cart Vue Component -->
+<v-mini-cart>
+    <span class="icon-cart cursor-pointer text-2xl text-gold hover:text-white" role="button"
+        aria-label="عربة التسوق"></span>
+</v-mini-cart>
+
+            
+            
+
+            
+
+            <!-- user profile -->
+            <v-dropdown position="bottom-left" class="relative">
+            <span class="icon-users inline-block cursor-pointer text-2xl text-gold hover:text-white"
+                        role="button" aria-label="الملف الشخصي"
+                        tabindex="0"></span>
+
+        <template v-slot:toggle>
+            <span class="icon-users inline-block cursor-pointer text-2xl text-gold hover:text-white"
+                        role="button" aria-label="الملف الشخصي"
+                        tabindex="0"></span>
+        </template>
+    
+            <template v-slot:content>
+            <div class="p-5">
+                <div class="grid gap-2.5">
+                                <p class="font-dmserif text-xl">
+                                    مرحبا بالزائر                                </p>
+
+                                <p class="text-sm">
+                                    إدارة السلة، الطلبات وقائمة الرغبات                                </p>
+                            </div>
+
+                            <p class="mt-3 w-full border border-zinc-200"></p>
+
+                            
+
+                            <div class="mt-6 flex gap-4">
+                                
+
+                                <a href="https://salem-store.test/customer/login"
+                                    class="primary-button m-0 mx-auto block w-max rounded-2xl px-7 text-center text-base max-md:rounded-lg ltr:ml-0 rtl:mr-0">
+                                    تسجيل الدخول                                </a>
+
+                                <a href="https://salem-store.test/customer/register"
+                                    class="secondary-button m-0 mx-auto block w-max rounded-2xl border-2 px-7 text-center text-base max-md:rounded-lg max-md:py-3 ltr:ml-0 rtl:mr-0">
+                                    إنشاء حساب                                </a>
+
+                                
+                            </div>
+            </div>
+        </template>
+    
+    </v-dropdown>
+
+
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+    <!--
+    This code needs to be refactored to reduce the amount of PHP in the Blade
+    template as much as possible.
+-->
+
+<div class="flex flex-wrap gap-4 px-4 pb-4 pt-6 shadow-sm lg:hidden">
+    <div class="flex w-full items-center justify-between">
+        <!-- Left Navigation -->
+        <div class="flex items-center gap-x-1.5">
+            
+
+            <!-- Drawer -->
+            <v-mobile-drawer></v-mobile-drawer>
+
+            
+
+            
+
+            <a
+                href="https://salem-store.test"
+                class="max-h-[30px]"
+                aria-label="باجيستو"
+            >
+                <img
+                    src="https://salem-store.test/storage/channel/1/freNH5UTTHFFQUgAI6JkbjqAtWfJtYUgWObRoYYo.jpg"
+                    alt="Salem Store"
+                    width="131"
+                    height="29"
+                >
+            </a>
+
+            
+        </div>
+
+        <!-- Right Navigation -->
+        <div>
+            <div class="flex items-center gap-x-5 max-md:gap-x-4">
+                
+
+                                    <a
+                        href="https://salem-store.test/compare"
+                        aria-label="مقارنة"
+                    >
+                        <span class="icon-compare cursor-pointer text-2xl"></span>
+                    </a>
+                
+                
+
+                
+
+                                    <!-- Mini Cart Vue Component -->
+<v-mini-cart>
+    <span class="icon-cart cursor-pointer text-2xl text-gold hover:text-white" role="button"
+        aria-label="عربة التسوق"></span>
+</v-mini-cart>
+
+                
+                
+
+                <!-- For Large screens -->
+                <div class="max-md:hidden">
+                    <v-dropdown position="bottom-left" class="relative">
+            <span class="icon-users cursor-pointer text-2xl"></span>
+
+        <template v-slot:toggle>
+            <span class="icon-users cursor-pointer text-2xl"></span>
+        </template>
+    
+            <template v-slot:content>
+            <div class="p-5">
+                <div class="grid gap-2.5">
+                                    <p class="font-dmserif text-xl">
+                                        مرحبا بالزائر                                    </p>
+
+                                    <p class="text-sm">
+                                        إدارة السلة، الطلبات وقائمة الرغبات                                    </p>
+                                </div>
+
+                                <p class="mt-3 w-full border border-zinc-200"></p>
+
+                                
+
+                                <div class="mt-6 flex gap-4">
+                                    
+
+                                    <a
+                                        href="https://salem-store.test/customer/login"
+                                        class="m-0 mx-auto block w-max cursor-pointer rounded-2xl bg-navyBlue px-7 py-4 text-center text-base font-medium text-white ltr:ml-0 rtl:mr-0"
+                                    >
+                                        تسجيل الدخول                                    </a>
+
+                                    <a
+                                        href="https://salem-store.test/customer/register"
+                                        class="m-0 mx-auto block w-max cursor-pointer rounded-2xl border-2 border-navyBlue bg-white px-7 py-3.5 text-center text-base font-medium text-navyBlue ltr:ml-0 rtl:mr-0"
+                                    >
+                                        إنشاء حساب                                    </a>
+
+                                    
+                                </div>
+            </div>
+        </template>
+    
+    </v-dropdown>
+
+                </div>
+
+                <!-- For Medium and small screen -->
+                <div class="md:hidden">
+                                            <a
+                            href="https://salem-store.test/customer/login"
+                            aria-label="الحساب"
+                        >
+                            <span class="icon-users cursor-pointer text-2xl"></span>
+                        </a>
+                    
+                    <!-- Customers Dropdown -->
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Serach Catalog Form -->
+    <form action="https://salem-store.test/search" class="flex w-full items-center">
+        <label
+            for="organic-search"
+            class="sr-only"
+        >
+            بحث        </label>
+
+        <div class="relative w-full">
+            <div class="icon-search pointer-events-none absolute top-3 flex items-center text-2xl max-md:text-xl max-sm:top-2.5 ltr:left-3 rtl:right-3"></div>
+
+            <input
+                type="text"
+                class="block w-full rounded-xl border border-['#E3E3E3'] px-11 py-3.5 text-sm font-medium text-gray-900 max-md:rounded-lg max-md:px-10 max-md:py-3 max-md:font-normal max-sm:text-xs"
+                name="query"
+                value=""
+                placeholder="ابحث عن المنتجات هنا"
+                required
+            >
+
+                            <v-image-search>
+    <button type="button"
+        class="icon-camera absolute top-3 flex items-center text-xl text-gold max-sm:top-2.5 ltr:right-3 ltr:pr-3 max-md:ltr:right-1.5 rtl:left-3 rtl:pl-3 max-md:rtl:left-1.5"
+        aria-label="بحث">
+    </button>
+</v-image-search>
+
+                    </div>
+    </form>
+
+    
+</div>
+
+</header>
+
+            
+            
+            
+
+            <!-- Page Content Blade Component -->
+            <main id="main" class="bg-white">
+                <!-- Page Title -->
+     
+    <!-- Page Content -->
+    <div class="container mt-8 px-[60px] max-lg:px-8">
+        <div class="flex items-center justify-center relative overflow-hidden"
+    style="background-color: #F5F7FA; padding: 2rem; border-radius: 2rem;">
+    <style>
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .md-flex-row { flex-direction: row !important; }
+            .md-flex-col { flex-direction: column !important; }
+            .md-w-24 { width: 6rem !important; }
+        }
+        
+        .salem-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 2rem;
+            overflow: hidden;
+            background-color: white;
+            width: 100%;
+            max-width: 72rem;
+            min-height: 600px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .salem-sidebar {
+            background: linear-gradient(to bottom, #D4AF37, #AA771C) !important;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+            padding: 1rem 0;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .salem-content-area {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            flex: 1 1 0%;
+        }
+        .salem-half-section {
+            width: 100%;
+            flex: none;
+        }
+        @media (min-width: 1024px) {
+            .salem-card { flex-direction: row; }
+            .salem-sidebar {
+                flex-direction: column;
+                width: 6rem;
+                padding: 1.5rem 0;
+            }
+            .salem-content-area { flex-direction: row; }
+            .salem-half-section {
+                width: 50%;
+                flex: 1 1 50%;
+            }
+        }
+    </style>
+
+    <!-- Background Blobs -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"
+            style="background-color: #e9d5ff;"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"
+            style="background-color: #bfdbfe;"></div>
+        <div class="absolute -bottom-32 left-20 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"
+            style="background-color: #fbcfe8;"></div>
+    </div>
+
+    <!-- Card Container -->
+    <div dir="ltr" class="relative salem-card animate-fade-in-up">
+
+        <!-- 1. Left Sidebar (Socials) -->
+        <div class="salem-sidebar" style="background: linear-gradient(to bottom, #D4AF37, #AA771C) !important;">
+            <!-- TikTok -->
+            <a href="#"
+                class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12.525.02c1.31-.02 2.61-.01 3.91.04.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-1.15 4.34-2.88 5.6-1.89 1.37-4.4 1.73-6.59 1.07-2.19-.66-3.95-2.28-4.73-4.41-.78-2.13-.53-4.63.67-6.55 1.2-1.92 3.32-3.15 5.56-3.32.18-.01.35-.01.53-.01v4.06c-1.41.06-2.67.92-3.35 2.15-.68 1.23-.74 2.82-.16 4.1.58 1.28 1.83 2.21 3.23 2.39 1.4.18 2.87-.27 3.86-1.17 1-.9 1.55-2.24 1.53-3.62V0h-1.74v.02z" />
+                </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/salemstore.eg" target="_blank"
+                class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.641c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z" />
+                </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/salemstore.eg" target="_blank"
+                class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+            </a>
+            <!-- Phone -->
+            <a href="tel:+201050704079"
+                class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Content Area -->
+        <div class="salem-content-area">
+
+            <!-- 2. Contact Form Section -->
+            <div class="p-8 lg:p-12 flex flex-col justify-center salem-half-section">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-2" style="color: #D4AF37;">Contact Us</h2>
+                    <p class="text-gray-500">We'd love to hear from you! Send us a message.</p>
+                </div>
+
+                <form id="contactForm" action="/contact-us/send-mail" method="POST" class="space-y-6">
+                    <input type="hidden" name="_token" id="csrf_token_field">
+
+                    <!-- Name -->
+                    <div class="group">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                        <input type="text" name="name" id="name" required
+                            class="w-full px-0 py-2 border-b-2 border-gray-200 focus:border-[#D4AF37] outline-none bg-transparent transition-colors placeholder-gray-300"
+                            placeholder="John Doe">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="group">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                        <input type="email" name="email" id="email" required
+                            class="w-full px-0 py-2 border-b-2 border-gray-200 focus:border-[#D4AF37] outline-none bg-transparent transition-colors placeholder-gray-300"
+                            placeholder="john@example.com">
+                    </div>
+
+                    <!-- Message -->
+                    <div class="group">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea name="message" id="message" rows="3" required
+                            class="w-full px-3 py-3 rounded-lg bg-gray-50 border border-transparent focus:bg-white focus:border-[#D4AF37] outline-none transition-all placeholder-gray-300 resize-none"
+                            placeholder="Write your message here..."></textarea>
+                    </div>
+
+                    <!-- Privacy -->
+                    <div class="flex items-center space-x-3" dir="ltr">
+                        <input id="privacy" type="checkbox" required
+                            class="w-4 h-4 text-[#D4AF37] border-gray-300 rounded focus:ring-[#D4AF37]">
+                        <label for="privacy" class="font-medium text-gray-700 text-sm m-0 leading-none">
+                            I agree to the <a href="#" class="text-[#D4AF37] hover:underline" style="color: #D4AF37;">privacy policy</a>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" style="background: linear-gradient(to right, #D4AF37, #AA771C);"
+                        class="w-full text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transform transition-all duration-200 flex items-center justify-center">
+                        <span>Send Message</span>
+                        <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- 3. Map Section -->
+            <div class="relative bg-gray-100 min-h-[400px] lg:min-h-full salem-half-section">
+                <!-- Address Card Overlay -->
+                <div
+                    class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg max-w-xs border border-white/50">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-red-100 p-2 rounded-full text-red-500 shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Campinas</h4>
+                            <p class="text-xs text-gray-500 mt-1">State of São Paulo, Brazil</p>
+                            <div class="flex items-center mt-2 text-xs font-semibold" style="color: #667EEA;">
+                                <span>4.9</span>
+                                <div class="flex mx-1 text-yellow-400">★★★★★</div>
+                                <span class="text-gray-400">(254 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map Embed -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.3468531102927!2d-47.06584218503463!3d-22.906846685012356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c8cb7f4a56c5%3A0x6ce6b70c2d3b2c1f!2sCampinas%2C%20State%20of%20S%C3%A3o%20Paulo%2C%20Brazil!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg"
+                    class="absolute top-0 left-0 w-full h-full" style="border:0;" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Include CSRF Token Script
+    document.addEventListener("DOMContentLoaded", function () {
+        const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+        if (csrfToken) {
+            const tokenInput = document.getElementById('csrf_token_field');
+            if (tokenInput) tokenInput.value = csrfToken;
+        } else {
+            // Try to find token if meta is missing (fallback)
+            let knownToken = document.querySelector('input[name="_token"]')?.value;
+            if (knownToken) {
+                document.getElementById('csrf_token_field').value = knownToken;
+            }
+        }
+    });
+</script>
+    </div>
+            </main>
+
+            
+
+
+            <!-- Page Services Blade Component -->
+                            <!--
+    The ThemeCustomizationRepository repository is injected directly here because there is no way
+    to retrieve it from the view composer, as this is an anonymous component.
+-->
+
+
+<!-- Features -->
+    <div class="container mt-20 max-lg:px-8 max-md:mt-10 max-md:px-4">
+        <div
+            class="max-md:max-y-6 flex justify-center gap-6 max-lg:flex-wrap max-md:grid max-md:grid-cols-2 max-md:gap-x-2.5 max-md:text-center">
+                            <div class="flex items-center gap-5 bg-white max-md:grid max-md:gap-2.5 max-sm:gap-1 max-sm:px-2">
+                    <span
+                        class="icon-truck flex items-center justify-center w-[60px] h-[60px] bg-white border border-gold rounded-full text-4xl text-gold p-2.5 max-md:m-auto max-md:w-16 max-md:h-16 max-sm:w-10 max-sm:h-10 max-sm:text-2xl"
+                        role="presentation"></span>
+
+                    <div class="max-lg:grid max-lg:justify-center">
+                        <!-- Service Title -->
+                        <p class="font-dmserif text-base font-medium max-md:text-xl max-sm:text-sm">الشحن المجاني</p>
+
+                        <!-- Service Description -->
+                        <p
+                            class="mt-2.5 max-w-[217px] text-sm font-medium text-zinc-500 max-md:mt-0 max-md:text-base max-sm:text-xs">
+                            استمتع بالشحن المجاني على جميع الطلبات
+                        </p>
+                    </div>
+                </div>
+                            <div class="flex items-center gap-5 bg-white max-md:grid max-md:gap-2.5 max-sm:gap-1 max-sm:px-2">
+                    <span
+                        class="icon-product flex items-center justify-center w-[60px] h-[60px] bg-white border border-gold rounded-full text-4xl text-gold p-2.5 max-md:m-auto max-md:w-16 max-md:h-16 max-sm:w-10 max-sm:h-10 max-sm:text-2xl"
+                        role="presentation"></span>
+
+                    <div class="max-lg:grid max-lg:justify-center">
+                        <!-- Service Title -->
+                        <p class="font-dmserif text-base font-medium max-md:text-xl max-sm:text-sm">استبدال المنتج</p>
+
+                        <!-- Service Description -->
+                        <p
+                            class="mt-2.5 max-w-[217px] text-sm font-medium text-zinc-500 max-md:mt-0 max-md:text-base max-sm:text-xs">
+                            استبدال المنتج بسهولة متاح!
+                        </p>
+                    </div>
+                </div>
+                            <div class="flex items-center gap-5 bg-white max-md:grid max-md:gap-2.5 max-sm:gap-1 max-sm:px-2">
+                    <span
+                        class="icon-dollar-sign flex items-center justify-center w-[60px] h-[60px] bg-white border border-gold rounded-full text-4xl text-gold p-2.5 max-md:m-auto max-md:w-16 max-md:h-16 max-sm:w-10 max-sm:h-10 max-sm:text-2xl"
+                        role="presentation"></span>
+
+                    <div class="max-lg:grid max-lg:justify-center">
+                        <!-- Service Title -->
+                        <p class="font-dmserif text-base font-medium max-md:text-xl max-sm:text-sm">توفر EMI</p>
+
+                        <!-- Service Description -->
+                        <p
+                            class="mt-2.5 max-w-[217px] text-sm font-medium text-zinc-500 max-md:mt-0 max-md:text-base max-sm:text-xs">
+                            توفر EMI بدون تكلفة على جميع بطاقات الائتمان الرئيسية
+                        </p>
+                    </div>
+                </div>
+                            <div class="flex items-center gap-5 bg-white max-md:grid max-md:gap-2.5 max-sm:gap-1 max-sm:px-2">
+                    <span
+                        class="icon-support flex items-center justify-center w-[60px] h-[60px] bg-white border border-gold rounded-full text-4xl text-gold p-2.5 max-md:m-auto max-md:w-16 max-md:h-16 max-sm:w-10 max-sm:h-10 max-sm:text-2xl"
+                        role="presentation"></span>
+
+                    <div class="max-lg:grid max-lg:justify-center">
+                        <!-- Service Title -->
+                        <p class="font-dmserif text-base font-medium max-md:text-xl max-sm:text-sm">الدعم على مدار الساعة</p>
+
+                        <!-- Service Description -->
+                        <p
+                            class="mt-2.5 max-w-[217px] text-sm font-medium text-zinc-500 max-md:mt-0 max-md:text-base max-sm:text-xs">
+                            دعم مخصص على مدار الساعة عبر الدردشة والبريد الإلكتروني
+                        </p>
+                    </div>
+                </div>
+                    </div>
+    </div>
+
+            
+            <!-- Page Footer Blade Component -->
+                            <!--
+    The category repository is injected directly here because there is no way
+    to retrieve it from the view composer, as this is an anonymous component.
+-->
+
+<!--
+    This code needs to be refactored to reduce the amount of PHP in the Blade
+    template as much as possible.
+-->
+
+<footer class="mt-9 bg-brandBlack max-sm:mt-10">
+    <div
+        class="flex justify-between gap-x-6 gap-y-8 p-[60px] max-1060:flex-col-reverse max-md:gap-5 max-md:p-8 max-sm:px-4 max-sm:py-5">
+        <!-- For Desktop View -->
+        <div class="flex flex-wrap items-start gap-24 max-1180:gap-6 max-1060:hidden">
+                                                <ul class="grid gap-5 text-sm text-gold">
+                        
+                                                    <li>
+                                <a href="https://salem-store.test/page/about-us" class="hover:text-gold-light">
+                                    معلومات عنا
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://salem-store.test/contact-us" class="hover:text-gold-light">
+                                    اتصل بنا
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://salem-store.test/page/customer-service" class="hover:text-gold-light">
+                                    خدمة العملاء
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://salem-store.test/page/whats-new" class="hover:text-gold-light">
+                                    ما الجديد
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://salem-store.test/page/terms-of-use" class="hover:text-gold-light">
+                                    شروط الاستخدام
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://salem-store.test/page/terms-conditions" class="hover:text-gold-light">
+                                    الشروط والأحكام
+                                </a>
+                            </li>
+                                            </ul>
+                                    <ul class="grid gap-5 text-sm text-gold">
+                        
+                                                    <li>
+                                <a href="https://salem-store.test/page/privacy-policy" class="hover:text-gold-light">
+                                    سياسة الخصوصية
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://salem-store.test/page/payment-policy" class="hover:text-gold-light">
+                                    سياسة الدفع
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://salem-store.test/page/shipping-policy" class="hover:text-gold-light">
+                                    سياسة الشحن
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://salem-store.test/page/refund-policy" class="hover:text-gold-light">
+                                    سياسة الاسترداد
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://salem-store.test/page/return-policy" class="hover:text-gold-light">
+                                    سياسة الإرجاع
+                                </a>
+                            </li>
+                                            </ul>
+                                    </div>
+
+        <!-- For Mobile view -->
+        <div class="border-b border-zinc-200 hidden !w-full rounded-xl !border-2 !border-[#e9decc] max-1060:block max-sm:rounded-lg">
+    <v-accordion
+        
+        is-active=""
+    >
+                    <template v-slot:header="{ toggle, isOpen }">
+                <div
+                    class="flex cursor-pointer select-none items-center justify-between p-4 rounded-t-lg bg-brandBlack-light font-medium text-gold max-md:p-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-sm"
+                    role="button"
+                    tabindex="0"
+                    @click="toggle"
+                >
+                    محتوى التذييل
+
+                    <span
+                        v-bind:class="isOpen ? 'icon-arrow-up text-2xl' : 'icon-arrow-down text-2xl'"
+                        role="button"
+                        aria-label="Toggle accordion"
+                        tabindex="0"
+                    ></span>
+                </div>
+            </template>
+        
+                    <template v-slot:content="{ isOpen }">
+                <div
+                    class="z-10 rounded-lg bg-white p-1.5 flex justify-between !bg-transparent !p-4"
+                    v-show="isOpen"
+                >
+                    <ul class="grid gap-5 text-sm text-gold">
+                                
+                                                                    <li>
+                                        <a href="https://salem-store.test/page/about-us" class="text-sm font-medium max-sm:text-xs">
+                                            معلومات عنا
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://salem-store.test/contact-us" class="text-sm font-medium max-sm:text-xs">
+                                            اتصل بنا
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://salem-store.test/page/customer-service" class="text-sm font-medium max-sm:text-xs">
+                                            خدمة العملاء
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://salem-store.test/page/whats-new" class="text-sm font-medium max-sm:text-xs">
+                                            ما الجديد
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://salem-store.test/page/terms-of-use" class="text-sm font-medium max-sm:text-xs">
+                                            شروط الاستخدام
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://salem-store.test/page/terms-conditions" class="text-sm font-medium max-sm:text-xs">
+                                            الشروط والأحكام
+                                        </a>
+                                    </li>
+                                                            </ul>
+                                                    <ul class="grid gap-5 text-sm text-gold">
+                                
+                                                                    <li>
+                                        <a href="https://salem-store.test/page/privacy-policy" class="text-sm font-medium max-sm:text-xs">
+                                            سياسة الخصوصية
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://salem-store.test/page/payment-policy" class="text-sm font-medium max-sm:text-xs">
+                                            سياسة الدفع
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://salem-store.test/page/shipping-policy" class="text-sm font-medium max-sm:text-xs">
+                                            سياسة الشحن
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://salem-store.test/page/refund-policy" class="text-sm font-medium max-sm:text-xs">
+                                            سياسة الاسترداد
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://salem-store.test/page/return-policy" class="text-sm font-medium max-sm:text-xs">
+                                            سياسة الإرجاع
+                                        </a>
+                                    </li>
+                                                            </ul>
+                </div>
+            </template>
+            </v-accordion>
+</div>
+
+
+        
+
+        <!-- News Letter subscription -->
+        
+        
+    </div>
+
+    <div class="flex justify-between bg-brandBlack-light px-[60px] py-3.5 max-md:justify-center max-sm:px-5">
+        
+
+        <p class="text-sm text-gold/70 max-md:text-center">
+                    </p>
+
+        
+    </div>
+</footer>
+
+                    </div>
+
+        <style>
+    .path-hint {
+        border: solid 1px transparent;
+        padding: 1px;
+    }
+
+    .path-hint:hover {
+        border: 1px solid red;
+    }
+
+    .path-hint-tooltip {
+        padding: 0px 10px;
+        position: absolute;
+        background: #000000;
+        z-index: 10000;
+        color: #fff;
+        font-size: 10px;
+    }
+
+    .path-hint-tooltip h4 {
+        margin-top: 5px;
+        margin-bottom: 3px;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    .path-hint-tooltip ul li {
+        margin-bottom: 3px;
+    }
+
+    .main-container-wrapper .product-card .product-image img {
+        max-width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+</style>
+
+
+            <script
+        type="text/x-template"
+        id="v-flash-item-template"
+    >
+        <div
+            class="flex w-max max-w-[408px] justify-between gap-12 rounded-lg px-5 py-3 max-sm:max-w-80 max-sm:items-center max-sm:gap-2 max-sm:p-3"
+            :style="typeStyles[flash.type]['container']"
+        >
+            <p
+                class="flex items-center break-words text-sm"
+                :style="typeStyles[flash.type]['message']"
+            >
+                <span
+                    class="icon-toast-done text-2xl ltr:mr-2.5 rtl:ml-2.5"
+                    :class="iconClasses[flash.type]"
+                    :style="typeStyles[flash.type]['icon']"
+                ></span>
+
+                {{ flash.message }}
+            </p>
+
+			<span
+                class="icon-cancel max-h-4 max-w-4 cursor-pointer"
+                :style="typeStyles[flash.type]['icon']"
+                @click="remove"
+            ></span>
+        </div>
+    </script>
+
+    <script type="module">
+        app.component('v-flash-item', {
+            template: '#v-flash-item-template',
+
+            props: ['flash'],
+
+            data() {
+                return {
+                    iconClasses: {
+                        success: 'icon-toast-done',
+
+                        error: 'icon-toast-error',
+
+                        warning: 'icon-toast-exclamation-mark',
+
+                        info: 'icon-toast-info',
+                    },
+
+                    typeStyles: {
+                        success: {
+                            container: 'background: #D4EDDA',
+
+                            message: 'color: #155721',
+
+                            icon: 'color: #155721'
+                        },
+
+                        error: {
+                            container: 'background: #F8D7DA',
+
+                            message: 'color: #721C24',
+
+                            icon: 'color: #721C24'
+                        },
+
+                        warning: {
+                            container: 'background: #FFF3CD',
+
+                            message: 'color: #856404',
+
+                            icon: 'color: #856404'
+                        },
+
+                        info: {
+                            container: 'background: #E2E3E5',
+
+                            message: 'color: #383D41',
+
+                            icon: 'color: #383D41'
+                        },
+                    },
+                };
+            },
+
+            created() {
+                var self = this;
+
+                setTimeout(function() {
+                    self.remove()
+                }, 5000)
+            },
+
+            methods: {
+                remove() {
+                    this.$emit('onRemove', this.flash)
+                }
+            }
+        });
+    </script>
+    <script type="text/x-template" id="v-mobile-drawer-template">
+        <v-drawer
+    @close="onDrawerClose"
+    is-active=""
+    position="left"
+    width="100%"
+>
+            <template v-slot:toggle>
+            <span class="icon-hamburger cursor-pointer text-2xl"></span>
+        </template>
+    
+            <template v-slot:header="{ close }">
+            <div class="grid gap-y-2.5 p-6 pb-5 max-md:gap-y-1.5 max-md:border-b max-md:border-zinc-200 max-md:p-4 max-md:gap-y-1 max-md:font-semibold">
+                <div class="flex items-center justify-between">
+                    <a href="https://salem-store.test">
+                        <img
+                            src="https://salem-store.test/storage/channel/1/freNH5UTTHFFQUgAI6JkbjqAtWfJtYUgWObRoYYo.jpg"
+                            alt="Salem Store"
+                            width="131"
+                            height="29"
+                        >
+                    </a>
+                </div>
+
+                <div class="absolute top-5 max-sm:top-4 ltr:right-5 rtl:left-5">
+                    <span
+                        class="icon-cancel cursor-pointer text-3xl max-md:text-2xl"
+                        @click="close"
+                    >
+                    </span>
+                </div>
+            </div>
+        </template>
+    
+            <template v-slot:content>
+            <div class="flex-1 overflow-auto px-6 max-md:px-4 !p-0">
+                <!-- Account Profile Hero Section -->
+                <div class="border-b border-zinc-200 p-4">
+                    <div class="grid grid-cols-[auto_1fr] items-center gap-4 rounded-xl border border-zinc-200 p-2.5">
+                        <div>
+                            <img
+                                src="https://salem-store.test/themes/shop/default/build/assets/user-placeholder-C_FiyGd9.png"
+                                class="h-[60px] w-[60px] rounded-full max-md:rounded-full"
+                            >
+                        </div>
+
+                                                    <a
+                                href="https://salem-store.test/customer/login"
+                                class="flex text-base font-medium"
+                            >
+                                تسجيل الدخول أو إنشاء حساب
+                                <i class="icon-double-arrow text-2xl ltr:ml-2.5 rtl:mr-2.5"></i>
+                            </a>
+                        
+                                            </div>
+                </div>
+
+                
+
+                <!-- Mobile category view -->
+                <v-mobile-category ref="mobileCategory"></v-mobile-category>
+            </div>
+        </template>
+    
+            <template v-slot:footer>
+            <div class="pb-8 max-md:pb-2">
+                <!-- Localization & Currency Section -->
+            </div>
+        </template>
+    </v-drawer>
+
+    </script>
+
+    <script
+        type="text/x-template"
+        id="v-mobile-category-template"
+    >
+        <!-- Wrapper with transition effects -->
+        <div class="relative h-full overflow-hidden">
+            <!-- Sliding container -->
+            <div
+                class="flex h-full transition-transform duration-300"
+                :class="{
+                    'ltr:translate-x-0 rtl:translate-x-0': currentViewLevel !== 'third',
+                    'ltr:-translate-x-full rtl:translate-x-full': currentViewLevel === 'third'
+                }"
+            >
+                <!-- First level view -->
+                <div class="h-full w-full flex-shrink-0 overflow-auto px-6">
+                    <div class="py-4">
+                        <div
+                            v-for="category in categories"
+                            :key="category.id"
+                            :class="{'mb-2': category.children && category.children.length}"
+                        >
+                            <div class="flex cursor-pointer items-center justify-between py-2 transition-colors duration-200">
+                                <a :href="category.url" class="text-base font-medium text-black">
+                                    {{ category.name }}
+                                </a>
+                            </div>
+
+                            <!-- Second Level Categories -->
+                            <div v-if="category.children && category.children.length" >
+                                <div
+                                    v-for="secondLevelCategory in category.children"
+                                    :key="secondLevelCategory.id"
+                                >
+                                    <div
+                                        class="flex cursor-pointer items-center justify-between py-2 transition-colors duration-200"
+                                        @click="showThirdLevel(secondLevelCategory, category, $event)"
+                                    >
+                                        <a :href="secondLevelCategory.url" class="text-sm font-normal">
+                                            {{ secondLevelCategory.name }}
+                                        </a>
+
+                                        <span
+                                            v-if="secondLevelCategory.children && secondLevelCategory.children.length"
+                                            class="icon-arrow-right rtl:icon-arrow-left"
+                                        ></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third level view -->
+                <div
+                    class="h-full w-full flex-shrink-0"
+                    v-if="currentViewLevel === 'third'"
+                >
+                    <div class="border-b border-gray-200 px-6 py-4">
+                        <button
+                            @click="goBackToMainView"
+                            class="flex items-center justify-center gap-2 focus:outline-none"
+                            aria-label="Go back"
+                        >
+                            <span class="icon-arrow-left rtl:icon-arrow-right text-lg"></span>
+                            <div class="text-base font-medium text-black">
+                                العودة إلى القائمة الرئيسية                            </div>
+                        </button>
+                    </div>
+
+                    <!-- Third Level Content -->
+                    <div class="px-6 py-4">
+                        <div
+                            v-for="thirdLevelCategory in currentSecondLevelCategory?.children"
+                            :key="thirdLevelCategory.id"
+                            class="mb-2"
+                        >
+                            <a
+                                :href="thirdLevelCategory.url"
+                                class="block py-2 text-sm transition-colors duration-200"
+                            >
+                                {{ thirdLevelCategory.name }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="module">
+        app.component('v-mobile-category', {
+            template: '#v-mobile-category-template',
+
+            data() {
+                return  {
+                    categories: [],
+                    currentViewLevel: 'main',
+                    currentSecondLevelCategory: null,
+                    currentParentCategory: null
+                }
+            },
+
+            mounted() {
+                this.getCategories();
+            },
+
+            computed: {
+                getCurrentScreenHeight() {
+                    return window.innerHeight - (window.innerWidth < 920 ? 61 : 0) + 'px';
+                },
+            },
+
+            methods: {
+                getCategories() {
+                    this.$axios.get("https://salem-store.test/api/categories/tree")
+                        .then(response => {
+                            this.categories = response.data.data;
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+
+                showThirdLevel(secondLevelCategory, parentCategory, event) {
+                    if (secondLevelCategory.children && secondLevelCategory.children.length) {
+                        this.currentSecondLevelCategory = secondLevelCategory;
+                        this.currentParentCategory = parentCategory;
+                        this.currentViewLevel = 'third';
+
+                        if (event) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                    }
+                },
+
+                goBackToMainView() {
+                    this.currentViewLevel = 'main';
+                }
+            },
+        });
+
+        app.component('v-mobile-drawer', {
+            template: '#v-mobile-drawer-template',
+
+            methods: {
+                onDrawerClose() {
+                    this.$refs.mobileCategory.currentViewLevel = 'main';
+                }
+            },
+        });
+    </script>
+    <script
+        type="text/x-template"
+        id="v-accordion-template"
+    >
+        <div>
+            <slot
+                name="header"
+                :toggle="toggle"
+                :isOpen="isOpen"
+            >
+                admin::app.components.accordion.default-content            </slot>
+
+            <slot
+                name="content"
+                :isOpen="isOpen"
+            >
+                admin::app.components.accordion.default-content            </slot>
+        </div>
+    </script>
+
+    <script type="module">
+        app.component('v-accordion', {
+            template: '#v-accordion-template',
+
+            props: [
+                'isActive',
+            ],
+
+            data() {
+                return {
+                    isOpen: this.isActive,
+                };
+            },
+
+            methods: {
+                toggle() {
+                    this.isOpen = ! this.isOpen;
+
+                    this.$emit('toggle', { isActive: this.isOpen });
+                },
+            },
+        });
+    </script>
+    <script
+        type="text/x-template"
+        id="v-flash-group-template"
+    >
+        <transition-group
+            tag='div'
+            name="flash-group"
+            enter-from-class="ltr:translate-x-full rtl:-translate-x-full"
+            enter-active-class="transform transition duration-200 ease-in-out"
+            enter-to-class="ltr:translate-x-0 rtl:-translate-x-0"
+            leave-from-class="ltr:translate-x-0 rtl:-translate-x-0"
+            leave-active-class="transform transition duration-200 ease-in-out"
+            leave-to-class="ltr:translate-x-full rtl:-translate-x-full"
+            class='fixed top-5 z-[1001] grid justify-items-end gap-2.5 max-sm:hidden ltr:right-5 rtl:left-5'
+        >
+            <v-flash-item
+    v-for='flash in flashes'
+    :key='flash.uid'
+    :flash="flash"
+    @onRemove="remove($event)"
+/>
+
+        </transition-group>
+
+        <transition-group
+            tag='div'
+            name="flash-group"
+            enter-from-class="ltr:translate-y-full rtl:-translate-y-full"
+            enter-active-class="transform transition duration-200 ease-in-out"
+            enter-to-class="ltr:translate-y-0 rtl:-translate-y-0"
+            leave-from-class="ltr:translate-y-0 rtl:-translate-y-0"
+            leave-active-class="transform transition duration-200 ease-in-out"
+            leave-to-class="ltr:translate-y-full rtl:-translate-y-full"
+            class='fixed bottom-10 left-1/2 z-[1001] grid -translate-x-1/2 -translate-y-1/2 transform justify-items-center gap-2.5 sm:hidden'
+        >
+            <v-flash-item
+    v-for='flash in flashes'
+    :key='flash.uid'
+    :flash="flash"
+    @onRemove="remove($event)"
+/>
+
+        </transition-group>
+    </script>
+
+    <script type="module">
+        app.component('v-flash-group', {
+            template: '#v-flash-group-template',
+
+            data() {
+                return {
+                    uid: 0,
+
+                    flashes: []
+                }
+            },
+
+            created() {
+                                                                                                                                                                
+                this.registerGlobalEvents();
+            },
+
+            methods: {
+                add(flash) {
+                    flash.uid = this.uid++;
+
+                    this.flashes.push(flash);
+                },
+
+                remove(flash) {
+                    let index = this.flashes.indexOf(flash);
+
+                    this.flashes.splice(index, 1);
+                },
+
+                registerGlobalEvents() {
+                    this.$emitter.on('add-flash', this.add);
+                },
+            }
+        });
+    </script>
+    <script
+        type="text/x-template"
+        id="v-modal-confirm-template"
+    >
+        <div>
+            <transition
+                tag="div"
+                name="modal-overlay"
+                enter-class="duration-300 ease-out"
+                enter-from-class="opacity-0"
+                enter-to-class="opacity-100"
+                leave-class="duration-200 ease-in"
+                leave-from-class="opacity-100"
+                leave-to-class="opacity-0"
+            >
+                <div
+                    class="fixed inset-0 z-20 bg-gray-500 bg-opacity-50 transition-opacity"
+                    v-show="isOpen"
+                ></div>
+            </transition>
+
+            <transition
+                tag="div"
+                name="modal-content"
+                enter-class="duration-300 ease-out"
+                enter-from-class="translate-y-4 opacity-0 md:translate-y-0 md:scale-95"
+                enter-to-class="translate-y-0 opacity-100 md:scale-100"
+                leave-class="duration-200 ease-in"
+                leave-from-class="translate-y-0 opacity-100 md:scale-100"
+                leave-to-class="translate-y-4 opacity-0 md:translate-y-0 md:scale-95"
+            >
+                <div
+                    class="fixed inset-0 z-20 transform overflow-y-auto transition" v-show="isOpen"
+                >
+                    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                        <div class="absolute left-1/2 top-1/2 z-[999] w-full max-w-[475px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl bg-white p-5 max-md:w-[90%] max-sm:p-4">
+                            <div class="flex gap-2.5">
+                                <div>
+                                    <span class="flex rounded-full border border-gray-300 p-2.5">
+                                        <i class="icon-error text-3xl max-sm:text-xl"></i>
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <div class="flex items-center justify-between gap-5 text-xl max-sm:text-lg">
+                                        {{ title }}
+                                    </div>
+
+                                    <div class="pb-5 pt-1.5 text-left text-sm text-gray-500">
+                                        {{ message }}
+                                    </div>
+
+                                    <div class="flex justify-end gap-2.5">
+                                        <button
+                                            type="button"
+                                            class="secondary-button max-md:py-3 max-sm:px-6 max-sm:py-2.5"
+                                            @click="disagree"
+                                        >
+                                            {{ options.btnDisagree }}
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="primary-button max-md:py-3 max-sm:px-6 max-sm:py-2.5"
+                                            @click="agree"
+                                        >
+                                            {{ options.btnAgree }} 
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+        </div>
+    </script>
+
+    <script type="module">
+        app.component('v-modal-confirm', {
+            template: '#v-modal-confirm-template',
+
+            data() {
+                return {
+                    isOpen: false,
+
+                    title: '',
+
+                    message: '',
+
+                    options: {
+                        btnDisagree: '',
+                        btnAgree: '',
+                    },
+
+                    agreeCallback: null,
+
+                    disagreeCallback: null,
+                };
+            },
+
+            created() {
+                this.registerGlobalEvents();
+            },
+
+            methods: {
+                open({
+                    title = "هل أنت متأكد؟",
+                    message = "هل أنت متأكد أنك تريد القيام بهذا الإجراء؟",
+                    options = {
+                        btnDisagree: "غير موافق",
+                        btnAgree: "موافق",
+                    },
+                    agree = () => {},
+                    disagree = () => {},
+                }) {
+                    this.isOpen = true;
+
+                    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+                    document.body.style.overflow = 'hidden';
+
+                    document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+                    this.title = title;
+
+                    this.message = message;
+
+                    this.options = options;
+
+                    this.agreeCallback = agree;
+
+                    this.disagreeCallback = disagree;
+                },
+
+                disagree() {
+                    this.isOpen = false;
+
+                    document.body.style.overflow = 'auto';
+
+                    document.body.style.paddingRight = '';
+
+                    this.disagreeCallback();
+                },
+
+                agree() {
+                    this.isOpen = false;
+
+                    document.body.style.overflow = 'auto';
+
+                    document.body.style.paddingRight = '';
+
+                    this.agreeCallback();
+                },
+
+                registerGlobalEvents() {
+                    this.$emitter.on('open-confirm-modal', this.open);
+                },
+            }
+        });
+    </script>
+    <script type="text/x-template" id="v-image-search-template">
+            <div>
+                <label
+                    class="icon-camera absolute top-3 flex items-center text-xl text-gold max-sm:top-2.5 ltr:right-3 ltr:pr-3 max-md:ltr:right-1.5 rtl:left-3 rtl:pl-3 max-md:rtl:left-1.5"
+                    aria-label="بحث"
+                    :for="'v-image-search-' + $.uid"
+                    v-if="! isSearching"
+                >
+                </label>
+
+                <label
+                    class="absolute top-2.5 flex cursor-pointer items-center text-xl ltr:right-3 ltr:pr-3 max-md:ltr:pr-1 rtl:left-3 rtl:pl-3 max-md:rtl:pl-1"
+                    v-else
+                >
+                    <!-- Spinner -->
+                    <svg
+                        class="h-5 w-5 animate-spin text-gold"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <circle
+                            class="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            stroke-width="4"
+                        >
+                        </circle>
+
+                        <path
+                            class="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        >
+                        </path>
+                    </svg>
+                </label>
+
+                <input
+                    type="file"
+                    class="hidden"
+                    ref="imageSearchInput"
+                    :id="'v-image-search-' + $.uid"
+                    @change="loadLibrary()"
+                />
+
+                <img
+                    id="uploaded-image-url"
+                    class="hidden"
+                    :src="uploadedImageUrl"
+                    alt="uploaded image url"
+                    width="20"
+                    height="20"
+                />
+            </div>
+        </script>
+
+    <script type="module">
+        app.component('v-image-search', {
+            template: '#v-image-search-template',
+
+            data() {
+                return {
+                    uploadedImageUrl: '',
+
+                    isSearching: false,
+                };
+            },
+
+            methods: {
+                /**
+                 * This method will dynamically load the scripts. Because image search library
+                 * only used when someone clicks or interact with the image button. This will
+                 * reduce some data usage for mobile user.
+                 * 
+                 * @return {void}
+                 */
+                loadLibrary() {
+                    this.$shop.loadDynamicScript(
+                        'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js', () => {
+                            this.$shop.loadDynamicScript(
+                                'https://cdn.jsdelivr.net/npm/tensorflow-models-mobilenet-patch@2.1.1/dist/mobilenet.min.js', () => {
+                                    this.analyzeImage();
+                                }
+                            );
+                        }
+                    );
+                },
+
+                /**
+                 * This method will analyze the image and load the sets on the bases of trained model.
+                 * 
+                 * @return {void}
+                 */
+                analyzeImage() {
+                    this.isSearching = true;
+
+                    let imageInput = this.$refs.imageSearchInput;
+
+                    if (imageInput.files && imageInput.files[0]) {
+                        if (imageInput.files[0].type.includes('image/')) {
+                            if (imageInput.files[0].size <= 2000000) {
+                                let formData = new FormData();
+
+                                formData.append('image', imageInput.files[0]);
+
+                                this.$axios.post('https://salem-store.test/search/upload', formData, {
+                                    headers: {
+                                        'Content-Type': 'multipart/form-data'
+                                    }
+                                })
+                                    .then(response => {
+                                        let net;
+
+                                        let self = this;
+
+                                        this.uploadedImageUrl = response.data;
+
+                                        async function app() {
+                                            let analysedResult = [];
+
+                                            let queryString = '';
+
+                                            net = await mobilenet.load();
+
+                                            try {
+                                                const result = await net.classify(document.getElementById('uploaded-image-url'));
+
+                                                result.forEach(function (value) {
+                                                    queryString = value.className.split(',');
+
+                                                    if (queryString.length > 1) {
+                                                        analysedResult = analysedResult.concat(queryString);
+                                                    } else {
+                                                        analysedResult.push(queryString[0]);
+                                                    }
+                                                });
+                                            } catch (error) {
+                                                this.$emitter.emit('add-flash', { type: 'error', message: "حدث خطأ ما، يُرجى المحاولة مرة أخرى في وقت لاحق." });
+                                            }
+
+                                            localStorage.searchedImageUrl = self.uploadedImageUrl;
+
+                                            queryString = localStorage.searchedTerms = analysedResult.join('_');
+
+                                            queryString = localStorage.searchedTerms.split('_').map(term => {
+                                                return term.split(' ').join('+');
+                                            });
+
+                                            window.location.href = `${'https://salem-store.test/search'}?query=${queryString[0]}&image-search=1`;
+                                        }
+
+                                        app();
+                                    })
+                                    .catch((error) => {
+                                        this.$emitter.emit('add-flash', { type: 'error', message: "حدث خطأ ما، يُرجى المحاولة مرة أخرى في وقت لاحق." });
+
+                                        this.isSearching = false;
+                                    });
+                            } else {
+                                imageInput.value = '';
+
+                                this.$emitter.emit('add-flash', { type: 'error', message: 'خطأ في حد الحجم' });
+
+                                this.isSearching = false;
+                            }
+                        } else {
+                            imageInput.value = '';
+
+                            this.$emitter.emit('add-flash', { type: 'error', message: 'يُسمح فقط بالصور (.jpeg، .jpg، .png، ..).' });
+
+                            this.isSearching = false;
+                        }
+                    }
+                },
+            },
+        });
+    </script>
+<script type="text/x-template" id="v-mini-cart-template">
+        
+
+                    <v-drawer
+    
+    is-active=""
+    position="right"
+    width="500px"
+>
+            <template v-slot:toggle>
+            <span class="relative">
+                        <span
+                            class="icon-cart cursor-pointer text-2xl text-gold hover:text-white"
+                            role="button"
+                            aria-label="عربة التسوق"
+                            tabindex="0"
+                        ></span>
+
+                                                    <span
+                                class="absolute -top-4 rounded-[44px] bg-gold px-2 py-1.5 text-xs font-semibold leading-[9px] text-brandBlack ltr:left-5 rtl:right-5 max-md:px-2 max-md:py-1.5 max-md:ltr:left-4 max-md:rtl:right-4"
+                                v-if="cart?.items_count"
+                            >
+                                {{ cart.items_count }}
+                            </span>
+                                            </span>
+        </template>
+    
+            <template v-slot:header="{ close }">
+            <div class="grid gap-y-2.5 p-6 pb-5 max-md:gap-y-1.5 max-md:border-b max-md:border-zinc-200 max-md:p-4 max-md:gap-y-1 max-md:font-semibold">
+                <div class="flex items-center justify-between">
+                        <p class="text-2xl font-medium max-md:text-xl max-sm:text-xl">
+                            عربة التسوق                        </p>
+                    </div>
+
+                    <p class="text-base max-md:text-zinc-500 max-sm:text-xs">
+                        Get Up To 30% OFF on your 1st order
+                    </p>
+
+                <div class="absolute top-5 max-sm:top-4 ltr:right-5 rtl:left-5">
+                    <span
+                        class="icon-cancel cursor-pointer text-3xl max-md:text-2xl"
+                        @click="close"
+                    >
+                    </span>
+                </div>
+            </div>
+        </template>
+    
+            <template v-slot:content>
+            <div class="flex-1 overflow-auto px-6 max-md:px-4">
+                <!-- Cart Item Listing -->
+                    <div
+                        class="mt-9 grid gap-12 max-md:mt-2.5 max-md:gap-5"
+                        v-if="cart?.items?.length"
+                    >
+                        <div
+                            class="flex gap-x-5 max-md:gap-x-4"
+                            v-for="item in cart?.items"
+                        >
+                            <!-- Cart Item Image -->
+                            
+
+                            <div class="">
+                                <a :href="`https://salem-store.test/${item.product_url_key}`">
+                                    <img
+                                        :src="item.base_image.small_image_url"
+                                        class="max-w-28 max-h-28 rounded-xl max-md:max-h-20 max-md:max-w-[76px]"
+                                    />
+                                </a>
+                            </div>
+
+                            
+
+                        <!-- Cart Item Information -->
+                        <div class="grid flex-1 place-content-start justify-stretch gap-y-2.5">
+                            <div class="flex justify-between gap-2 max-md:gap-0 max-sm:flex-wrap">
+
+                                    
+
+                                    <a
+                                    class="max-w-4/5 max-md:w-full"
+                                    :href="`https://salem-store.test/${item.product_url_key}`"
+                                >
+                                        <p class="text-base font-medium max-md:font-normal max-sm:text-sm">
+                                            {{ item.name }}
+                                        </p>
+                                    </a>
+
+                                    
+
+                                    
+
+                                    <template v-if="displayTax.prices == 'including_tax'">
+                                        <p class="text-lg max-md:font-semibold max-sm:text-sm">
+                                            {{ item.formatted_price_incl_tax }}
+                                        </p>
+                                    </template>
+
+                                    <template v-else-if="displayTax.prices == 'both'">
+                                        <p class="flex flex-col text-lg max-md:font-semibold max-sm:text-sm">
+                                            {{ item.formatted_price_incl_tax }}
+
+                                            <span class="text-xs font-normal text-zinc-500">
+                                                بدون ضريبة:
+                                                <span class="font-medium text-black">{{ item.formatted_price }}</span>
+                                            </span>
+                                        </p>
+                                    </template>
+
+                                    <template v-else>
+                                        <p class="text-lg max-md:font-semibold max-sm:text-sm">
+                                            {{ item.formatted_price }}
+                                        </p>
+                                    </template>
+
+                                    
+                                </div>
+
+                                <!-- Cart Item Options Container -->
+                                <div
+                                    class="grid select-none gap-x-2.5 gap-y-1.5 max-sm:gap-y-0.5"
+                                    v-if="item.options.length"
+                                >
+
+                                    
+
+                                    <!-- Details Toggler -->
+                                    <div class="">
+                                        <p
+                                            class="flex cursor-pointer items-center gap-x-4 text-base max-md:gap-x-1.5 max-md:text-sm max-sm:text-xs"
+                                            @click="item.option_show = ! item.option_show"
+                                        >
+                                            رؤية التفاصيل
+                                            <span
+                                                class="text-2xl max-md:text-xl max-sm:text-lg"
+                                                :class="{'icon-arrow-up': item.option_show, 'icon-arrow-down': ! item.option_show}"
+                                            ></span>
+                                        </p>
+                                    </div>
+
+                                    <!-- Option Details -->
+                                    <div
+                                        class="grid gap-2"
+                                        v-show="item.option_show"
+                                    >
+                                        <template v-for="attribute in item.options">
+                                            <div class="max-md:grid max-md:gap-0.5">
+                                                <p class="text-sm font-medium text-zinc-500 max-md:font-normal max-sm:text-xs">
+                                                    {{ attribute.attribute_name + ':' }}
+                                                </p>
+
+                                                <p class="text-sm max-sm:text-xs">
+                                                    <template v-if="attribute?.attribute_type === 'file'">
+                                                        <a
+                                                            :href="attribute.file_url"
+                                                            class="text-blue-700"
+                                                            target="_blank"
+                                                            :download="attribute.file_name"
+                                                        >
+                                                            {{ attribute.file_name }}
+                                                        </a>
+                                                    </template>
+
+                                                    <template v-else>
+                                                        {{ attribute.option_label }}
+                                                    </template>
+                                                </p>
+                                            </div>
+                                        </template>
+                                    </div>
+
+                                    
+                                </div>
+
+                                <div class="flex flex-wrap items-center gap-5 max-md:gap-2.5">
+                                    
+
+                                <!-- Cart Item Quantity Changer -->
+                                <v-quantity-changer
+    class="flex items-center border border-navyBlue max-h-9 max-w-[150px] gap-x-2.5 rounded-[54px] px-3.5 py-1.5 max-md:gap-x-2 max-md:px-1 max-md:py-0.5" :value="item?.quantity" @change="updateItem($event, item)"
+    name="quantity"
+    value="1"
+    min-value="1"
+>
+</v-quantity-changer>
+
+
+                                    
+
+                                
+
+                                <!-- Cart Item Remove Button -->
+                                <button
+                                    type="button"
+                                    class="text-blue-700 max-md:text-sm"
+                                    @click="removeItem(item.id)"
+                                >
+                                    إزالة                                </button>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Empty Cart Section -->
+                    <div
+                        class="mt-32 pb-8 max-md:mt-32"
+                        v-else
+                    >
+                        <div class="b-0 grid place-items-center gap-y-5 max-md:gap-y-0">
+                            <img
+                                class="max-md:h-[100px] max-md:w-[100px]"
+                                src="https://salem-store.test/themes/shop/default/build/assets/thank-you-mhMpuEVL.png"
+                            >
+
+                            <p
+                                class="text-xl max-md:text-sm"
+                                role="heading"
+                            >
+                                سلة التسوق الخاصة بك فارغة                            </p>
+                        </div>
+                    </div>
+            </div>
+        </template>
+    
+            <template v-slot:footer>
+            <div class="pb-8 max-md:pb-2">
+                <div
+                    v-if="cart?.items?.length"
+                    class="grid-col-1 grid gap-5 max-md:gap-2.5"
+                >
+                    <div
+                        class="my-8 flex items-center justify-between border-b border-zinc-200 px-6 pb-2 max-md:my-0 max-md:border-t max-md:px-5 max-md:py-2"
+                        :class="{'!justify-end': isLoading}"
+                    >
+                        
+
+                        <template v-if="! isLoading">
+                            <p class="text-sm font-medium text-zinc-500">
+                                المجموع الفرعي                            </p>
+
+                        <template v-if="displayTax.subtotal == 'including_tax'">
+                            <p class="text-3xl font-semibold max-md:text-base">
+                                {{ cart.formatted_sub_total_incl_tax }}
+                            </p>
+                        </template>
+
+                        <template v-else-if="displayTax.subtotal == 'both'">
+                            <p class="flex flex-col text-3xl font-semibold max-md:text-sm max-sm:text-right">
+                                {{ cart.formatted_sub_total_incl_tax }}
+
+                                <span class="text-sm font-normal text-zinc-500 max-sm:text-xs">
+                                    بدون ضريبة:
+                                    <span class="font-medium text-black">{{ cart.formatted_sub_total }}</span>
+                                </span>
+                            </p>
+                        </template>
+
+                        <template v-else>
+                            <p class="text-3xl font-semibold max-md:text-base">
+                                {{ cart.formatted_sub_total }}
+                            </p>
+                        </template>
+                    </template>
+
+                        <template v-else>
+                            <!-- Spinner -->
+                            <svg
+                                class="text-blue h-8 w-8 animate-spin text-[5px] font-semibold max-md:h-7 max-md:w-7 max-sm:h-4 max-sm:w-4"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                aria-hidden="true"
+                                viewBox="0 0 24 24"
+                            >
+                                <circle
+                                    class="opacity-25"
+                                    cx="12"
+                                    cy="12"
+                                    r="10"
+                                    stroke="currentColor"
+                                    stroke-width="4"
+                                ></circle>
+
+                                <path
+                                    class="opacity-75"
+                                    fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                ></path>
+                            </svg>
+                        </template>
+
+                            
+                        </div>
+
+                        
+
+                        <!-- Cart Action Container -->
+                        <div class="grid gap-2.5 px-6 max-md:px-4 max-sm:gap-1.5">
+                            
+
+                        <a
+                            href="https://salem-store.test/checkout/onepage"
+                            class="mx-auto block w-full cursor-pointer rounded-2xl bg-navyBlue px-11 py-4 text-center text-base font-medium text-white max-md:rounded-lg max-md:px-5 max-md:py-2"
+                        >
+                            متابعة للسداد                        </a>
+
+                            
+
+                            <div class="block cursor-pointer text-center text-base font-medium max-md:py-1.5">
+                                <a href="https://salem-store.test/checkout/cart">
+                                    عرض عربة التسوق                                </a>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+            </div>
+        </template>
+    </v-drawer>
+
+
+        
+        
+    </script>
+
+<script type="module">
+    app.component("v-mini-cart", {
+        template: '#v-mini-cart-template',
+
+        data() {
+            return {
+                cart: null,
+
+                isLoading: false,
+
+                displayTax: {
+                    prices: "excluding_tax",
+                    subtotal: "excluding_tax",
+                },
+            }
+        },
+
+        mounted() {
+            this.getCart();
+
+            /**
+             * To Do: Implement this.
+             *
+             * Action.
+             */
+            this.$emitter.on('update-mini-cart', (cart) => {
+                this.cart = cart;
+            });
+        },
+
+        methods: {
+            getCart() {
+                this.$axios.get('https://salem-store.test/api/checkout/cart')
+                    .then(response => {
+                        this.cart = response.data.data;
+                    })
+                    .catch(error => { });
+            },
+
+            updateItem(quantity, item) {
+                this.isLoading = true;
+
+                let qty = {};
+
+                qty[item.id] = quantity;
+
+                this.$axios.put('https://salem-store.test/api/checkout/cart', { qty })
+                    .then(response => {
+                        if (response.data.message) {
+                            this.cart = response.data.data;
+                        } else {
+                            this.$emitter.emit('add-flash', { type: 'warning', message: response.data.data.message });
+                        }
+
+                        this.isLoading = false;
+                    }).catch(error => this.isLoading = false);
+            },
+
+            removeItem(itemId) {
+                this.$emitter.emit('open-confirm-modal', {
+                    agree: () => {
+                        this.isLoading = true;
+
+                        this.$axios.post('https://salem-store.test/api/checkout/cart', {
+                            '_method': 'DELETE',
+                            'cart_item_id': itemId,
+                        })
+                            .then(response => {
+                                this.cart = response.data.data;
+
+                                this.$emitter.emit('add-flash', { type: 'success', message: response.data.message });
+
+                                this.isLoading = false;
+                            })
+                            .catch(error => {
+                                this.$emitter.emit('add-flash', { type: 'error', message: response.data.message });
+
+                                this.isLoading = false;
+                            });
+                    }
+                });
+            },
+        },
+    });
+</script>
+    <script
+        type="text/x-template"
+        id="v-dropdown-template"
+    >
+        <div>
+            <div
+                class="select-none"
+                ref="toggleBlock"
+                @click="toggle()"
+            >
+                <slot name="toggle">Toggle</slot>
+            </div>
+
+            <transition
+                tag="div"
+                name="dropdown"
+                enter-active-class="transition duration-100 ease-out"
+                enter-from-class="scale-95 transform opacity-0"
+                enter-to-class="scale-100 transform opacity-100"
+                leave-active-class="transition duration-75 ease-in"
+                leave-from-class="scale-100 transform opacity-100"
+                leave-to-class="scale-95 transform opacity-0"
+            >
+                <div
+                    class="absolute z-20 w-max rounded-[20px] bg-white shadow-[0px_10px_84px_rgba(0,0,0,0.1)] max-md:rounded-lg"
+                    :style="positionStyles"
+                    v-show="isActive"
+                >
+                    <slot name="content"></slot>
+
+                    <slot name="menu"></slot>
+                </div>
+            </transition>
+        </div>
+    </script>
+
+    <script type="module">
+        app.component('v-dropdown', {
+            template: '#v-dropdown-template',
+
+            props: {
+                position: String,
+
+                closeOnClick: {
+                    type: Boolean,
+                    required: false,
+                    default: true
+                },
+            },
+
+            data() {
+                return {
+                    toggleBlockWidth: 0,
+
+                    toggleBlockHeight: 0,
+
+                    isActive: false,
+                };
+            },
+
+            created() {
+                window.addEventListener('click', this.handleFocusOut);
+            },
+
+            mounted() {
+                this.toggleBlockWidth = this.$refs.toggleBlock.clientWidth;
+
+                this.toggleBlockHeight = this.$refs.toggleBlock.clientHeight;
+            },
+
+            beforeDestroy() {
+                window.removeEventListener('click', this.handleFocusOut);
+            },
+
+            computed: {
+                positionStyles() {
+                    switch (this.position) {
+                        case 'bottom-left':
+                            return [
+                                `min-width: ${this.toggleBlockWidth}px`,
+                                `top: ${this.toggleBlockHeight}px`,
+                                'left: 0',
+                            ];
+
+                        case 'bottom-right':
+                            return [
+                                `min-width: ${this.toggleBlockWidth}px`,
+                                `top: ${this.toggleBlockHeight}px`,
+                                'right: 0',
+                            ];
+
+                        case 'top-left':
+                            return [
+                                `min-width: ${this.toggleBlockWidth}px`,
+                                `bottom: ${this.toggleBlockHeight}px`,
+                                'left: 0',
+                            ];
+
+                        case 'top-right':
+                            return [
+                                `min-width: ${this.toggleBlockWidth}px`,
+                                `bottom: ${this.toggleBlockHeight}px`,
+                                'right: 0',
+                            ];
+
+                        default:
+                            return [
+                                `min-width: ${this.toggleBlockWidth}px`,
+                                `top: ${this.toggleBlockHeight}px`,
+                                'left: 0',
+                            ];
+                    }
+                },
+            },
+
+            methods: {
+                toggle() {
+                    /**
+                     * If still somehow width is zero then this will check for width one more time.
+                     */
+                    if (this.toggleBlockWidth === 0) {
+                        this.toggleBlockWidth = this.$refs.toggleBlock.clientWidth;
+                    }
+
+                    /**
+                     * If still somehow height is zero then this will check for height one more time.
+                     */
+                    if (this.toggleBlockHeight === 0) {
+                        this.toggleBlockHeight = this.$refs.toggleBlock.clientHeight;
+                    }
+
+                    this.isActive = ! this.isActive;
+                },
+
+                handleFocusOut(e) {
+                    if (! this.$el.contains(e.target) || (this.closeOnClick && this.$el.children[1].contains(e.target))) {
+                        this.isActive = false;
+                    }
+                },
+            },
+        });
+    </script>
+    <script
+        type="text/x-template"
+        id="v-quantity-changer-template"
+    >
+        <div>
+            <span 
+                class="icon-minus cursor-pointer text-2xl"
+                role="button"
+                tabindex="0"
+                aria-label="تقليل الكمية"
+                @click="decrease"
+            >
+            </span>
+
+            <p class="w-2.5 select-none text-center max-sm:text-sm">
+                {{ quantity }}
+            </p>
+            
+            <span 
+                class="icon-plus cursor-pointer text-2xl"
+                role="button"
+                tabindex="0"
+                aria-label="زيادة الكمية"
+                @click="increase"
+            >
+            </span>
+
+            <v-field
+                type="hidden"
+                :name="name"
+                v-model="quantity"
+            ></v-field>
+        </div>
+    </script>
+
+    <script type="module">
+        app.component("v-quantity-changer", {
+            template: '#v-quantity-changer-template',
+
+            props:['name', 'value', 'minValue'],
+
+            data() {
+                return  {
+                    quantity: this.value,
+                }
+            },
+
+            watch: {
+                value() {
+                    this.quantity = this.value;
+                },
+            },
+
+            methods: {
+                increase() {
+                    this.$emit('change', ++this.quantity);
+                },
+
+                decrease() {
+                    if (this.quantity > this.minValue) {
+                        this.quantity -= 1;
+
+                        this.$emit('change', this.quantity);
+                    }
+                },
+            }
+        });
+    </script>
+    <script
+        type="text/x-template"
+        id="v-drawer-template"
+    >
+        <div>
+            <!-- Toggler -->
+            <div @click="open">
+                <slot name="toggle"></slot>
+            </div>
+
+            <!-- Overlay -->
+            <transition
+                tag="div"
+                name="drawer-overlay"
+                enter-class="duration-300 ease-out"
+                enter-from-class="opacity-0"
+                enter-to-class="opacity-100"
+                leave-class="duration-200 ease-in"
+                leave-from-class="opacity-100"
+                leave-to-class="opacity-0"
+            >
+                <div
+                    class="fixed inset-0 z-20 bg-gray-500 bg-opacity-50 transition-opacity"
+                    v-show="isOpen"
+                ></div>
+            </transition>
+
+            <!-- Content -->
+            <transition
+                tag="div"
+                name="drawer"
+                :enter-from-class="enterFromLeaveToClasses"
+                enter-active-class="transform transition duration-200 ease-in-out"
+                enter-to-class="translate-x-0"
+                leave-from-class="translate-x-0"
+                leave-active-class="transform transition duration-200 ease-in-out"
+                :leave-to-class="enterFromLeaveToClasses"
+            >
+                <div
+                    class="fixed z-[1000] overflow-hidden bg-white max-md:!w-full"
+                    :class="{
+                        'inset-x-0 top-0': position == 'top',
+                        'inset-x-0 bottom-0 max-sm:max-h-full': position == 'bottom',
+                        'inset-y-0 ltr:right-0 rtl:left-0': position == 'right',
+                        'inset-y-0 ltr:left-0 rtl:right-0': position == 'left'
+                    }"
+                    :style="'width:' + width"
+                    v-show="isOpen"
+                >
+                    <div class="pointer-events-auto h-full w-full overflow-auto bg-white">
+                        <div class="flex h-full w-full flex-col">
+                            <div class="min-h-0 min-w-0 flex-1 overflow-auto">
+                                <div class="flex h-full flex-col">
+                                    <slot
+                                        name="header"
+                                        :close="close"
+                                    >
+                                        Default Header
+                                    </slot>
+
+                                    <!-- Content Slot -->
+                                    <slot name="content"></slot>
+
+                                    <!-- Footer Slot -->
+                                    <slot name="footer"></slot>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+        </div>
+    </script>
+
+    <script type="module">
+        app.component('v-drawer', {
+            template: '#v-drawer-template',
+
+            props: [
+                'isActive',
+                'position',
+                'width'
+            ],
+
+            data() {
+                return {
+                    isOpen: this.isActive,
+                };
+            },
+
+            watch: {
+                isActive: function(newVal, oldVal) {
+                    this.isOpen = newVal;
+                }
+            },
+
+            computed: {
+                enterFromLeaveToClasses() {
+                    if (this.position == 'top') {
+                        return '-translate-y-full';
+                    } else if (this.position == 'bottom') {
+                        return 'translate-y-full';
+                    } else if (this.position == 'left') {
+                        return 'ltr:-translate-x-full rtl:translate-x-full';
+                    } else if (this.position == 'right') {
+                        return 'ltr:translate-x-full rtl:-translate-x-full';
+                    }
+                }
+            },
+
+            methods: {
+                toggle() {
+                    this.isOpen = ! this.isOpen;
+
+                    if (this.isOpen) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow ='auto';
+                    }
+
+                    document.body.style.paddingRight = '';
+
+                    this.$emit('toggle', { isActive: this.isOpen });
+                },
+
+                open() {
+                    this.isOpen = true;
+
+                    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+                    document.body.style.overflow = 'hidden';
+
+                    document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+                    this.$emit('open', { isActive: this.isOpen });
+                },
+
+                close() {
+                    this.isOpen = false;
+
+                    document.body.style.overflow = 'auto';
+
+                    document.body.style.paddingRight = '';
+
+                    this.$emit('close', { isActive: this.isOpen });
+                }
+            },
+        });
+    </script>
+    <script type="text/x-template" id="v-desktop-category-template">
+                            <!-- Loading State -->
+    <div class="flex items-center gap-5" v-if="isLoading">
+        <span class="shimmer h-6 w-20 rounded" role="presentation"></span>
+
+        <span class="shimmer h-6 w-20 rounded" role="presentation"></span>
+
+        <span class="shimmer h-6 w-20 rounded" role="presentation"></span>
+    </div>
+
+    <!-- Default category layout -->
+    <div class="flex items-center"
+        v-else-if="'default' !== 'sidebar'">
+        <div class="group relative flex h-[100px] items-center border-b-4 border-transparent hover:border-b-4 hover:border-gold"
+            v-for="category in categories">
+            <span>
+                <a :href="category.url" class="inline-block px-5 uppercase text-gold hover:text-white">
+                    {{ category.name }}
+                </a>
+            </span>
+
+            <div class="pointer-events-none absolute top-[100px] z-[1] w-max min-w-[200px] translate-y-1 overflow-auto overflow-x-auto border border-b-0 border-l-0 border-r-0 border-t border-[#F3F3F3] bg-white p-5 opacity-0 shadow-[0_6px_6px_1px_rgba(0,0,0,.3)] transition duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:duration-200 group-hover:ease-in ltr:left-0 rtl:right-0"
+                v-if="category.children && category.children.length">
+                <div class="grid grid-cols-1 gap-y-4">
+                    <div class="" v-for="secondLevelCategory in category.children">
+                        <p class="font-medium text-brandBlack hover:text-gold whitespace-nowrap">
+                            <a :href="secondLevelCategory.url">
+                                {{ secondLevelCategory.name }}
+                            </a>
+                        </p>
+
+                        <ul class="mt-2 grid gap-y-2 ltr:ml-5 rtl:mr-5"
+                            v-if="secondLevelCategory.children && secondLevelCategory.children.length">
+                            <li class="text-sm font-medium text-zinc-500 hover:text-gold whitespace-nowrap"
+                                v-for="thirdLevelCategory in secondLevelCategory.children">
+                                <a :href="thirdLevelCategory.url">
+                                    {{ thirdLevelCategory.name }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar category layout -->
+    <div v-else>
+        <!-- Categories Navigation -->
+        <div class="flex items-center">
+            <!-- "All" button for opening the category drawer -->
+            <div class="flex h-[100px] cursor-pointer items-center border-b-4 border-transparent hover:border-b-4 hover:border-gold"
+                @click="toggleCategoryDrawer">
+                <span class="flex items-center gap-1 px-5 uppercase text-gold hover:text-white">
+                    <span class="icon-hamburger text-xl"></span>
+
+                    الكل                </span>
+            </div>
+
+            <!-- Show only first 4 categories in main navigation -->
+            <div class="group relative flex h-[100px] items-center border-b-4 border-transparent hover:border-b-4 hover:border-gold"
+                v-for="category in categories.slice(0, 4)">
+                <span>
+                    <a :href="category.url" class="inline-block px-5 uppercase text-gold hover:text-white">
+                        {{ category.name }}
+                    </a>
+                </span>
+
+                <!-- Dropdown for each category -->
+                <div class="pointer-events-none absolute top-[100px] z-[1] w-max min-w-[200px] translate-y-1 overflow-auto overflow-x-auto border border-b-0 border-l-0 border-r-0 border-t border-[#F3F3F3] bg-white p-5 opacity-0 shadow-[0_6px_6px_1px_rgba(0,0,0,.3)] transition duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:duration-200 group-hover:ease-in ltr:left-0 rtl:right-0"
+                    v-if="category.children && category.children.length">
+                    <div class="grid grid-cols-1 gap-y-4">
+                        <div class="" v-for="secondLevelCategory in category.children">
+                            <p class="font-medium text-brandBlack hover:text-gold whitespace-nowrap">
+                                <a :href="secondLevelCategory.url">
+                                    {{ secondLevelCategory.name }}
+                                </a>
+                            </p>
+
+                            <ul class="mt-2 grid gap-y-2 ltr:ml-5 rtl:mr-5"
+                                v-if="secondLevelCategory.children && secondLevelCategory.children.length">
+                                <li class="text-sm font-medium text-zinc-500 hover:text-gold whitespace-nowrap"
+                                    v-for="thirdLevelCategory in secondLevelCategory.children">
+                                    <a :href="thirdLevelCategory.url">
+                                        {{ thirdLevelCategory.name }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagisto Drawer Integration -->
+        <v-drawer
+    :is-active="isDrawerActive" @toggle="onDrawerToggle" @close="onDrawerClose"
+    is-active=""
+    position="left"
+    width="400px"
+>
+            <template v-slot:toggle>
+            
+        </template>
+    
+            <template v-slot:header="{ close }">
+            <div class="grid gap-y-2.5 p-6 pb-5 max-md:gap-y-1.5 max-md:border-b max-md:border-zinc-200 max-md:p-4 max-md:gap-y-1 max-md:font-semibold border-b border-gray-200">
+                <div class="flex w-full items-center justify-between">
+                        <p class="text-xl font-medium">
+                            الفئات                        </p>
+                    </div>
+
+                <div class="absolute top-5 max-sm:top-4 ltr:right-5 rtl:left-5">
+                    <span
+                        class="icon-cancel cursor-pointer text-3xl max-md:text-2xl"
+                        @click="close"
+                    >
+                    </span>
+                </div>
+            </div>
+        </template>
+    
+            <template v-slot:content>
+            <div class="flex-1 overflow-auto px-6 max-md:px-4 !px-0">
+                <!-- Wrapper with transition effects -->
+                        <div class="relative h-full overflow-hidden">
+                            <!-- Sliding container -->
+                            <div class="flex h-full transition-transform duration-300" :class="{
+                                                    'ltr:translate-x-0 rtl:translate-x-0': currentViewLevel !== 'third',
+                                                    'ltr:-translate-x-full rtl:translate-x-full': currentViewLevel === 'third'
+                                                }">
+                                <!-- First level view -->
+                                <div class="h-[calc(100vh-74px)] w-full flex-shrink-0 overflow-auto">
+                                    <div class="py-4">
+                                        <div v-for="category in categories" :key="category.id"
+                                            :class="{'mb-2': category.children && category.children.length}">
+                                            <div
+                                                class="flex cursor-pointer items-center justify-between px-6 py-2 transition-colors duration-200 hover:bg-gray-100">
+                                                <a :href="category.url" class="text-base font-medium text-black">
+                                                    {{ category.name }}
+                                                </a>
+                                            </div>
+
+                                            <!-- Second Level Categories -->
+                                            <div v-if="category.children && category.children.length">
+                                                <div v-for="secondLevelCategory in category.children"
+                                                    :key="secondLevelCategory.id">
+                                                    <div class="flex cursor-pointer items-center justify-between px-6 py-2 transition-colors duration-200 hover:bg-gray-100"
+                                                        @click="showThirdLevel(secondLevelCategory, category, $event)">
+                                                        <a :href="secondLevelCategory.url" class="text-sm font-normal">
+                                                            {{ secondLevelCategory.name }}
+                                                        </a>
+
+                                                        <span
+                                                            v-if="secondLevelCategory.children && secondLevelCategory.children.length"
+                                                            class="icon-arrow-right rtl:icon-arrow-left"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Third level view -->
+                                <div class="h-full w-full flex-shrink-0" v-if="currentViewLevel === 'third'">
+                                    <div class="border-b border-gray-200 px-6 py-4">
+                                        <button @click="goBackToMainView"
+                                            class="flex items-center justify-center gap-2 focus:outline-none"
+                                            aria-label="Go back">
+                                            <span class="icon-arrow-left rtl:icon-arrow-right text-lg"></span>
+
+                                            <p class="text-base font-medium text-black">
+                                                العودة إلى القائمة الرئيسية                                            </p>
+                                        </button>
+                                    </div>
+
+                                    <!-- Third Level Content -->
+                                    <div class="py-4">
+                                        <div v-for="thirdLevelCategory in currentSecondLevelCategory?.children"
+                                            :key="thirdLevelCategory.id" class="mb-2">
+                                            <a :href="thirdLevelCategory.url"
+                                                class="block px-6 py-2 text-sm transition-colors duration-200 hover:bg-gray-100">
+                                                {{ thirdLevelCategory.name }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </template>
+    
+    </v-drawer>
+
+    </div>
+    </script>
+
+    <script type="module">
+        app.component('v-desktop-category', {
+            template: '#v-desktop-category-template',
+
+            data() {
+                return {
+                    isLoading: true,
+                    categories: [],
+                    isDrawerActive: false,
+                    currentViewLevel: 'main',
+                    currentSecondLevelCategory: null,
+                    currentParentCategory: null
+                }
+            },
+
+            mounted() {
+                this.getCategories();
+            },
+
+            methods: {
+                getCategories() {
+                    this.$axios.get("https://salem-store.test/api/categories/tree")
+                        .then(response => {
+                            this.isLoading = false;
+                            this.categories = response.data.data;
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+
+                pairCategoryChildren(category) {
+                    if (!category.children) return [];
+
+                    return category.children.reduce((result, value, index, array) => {
+                        if (index % 2 === 0) {
+                            result.push(array.slice(index, index + 2));
+                        }
+                        return result;
+                    }, []);
+                },
+
+                toggleCategoryDrawer() {
+                    this.isDrawerActive = !this.isDrawerActive;
+                    if (this.isDrawerActive) {
+                        this.currentViewLevel = 'main';
+                    }
+                },
+
+                onDrawerToggle(event) {
+                    this.isDrawerActive = event.isActive;
+                },
+
+                onDrawerClose(event) {
+                    this.isDrawerActive = false;
+                },
+
+                showThirdLevel(secondLevelCategory, parentCategory, event) {
+                    if (secondLevelCategory.children && secondLevelCategory.children.length) {
+                        this.currentSecondLevelCategory = secondLevelCategory;
+                        this.currentParentCategory = parentCategory;
+                        this.currentViewLevel = 'third';
+
+                        if (event) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                    }
+                },
+
+                goBackToMainView() {
+                    this.currentViewLevel = 'main';
+                }
+            },
+        });
+    </script>
+
+        
+        <script>
+            /**
+             * Load event, the purpose of using the event is to mount the application
+             * after all of our `Vue` components which is present in blade file have
+             * been registered in the app. No matter what `app.mount()` should be
+             * called in the last.
+             */
+            window.addEventListener("load", function (event) {
+                app.mount("#app");
+            });
+        </script>
+
+        
+
+        <script type="text/javascript">
+            
+        </script>
+    <script type="text/javascript">
+var phpdebugbar = new PhpDebugBar.DebugBar({"theme":"auto","hideEmptyTabs":true});
+phpdebugbar.addTab("request", new PhpDebugBar.DebugBar.Tab({"icon":"tags","order":-100,"title":"Request", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
+phpdebugbar.addTab("modules", new PhpDebugBar.DebugBar.Tab({"icon":"cubes","title":"Modules", "widget": new PhpDebugBar.Widgets.ModulesWidget()}));
+phpdebugbar.addTab("messages", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Messages", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addIndicator("time", new PhpDebugBar.DebugBar.Indicator({"icon":"clock-o","tooltip":"Request Duration","link":"timeline"}), "right");
+phpdebugbar.addTab("timeline", new PhpDebugBar.DebugBar.Tab({"icon":"tasks","title":"Timeline", "widget": new PhpDebugBar.Widgets.TimelineWidget()}));
+phpdebugbar.addIndicator("memory", new PhpDebugBar.DebugBar.Indicator({"icon":"cogs","tooltip":"Memory Usage"}), "right");
+phpdebugbar.addTab("exceptions", new PhpDebugBar.DebugBar.Tab({"icon":"bug","title":"Exceptions", "widget": new PhpDebugBar.Widgets.ExceptionsWidget()}));
+phpdebugbar.addIndicator("version", new PhpDebugBar.DebugBar.Indicator({"icon":"laravel phpdebugbar-fab"}), "right");
+phpdebugbar.addTab("views", new PhpDebugBar.DebugBar.Tab({"icon":"leaf","title":"Views", "widget": new PhpDebugBar.Widgets.TemplatesWidget()}));
+phpdebugbar.addTab("queries", new PhpDebugBar.DebugBar.Tab({"icon":"database","title":"Queries", "widget": new PhpDebugBar.Widgets.LaravelQueriesWidget()}));
+phpdebugbar.addTab("models", new PhpDebugBar.DebugBar.Tab({"icon":"cubes","title":"Models", "widget": new PhpDebugBar.Widgets.TableVariableListWidget()}));
+phpdebugbar.addTab("emails", new PhpDebugBar.DebugBar.Tab({"icon":"inbox","title":"Mails", "widget": new PhpDebugBar.Widgets.MailsWidget()}));
+phpdebugbar.addTab("gate", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Gate", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addIndicator("currentrequest", new PhpDebugBar.DebugBar.Indicator({"icon":"share","link":"request"}), "right");
+phpdebugbar.setDataMap({
+"request": ["request.data", {}],
+"modules": ["modules", []],
+"modules:badge": ["modules.count", 0],
+"messages": ["messages.messages", []],
+"messages:badge": ["messages.count", null],
+"time": ["time.duration_str", '0ms'],
+"timeline": ["time", {}],
+"memory": ["memory.peak_usage_str", '0B'],
+"exceptions": ["exceptions.exceptions", []],
+"exceptions:badge": ["exceptions.count", null],
+"version": ["laravel.version", ],
+"version:tooltip": ["laravel.tooltip", {}],
+"views": ["views", []],
+"views:badge": ["views.nb_templates", 0],
+"queries": ["queries", []],
+"queries:badge": ["queries.nb_statements", 0],
+"models": ["models", {}],
+"models:badge": ["models.count", 0],
+"emails": ["symfonymailer_mails.mails", []],
+"emails:badge": ["symfonymailer_mails.count", null],
+"gate": ["gate.messages", []],
+"gate:badge": ["gate.count", null],
+"request:badge": ["request.badge", null],
+"currentrequest": ["request.data.uri", ],
+"currentrequest:tooltip": ["request.tooltip", {}]
+});
+phpdebugbar.restoreState();
+phpdebugbar.enableAjaxHandlerTab();
+phpdebugbar.ajaxHandler = new PhpDebugBar.AjaxHandler(phpdebugbar, undefined, true);
+phpdebugbar.ajaxHandler.bindToFetch();
+phpdebugbar.ajaxHandler.bindToXHR();
+phpdebugbar.setOpenHandler(new PhpDebugBar.OpenHandler({"url":"https:\/\/salem-store.test\/_debugbar\/open"}));
+phpdebugbar.addDataSet({"__meta":{"id":"01KTKGBRBMG99HQGP7C2J860DF","datetime":"2026-06-08 14:37:21","utime":1780918641.013129,"method":"GET","uri":"\/touch-me","ip":"127.0.0.1"},"modules":{"count":5,"modules":[{"name":"Webkul\\Attribute","models":["Webkul\\Attribute\\Models\\Attribute (1)"],"views":[],"queries":[{"sql":"select * from `attributes` where `code` = \u0027url_key\u0027","duration":0.41,"duration_str":"410ms","connection":"salem_db"}]},{"name":"Webkul\\Category","models":[],"views":[],"queries":[{"sql":"select * from `categories` where exists (select * from `category_translations` where `categories`.`id` = `category_translations`.`category_id` and `category_translations`.`slug` = \u0027touch-me\u0027) limit 1","duration":1.12,"duration_str":"1.12s","connection":"salem_db"}]},{"name":"Webkul\\Core","models":["Webkul\\Core\\Models\\Channel (1)","Webkul\\Core\\Models\\Locale (3)","Webkul\\Core\\Models\\Currency (2)"],"views":[],"queries":[{"sql":"select * from `channels` where `hostname` in (\u0027salem-store.test\u0027, \u0027http:\/\/salem-store.test\u0027, \u0027https:\/\/salem-store.test\u0027)","duration":12.26,"duration_str":"12.26s","connection":"salem_db"},{"sql":"select `locales`.*, `channel_locales`.`channel_id` as `pivot_channel_id`, `channel_locales`.`locale_id` as `pivot_locale_id` from `locales` inner join `channel_locales` on `locales`.`id` = `channel_locales`.`locale_id` where `channel_locales`.`channel_id` = 1","duration":0.59,"duration_str":"590ms","connection":"salem_db"},{"sql":"select * from `locales` where `locales`.`id` = 1 limit 1","duration":0.69,"duration_str":"690ms","connection":"salem_db"},{"sql":"select `currencies`.*, `channel_currencies`.`channel_id` as `pivot_channel_id`, `channel_currencies`.`currency_id` as `pivot_currency_id` from `currencies` inner join `channel_currencies` on `currencies`.`id` = `channel_currencies`.`currency_id` where `channel_currencies`.`channel_id` = 1","duration":0.38,"duration_str":"380ms","connection":"salem_db"},{"sql":"select * from `currencies` where `currencies`.`id` = 1 limit 1","duration":0.43,"duration_str":"430ms","connection":"salem_db"},{"sql":"select * from `locales` where `locales`.`id` = 1 limit 1","duration":0.76,"duration_str":"760ms","connection":"salem_db"}]},{"name":"Webkul\\Marketing","models":[],"views":[],"queries":[{"sql":"select * from `url_rewrites` where `entity_type` = \u0027cms_page\u0027 and `request_path` = \u0027touch-me\u0027 and `locale` = \u0027ar\u0027","duration":0.81,"duration_str":"810ms","connection":"salem_db"}]},{"name":"Webkul\\Product","models":[],"views":[],"queries":[{"sql":"select * from `product_attribute_values` where `attribute_id` = 3 and `text_value` = \u0027touch-me\u0027","duration":0.78,"duration_str":"780ms","connection":"salem_db"}]}]},"messages":{"count":3,"messages":[{"message":"[14:37:20] LOG.warning: Since symfony\/http-foundation 7.4: Request::get() is deprecated, use properties -\u003Eattributes, query or request directly instead. in C:\\projects\\salem-store\\vendor\\symfony\\deprecation-contracts\\function.php on line 25","message_html":null,"is_string":false,"label":"warning","time":1780918640.982406,"xdebug_link":null,"collector":"log"},{"message":"[14:37:20] LOG.warning: Since symfony\/http-foundation 7.4: Request::get() is deprecated, use properties -\u003Eattributes, query or request directly instead. in C:\\projects\\salem-store\\vendor\\symfony\\deprecation-contracts\\function.php on line 25","message_html":null,"is_string":false,"label":"warning","time":1780918640.985183,"xdebug_link":null,"collector":"log"},{"message":"[14:37:21] LOG.warning: Since symfony\/http-foundation 7.4: Request::get() is deprecated, use properties -\u003Eattributes, query or request directly instead. in C:\\projects\\salem-store\\vendor\\symfony\\deprecation-contracts\\function.php on line 25","message_html":null,"is_string":false,"label":"warning","time":1780918641.007626,"xdebug_link":null,"collector":"log"}]},"time":{"count":3,"start":1780918640.896272,"end":1780918641.029149,"duration":0.13287711143493652,"duration_str":"133ms","measures":[{"label":"Booting","start":1780918640.896272,"relative_start":0,"end":1780918640.941943,"relative_end":1780918640.941943,"duration":0.04567098617553711,"duration_str":"45.67ms","memory":0,"memory_str":"0B","params":[],"collector":"time","group":null},{"label":"Application","start":1780918640.941964,"relative_start":0.04569196701049805,"end":1780918641.029152,"relative_end":2.86102294921875e-6,"duration":0.0871880054473877,"duration_str":"87.19ms","memory":0,"memory_str":"0B","params":[],"collector":"time","group":null},{"label":"Routing","start":1780918640.9484,"relative_start":0.05212807655334473,"end":1780918640.953197,"relative_end":1780918640.953197,"duration":0.0047969818115234375,"duration_str":"4.8ms","memory":0,"memory_str":"0B","params":[],"collector":null,"group":null}]},"memory":{"peak_usage":8730680,"peak_usage_str":"8MB"},"exceptions":{"count":0,"exceptions":[]},"laravel":{"version":"11.x","tooltip":{"Laravel Version":"11.54.0","PHP Version":"8.3.31","Environment":"local","Debug Mode":"Enabled","URL":"salem-store.test","Timezone":"Africa\/Cairo","Locale":"ar"}},"views":{"count":0,"nb_templates":0,"templates":[]},"queries":{"count":10,"nb_statements":10,"nb_visible_statements":10,"nb_excluded_statements":0,"nb_failed_statements":0,"accumulated_duration":0.01823,"accumulated_duration_str":"18.23ms","memory_usage":0,"memory_usage_str":null,"statements":[{"sql":"select * from `channels` where `hostname` in (\u0027salem-store.test\u0027, \u0027http:\/\/salem-store.test\u0027, \u0027https:\/\/salem-store.test\u0027)","type":"query","params":[],"bindings":["salem-store.test","http:\/\/salem-store.test","https:\/\/salem-store.test"],"hints":null,"show_copy":true,"backtrace":[{"index":15,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Eloquent\/BaseRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Eloquent\\BaseRepository.php","line":578},{"index":16,"namespace":null,"name":"packages\/Webkul\/Core\/src\/Core.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Core\\src\\Core.php","line":143},{"index":17,"namespace":"middleware","name":"theme","file":"C:\\projects\\salem-store\\packages\\Webkul\\Shop\\src\\Http\\Middleware\\Theme.php","line":19},{"index":18,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":209},{"index":19,"namespace":null,"name":"vendor\/laravel\/boost\/src\/Middleware\/InjectBoost.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\boost\\src\\Middleware\\InjectBoost.php","line":22}],"start":1780918640.965522,"duration":0.01226,"duration_str":"12.26ms","slow":false,"memory":0,"memory_str":null,"filename":"BaseRepository.php:578","source":{"index":15,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Eloquent\/BaseRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Eloquent\\BaseRepository.php","line":578},"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fvendor%2Fprettus%2Fl5-repository%2Fsrc%2FPrettus%2FRepository%2FEloquent%2FBaseRepository.php\u0026line=578","ajax":false,"filename":"BaseRepository.php","line":"578"},"connection":"salem_db","explain":null,"start_percent":0,"width_percent":67.252},{"sql":"select `locales`.*, `channel_locales`.`channel_id` as `pivot_channel_id`, `channel_locales`.`locale_id` as `pivot_locale_id` from `locales` inner join `channel_locales` on `locales`.`id` = `channel_locales`.`locale_id` where `channel_locales`.`channel_id` = 1","type":"query","params":[],"bindings":[1],"hints":null,"show_copy":true,"backtrace":[{"index":19,"namespace":null,"name":"vendor\/astrotomic\/laravel-translatable\/src\/Translatable\/Translatable.php","file":"C:\\projects\\salem-store\\vendor\\astrotomic\\laravel-translatable\\src\\Translatable\\Translatable.php","line":174},{"index":21,"namespace":"middleware","name":"installer_locale","file":"C:\\projects\\salem-store\\packages\\Webkul\\Shop\\src\\Http\\Middleware\\Locale.php","line":25},{"index":22,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":209},{"index":23,"namespace":"middleware","name":"theme","file":"C:\\projects\\salem-store\\packages\\Webkul\\Shop\\src\\Http\\Middleware\\Theme.php","line":32},{"index":24,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":209}],"start":1780918640.980574,"duration":0.0005899999999999999,"duration_str":"590\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"Translatable.php:174","source":{"index":19,"namespace":null,"name":"vendor\/astrotomic\/laravel-translatable\/src\/Translatable\/Translatable.php","file":"C:\\projects\\salem-store\\vendor\\astrotomic\\laravel-translatable\\src\\Translatable\\Translatable.php","line":174},"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fvendor%2Fastrotomic%2Flaravel-translatable%2Fsrc%2FTranslatable%2FTranslatable.php\u0026line=174","ajax":false,"filename":"Translatable.php","line":"174"},"connection":"salem_db","explain":null,"start_percent":67.252,"width_percent":3.236},{"sql":"select * from `locales` where `locales`.`id` = 1 limit 1","type":"query","params":[],"bindings":[1],"hints":null,"show_copy":true,"backtrace":[{"index":20,"namespace":null,"name":"vendor\/astrotomic\/laravel-translatable\/src\/Translatable\/Translatable.php","file":"C:\\projects\\salem-store\\vendor\\astrotomic\\laravel-translatable\\src\\Translatable\\Translatable.php","line":174},{"index":22,"namespace":"middleware","name":"installer_locale","file":"C:\\projects\\salem-store\\packages\\Webkul\\Shop\\src\\Http\\Middleware\\Locale.php","line":33},{"index":23,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":209},{"index":24,"namespace":"middleware","name":"theme","file":"C:\\projects\\salem-store\\packages\\Webkul\\Shop\\src\\Http\\Middleware\\Theme.php","line":32},{"index":25,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":209}],"start":1780918640.9827101,"duration":0.00069,"duration_str":"690\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"Translatable.php:174","source":{"index":20,"namespace":null,"name":"vendor\/astrotomic\/laravel-translatable\/src\/Translatable\/Translatable.php","file":"C:\\projects\\salem-store\\vendor\\astrotomic\\laravel-translatable\\src\\Translatable\\Translatable.php","line":174},"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fvendor%2Fastrotomic%2Flaravel-translatable%2Fsrc%2FTranslatable%2FTranslatable.php\u0026line=174","ajax":false,"filename":"Translatable.php","line":"174"},"connection":"salem_db","explain":null,"start_percent":70.488,"width_percent":3.785},{"sql":"select `currencies`.*, `channel_currencies`.`channel_id` as `pivot_channel_id`, `channel_currencies`.`currency_id` as `pivot_currency_id` from `currencies` inner join `channel_currencies` on `currencies`.`id` = `channel_currencies`.`currency_id` where `channel_currencies`.`channel_id` = 1","type":"query","params":[],"bindings":[1],"hints":null,"show_copy":true,"backtrace":[{"index":19,"namespace":null,"name":"vendor\/astrotomic\/laravel-translatable\/src\/Translatable\/Translatable.php","file":"C:\\projects\\salem-store\\vendor\\astrotomic\\laravel-translatable\\src\\Translatable\\Translatable.php","line":174},{"index":21,"namespace":"middleware","name":"currency","file":"C:\\projects\\salem-store\\packages\\Webkul\\Shop\\src\\Http\\Middleware\\Currency.php","line":25},{"index":22,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":209},{"index":23,"namespace":"middleware","name":"installer_locale","file":"C:\\projects\\salem-store\\packages\\Webkul\\Shop\\src\\Http\\Middleware\\Locale.php","line":40},{"index":24,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":209}],"start":1780918640.984214,"duration":0.00038,"duration_str":"380\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"Translatable.php:174","source":{"index":19,"namespace":null,"name":"vendor\/astrotomic\/laravel-translatable\/src\/Translatable\/Translatable.php","file":"C:\\projects\\salem-store\\vendor\\astrotomic\\laravel-translatable\\src\\Translatable\\Translatable.php","line":174},"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fvendor%2Fastrotomic%2Flaravel-translatable%2Fsrc%2FTranslatable%2FTranslatable.php\u0026line=174","ajax":false,"filename":"Translatable.php","line":"174"},"connection":"salem_db","explain":null,"start_percent":74.273,"width_percent":2.084},{"sql":"select * from `currencies` where `currencies`.`id` = 1 limit 1","type":"query","params":[],"bindings":[1],"hints":null,"show_copy":true,"backtrace":[{"index":20,"namespace":null,"name":"vendor\/astrotomic\/laravel-translatable\/src\/Translatable\/Translatable.php","file":"C:\\projects\\salem-store\\vendor\\astrotomic\\laravel-translatable\\src\\Translatable\\Translatable.php","line":174},{"index":22,"namespace":"middleware","name":"currency","file":"C:\\projects\\salem-store\\packages\\Webkul\\Shop\\src\\Http\\Middleware\\Currency.php","line":33},{"index":23,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":209},{"index":24,"namespace":"middleware","name":"installer_locale","file":"C:\\projects\\salem-store\\packages\\Webkul\\Shop\\src\\Http\\Middleware\\Locale.php","line":40},{"index":25,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":209}],"start":1780918640.9853609,"duration":0.00043,"duration_str":"430\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"Translatable.php:174","source":{"index":20,"namespace":null,"name":"vendor\/astrotomic\/laravel-translatable\/src\/Translatable\/Translatable.php","file":"C:\\projects\\salem-store\\vendor\\astrotomic\\laravel-translatable\\src\\Translatable\\Translatable.php","line":174},"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fvendor%2Fastrotomic%2Flaravel-translatable%2Fsrc%2FTranslatable%2FTranslatable.php\u0026line=174","ajax":false,"filename":"Translatable.php","line":"174"},"connection":"salem_db","explain":null,"start_percent":76.358,"width_percent":2.359},{"sql":"select * from `url_rewrites` where `entity_type` = \u0027cms_page\u0027 and `request_path` = \u0027touch-me\u0027 and `locale` = \u0027ar\u0027","type":"query","params":[],"bindings":["cms_page","touch-me","ar"],"hints":null,"show_copy":true,"backtrace":[{"index":15,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Eloquent\/BaseRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Eloquent\\BaseRepository.php","line":559},{"index":16,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Traits\/CacheableRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Traits\\CacheableRepository.php","line":315},{"index":17,"namespace":null,"name":"packages\/Webkul\/Core\/src\/Eloquent\/Repository.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Core\\src\\Eloquent\\Repository.php","line":119},{"index":18,"namespace":"middleware","name":"cache.response","file":"C:\\projects\\salem-store\\packages\\Webkul\\Shop\\src\\Http\\Middleware\\CacheResponse.php","line":86},{"index":19,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":209}],"start":1780918640.992785,"duration":0.0008100000000000001,"duration_str":"810\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"BaseRepository.php:559","source":{"index":15,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Eloquent\/BaseRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Eloquent\\BaseRepository.php","line":559},"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fvendor%2Fprettus%2Fl5-repository%2Fsrc%2FPrettus%2FRepository%2FEloquent%2FBaseRepository.php\u0026line=559","ajax":false,"filename":"BaseRepository.php","line":"559"},"connection":"salem_db","explain":null,"start_percent":78.716,"width_percent":4.443},{"sql":"select * from `categories` where exists (select * from `category_translations` where `categories`.`id` = `category_translations`.`category_id` and `category_translations`.`slug` = \u0027touch-me\u0027) limit 1","type":"query","params":[],"bindings":["touch-me"],"hints":null,"show_copy":true,"backtrace":[{"index":16,"namespace":null,"name":"packages\/Webkul\/Category\/src\/Repositories\/CategoryRepository.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Category\\src\\Repositories\\CategoryRepository.php","line":213},{"index":17,"namespace":null,"name":"packages\/Webkul\/Core\/src\/Jobs\/UpdateCreateVisitableIndex.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Core\\src\\Jobs\\UpdateCreateVisitableIndex.php","line":43},{"index":18,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php","line":36},{"index":19,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Container\/Util.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php","line":43},{"index":20,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php","file":"C:\\projects\\salem-store\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php","line":95}],"start":1780918641.003088,"duration":0.0011200000000000001,"duration_str":"1.12ms","slow":false,"memory":0,"memory_str":null,"filename":"CategoryRepository.php:213","source":{"index":16,"namespace":null,"name":"packages\/Webkul\/Category\/src\/Repositories\/CategoryRepository.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Category\\src\\Repositories\\CategoryRepository.php","line":213},"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fpackages%2FWebkul%2FCategory%2Fsrc%2FRepositories%2FCategoryRepository.php\u0026line=213","ajax":false,"filename":"CategoryRepository.php","line":"213"},"connection":"salem_db","explain":null,"start_percent":83.16,"width_percent":6.144},{"sql":"select * from `attributes` where `code` = \u0027url_key\u0027","type":"query","params":[],"bindings":["url_key"],"hints":null,"show_copy":true,"backtrace":[{"index":15,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Eloquent\/BaseRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Eloquent\\BaseRepository.php","line":538},{"index":16,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Traits\/CacheableRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Traits\\CacheableRepository.php","line":290},{"index":17,"namespace":null,"name":"packages\/Webkul\/Core\/src\/Eloquent\/Repository.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Core\\src\\Eloquent\\Repository.php","line":104},{"index":18,"namespace":null,"name":"packages\/Webkul\/Product\/src\/Repositories\/ProductRepository.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Product\\src\\Repositories\\ProductRepository.php","line":126},{"index":19,"namespace":null,"name":"packages\/Webkul\/Product\/src\/Repositories\/ProductRepository.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Product\\src\\Repositories\\ProductRepository.php","line":184}],"start":1780918641.005071,"duration":0.00041,"duration_str":"410\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"BaseRepository.php:538","source":{"index":15,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Eloquent\/BaseRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Eloquent\\BaseRepository.php","line":538},"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fvendor%2Fprettus%2Fl5-repository%2Fsrc%2FPrettus%2FRepository%2FEloquent%2FBaseRepository.php\u0026line=538","ajax":false,"filename":"BaseRepository.php","line":"538"},"connection":"salem_db","explain":null,"start_percent":89.303,"width_percent":2.249},{"sql":"select * from `product_attribute_values` where `attribute_id` = 3 and `text_value` = \u0027touch-me\u0027","type":"query","params":[],"bindings":[3,"touch-me"],"hints":null,"show_copy":true,"backtrace":[{"index":15,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Eloquent\/BaseRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Eloquent\\BaseRepository.php","line":559},{"index":16,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Traits\/CacheableRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Traits\\CacheableRepository.php","line":315},{"index":17,"namespace":null,"name":"packages\/Webkul\/Product\/src\/Repositories\/ProductRepository.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Product\\src\\Repositories\\ProductRepository.php","line":128},{"index":18,"namespace":null,"name":"packages\/Webkul\/Product\/src\/Repositories\/ProductRepository.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Product\\src\\Repositories\\ProductRepository.php","line":184},{"index":19,"namespace":null,"name":"packages\/Webkul\/Core\/src\/Jobs\/UpdateCreateVisitableIndex.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Core\\src\\Jobs\\UpdateCreateVisitableIndex.php","line":51}],"start":1780918641.0062058,"duration":0.00078,"duration_str":"780\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"BaseRepository.php:559","source":{"index":15,"namespace":null,"name":"vendor\/prettus\/l5-repository\/src\/Prettus\/Repository\/Eloquent\/BaseRepository.php","file":"C:\\projects\\salem-store\\vendor\\prettus\\l5-repository\\src\\Prettus\\Repository\\Eloquent\\BaseRepository.php","line":559},"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fvendor%2Fprettus%2Fl5-repository%2Fsrc%2FPrettus%2FRepository%2FEloquent%2FBaseRepository.php\u0026line=559","ajax":false,"filename":"BaseRepository.php","line":"559"},"connection":"salem_db","explain":null,"start_percent":91.552,"width_percent":4.279},{"sql":"select * from `locales` where `locales`.`id` = 1 limit 1","type":"query","params":[],"bindings":[1],"hints":null,"show_copy":true,"backtrace":[{"index":20,"namespace":null,"name":"vendor\/astrotomic\/laravel-translatable\/src\/Translatable\/Translatable.php","file":"C:\\projects\\salem-store\\vendor\\astrotomic\\laravel-translatable\\src\\Translatable\\Translatable.php","line":174},{"index":22,"namespace":null,"name":"packages\/Webkul\/Core\/src\/Core.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Core\\src\\Core.php","line":215},{"index":23,"namespace":null,"name":"packages\/Webkul\/Product\/src\/Repositories\/ProductRepository.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Product\\src\\Repositories\\ProductRepository.php","line":155},{"index":24,"namespace":null,"name":"packages\/Webkul\/Product\/src\/Repositories\/ProductRepository.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Product\\src\\Repositories\\ProductRepository.php","line":184},{"index":25,"namespace":null,"name":"packages\/Webkul\/Core\/src\/Jobs\/UpdateCreateVisitableIndex.php","file":"C:\\projects\\salem-store\\packages\\Webkul\\Core\\src\\Jobs\\UpdateCreateVisitableIndex.php","line":51}],"start":1780918641.009573,"duration":0.00076,"duration_str":"760\u03bcs","slow":false,"memory":0,"memory_str":null,"filename":"Translatable.php:174","source":{"index":20,"namespace":null,"name":"vendor\/astrotomic\/laravel-translatable\/src\/Translatable\/Translatable.php","file":"C:\\projects\\salem-store\\vendor\\astrotomic\\laravel-translatable\\src\\Translatable\\Translatable.php","line":174},"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fvendor%2Fastrotomic%2Flaravel-translatable%2Fsrc%2FTranslatable%2FTranslatable.php\u0026line=174","ajax":false,"filename":"Translatable.php","line":"174"},"connection":"salem_db","explain":null,"start_percent":95.831,"width_percent":4.169}]},"models":{"data":{"Webkul\\Core\\Models\\Locale":{"retrieved":3,"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fpackages%2FWebkul%2FCore%2Fsrc%2FModels%2FLocale.php\u0026line=1","ajax":false,"filename":"Locale.php","line":"?"}},"Webkul\\Core\\Models\\Currency":{"retrieved":2,"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fpackages%2FWebkul%2FCore%2Fsrc%2FModels%2FCurrency.php\u0026line=1","ajax":false,"filename":"Currency.php","line":"?"}},"Webkul\\Core\\Models\\Channel":{"retrieved":1,"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fpackages%2FWebkul%2FCore%2Fsrc%2FModels%2FChannel.php\u0026line=1","ajax":false,"filename":"Channel.php","line":"?"}},"Webkul\\Attribute\\Models\\Attribute":{"retrieved":1,"xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fpackages%2FWebkul%2FAttribute%2Fsrc%2FModels%2FAttribute.php\u0026line=1","ajax":false,"filename":"Attribute.php","line":"?"}}},"count":7,"key_map":{"retrieved":"Retrieved","created":"Created","updated":"Updated","deleted":"Deleted"},"is_counter":true,"badges":{"retrieved":7}},"symfonymailer_mails":{"count":0,"mails":[]},"gate":{"count":0,"messages":[]},"request":{"data":{"status":"200 OK","full_url":"https:\/\/salem-store.test\/touch-me","action_name":"shop.cms.page","controller_action":"Webkul\\Shop\\Http\\Controllers\\ProductsCategoriesProxyController@index","uri":"GET {slug}","controller":{"value":"Webkul\\Shop\\Http\\Controllers\\ProductsCategoriesProxyController@index","xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fpackages%2FWebkul%2FShop%2Fsrc%2FHttp%2FControllers%2FProductsCategoriesProxyController.php\u0026line=40","ajax":false,"filename":"ProductsCategoriesProxyController.php","line":"40"}},"file":{"value":"packages\/Webkul\/Shop\/src\/Http\/Controllers\/ProductsCategoriesProxyController.php:40-149","xdebug_link":{"url":"phpstorm:\/\/open?file=C%3A%2Fprojects%2Fsalem-store%2Fpackages%2FWebkul%2FShop%2Fsrc%2FHttp%2FControllers%2FProductsCategoriesProxyController.php\u0026line=40","ajax":false,"filename":"ProductsCategoriesProxyController.php","line":"40"}},"middleware":"web, shop, Webkul\\Core\\Http\\Middleware\\PreventRequestsDuringMaintenance, cache.response","duration":"133ms","peak_memory":"10MB","response":"text\/html; charset=utf-8","request_format":"html","request_query":"\u003Cpre class=sf-dump id=sf-dump-1587703446 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1587703446\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","request_request":"\u003Cpre class=sf-dump id=sf-dump-1917913625 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1917913625\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","request_headers":"\u003Cpre class=sf-dump id=sf-dump-759953083 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:3\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003Eaccept\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00223 characters\u0022\u003E*\/*\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Euser-agent\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002211 characters\u0022\u003Ecurl\/8.19.0\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Ehost\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002216 characters\u0022\u003Esalem-store.test\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-759953083\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","request_cookies":"\u003Cpre class=sf-dump id=sf-dump-1457126598 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1457126598\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","response_headers":"\u003Cpre class=sf-dump id=sf-dump-701324906 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:4\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003Econtent-type\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002224 characters\u0022\u003Etext\/html; charset=utf-8\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Ecache-control\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002217 characters\u0022\u003Eno-cache, private\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Edate\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002229 characters\u0022\u003EMon, 08 Jun 2026 11:35:38 GMT\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Elaravel-responsecache\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002231 characters\u0022\u003EMon, 08 Jun 2026 14:35:39 +0300\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-701324906\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","session_attributes":"\u003Cpre class=sf-dump id=sf-dump-910192895 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:3\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003E_token\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002240 characters\u0022\u003E1dxKLkeRoR1DZoS7LpKurgg0P7Bxka2VGTwNEaT8\u003C\/span\u003E\u0022\n  \u0022\u003Cspan class=sf-dump-key\u003Elocale\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00222 characters\u0022\u003Ear\u003C\/span\u003E\u0022\n  \u0022\u003Cspan class=sf-dump-key\u003Ecurrency\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00223 characters\u0022\u003EEGP\u003C\/span\u003E\u0022\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-910192895\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n"},"tooltip":{"status":"200 OK","full_url":"https:\/\/salem-store.test\/touch-me","action_name":"shop.cms.page","controller_action":"Webkul\\Shop\\Http\\Controllers\\ProductsCategoriesProxyController@index"},"badge":null}}, "01KTKGBRBMG99HQGP7C2J860DF");
+
+</script>
+</body>
+</html>

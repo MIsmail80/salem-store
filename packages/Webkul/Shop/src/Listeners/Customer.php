@@ -19,9 +19,14 @@ class Customer extends Base
      */
     public function afterCreated($customer)
     {
+        // Skip email notifications if customer has no email (phone-based registration)
+        if (empty($customer->email)) {
+            return;
+        }
+
         if (core()->getConfigData('emails.general.notifications.emails.general.notifications.verification')) {
             try {
-                if (! core()->getConfigData('emails.general.notifications.emails.general.notifications.verification')) {
+                if (!core()->getConfigData('emails.general.notifications.emails.general.notifications.verification')) {
                     return;
                 }
 
@@ -36,7 +41,7 @@ class Customer extends Base
         }
 
         try {
-            if (! core()->getConfigData('emails.general.notifications.emails.general.notifications.registration')) {
+            if (!core()->getConfigData('emails.general.notifications.emails.general.notifications.registration')) {
                 return;
             }
 
@@ -54,6 +59,11 @@ class Customer extends Base
      */
     public function afterPasswordUpdated($customer)
     {
+        // Skip email notification if customer has no email (phone-based accounts)
+        if (empty($customer->email)) {
+            return;
+        }
+
         try {
             Mail::queue(new UpdatePasswordNotification($customer));
         } catch (\Exception $e) {
@@ -84,7 +94,7 @@ class Customer extends Base
      */
     public function afterNoteCreated($note)
     {
-        if (! $note->customer_notified) {
+        if (!$note->customer_notified) {
             return;
         }
 

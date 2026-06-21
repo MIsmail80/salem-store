@@ -1,0 +1,204 @@
+<div class="flex items-center justify-center relative overflow-hidden"
+    style="background-color: #F5F7FA; padding: 2rem; border-radius: 2rem;">
+    <style>
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .md-flex-row {
+                flex-direction: row !important;
+            }
+
+            .md-flex-col {
+                flex-direction: column !important;
+            }
+
+            .md-w-24 {
+                width: 6rem !important;
+            }
+        }
+    </style>
+
+    <!-- Background Blobs -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"
+            style="background-color: #e9d5ff;"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"
+            style="background-color: #bfdbfe;"></div>
+        <div class="absolute -bottom-32 left-20 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"
+            style="background-color: #fbcfe8;"></div>
+    </div>
+
+    <!-- Card Container -->
+    <div dir="ltr" class="relative animate-fade-in-up"
+        style="display: flex; flex-wrap: wrap; background-color: white; border-radius: 2rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); min-height: 600px; width: 100%; max-width: 72rem;">
+
+        <!-- 1. Left Sidebar (Socials) -->
+        <div
+            style="flex-grow: 1; flex-basis: 6rem; background: linear-gradient(to bottom, #D4AF37, #AA771C) !important; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem; padding: 1.5rem; flex-shrink: 0;">
+            <!-- TikTok -->
+            <a href="https://tiktok.com/@salemthestore"
+                class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12.525.02c1.31-.02 2.61-.01 3.91.04.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-1.15 4.34-2.88 5.6-1.89 1.37-4.4 1.73-6.59 1.07-2.19-.66-3.95-2.28-4.73-4.41-.78-2.13-.53-4.63.67-6.55 1.2-1.92 3.32-3.15 5.56-3.32.18-.01.35-.01.53-.01v4.06c-1.41.06-2.67.92-3.35 2.15-.68 1.23-.74 2.82-.16 4.1.58 1.28 1.83 2.21 3.23 2.39 1.4.18 2.87-.27 3.86-1.17 1-.9 1.55-2.24 1.53-3.62V0h-1.74v.02z" />
+                </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com/ASalem.store" target="_blank"
+                class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.641c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z" />
+                </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://tiktok.com/@salemthestore" target="_blank"
+                class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+            </a>
+            <!-- Phone -->
+            <a href="tel:+201050704078"
+                class="text-white hover:scale-110 transition-transform duration-200 opacity-90 hover:opacity-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Content Area -->
+        <div style="flex-grow: 999; flex-basis: 0; min-width: 300px; display: flex; flex-wrap: wrap;">
+
+            <!-- 2. Contact Form Section -->
+            <div class="p-8 lg:p-12 flex flex-col justify-center" style="flex-grow: 1; flex-basis: 300px;">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-2" style="color: #D4AF37;">Contact Us</h2>
+                    <p class="text-gray-500">We'd love to hear from you! Send us a message.</p>
+                </div>
+
+                <form id="contactForm" action="/contact-us/send-mail" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <input type="hidden" name="_token" id="csrf_token_field">
+
+                    <!-- Name -->
+                    <div class="group">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                        <input type="text" name="name" id="name" required
+                            class="w-full px-0 py-2 border-b-2 border-gray-200 focus:border-[#D4AF37] outline-none bg-transparent transition-colors placeholder-gray-300"
+                            placeholder="John Doe">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="group">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                        <input type="email" name="email" id="email" required
+                            class="w-full px-0 py-2 border-b-2 border-gray-200 focus:border-[#D4AF37] outline-none bg-transparent transition-colors placeholder-gray-300"
+                            placeholder="john@example.com">
+                    </div>
+
+                    <!-- Message -->
+                    <div class="group">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea name="message" id="message" rows="3" required
+                            class="w-full px-3 py-3 rounded-lg bg-gray-50 border border-transparent focus:bg-white focus:border-[#D4AF37] outline-none transition-all placeholder-gray-300 resize-none"
+                            placeholder="Write your message here..."></textarea>
+                    </div>
+
+                    <!-- Privacy -->
+                    <div class="flex items-center space-x-3" dir="ltr">
+                        <input id="privacy" type="checkbox" required
+                            class="w-4 h-4 text-[#D4AF37] border-gray-300 rounded focus:ring-[#D4AF37]">
+                        <label for="privacy" class="font-medium text-gray-700 text-sm m-0 leading-none">
+                            I agree to the <a href="#" class="text-[#D4AF37] hover:underline"
+                                style="color: #D4AF37;">privacy policy</a>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" style="background: linear-gradient(to right, #D4AF37, #AA771C);"
+                        class="w-full text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transform transition-all duration-200 flex items-center justify-center">
+                        <span>Send Message</span>
+                        <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- 3. Map Section -->
+            <div class="relative bg-gray-100" style="flex-grow: 1; flex-basis: 300px; min-height: 400px;">
+
+                <!-- Google Map Embed -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3418.2907752940614!2d31.364040299999996!3d31.0460038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f79d83b4a2652b%3A0x98741ababa0848c3!2sSalem%20Store!5e0!3m2!1sen!2seg!4v1736522260754!5m2!1sen!2seg"
+                    width="90%" height="450" class="absolute top-0 left-0 w-full h-full" style="border:0;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Include CSRF Token Script
+    document.addEventListener("DOMContentLoaded", function () {
+        const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+        if (csrfToken) {
+            const tokenInput = document.getElementById('csrf_token_field');
+            if (tokenInput) tokenInput.value = csrfToken;
+        } else {
+            // Try to find token if meta is missing (fallback)
+            let knownToken = document.querySelector('input[name="_token"]')?.value;
+            if (knownToken) {
+                document.getElementById('csrf_token_field').value = knownToken;
+            }
+        }
+    });
+</script>

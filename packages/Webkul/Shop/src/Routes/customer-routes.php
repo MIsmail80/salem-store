@@ -28,7 +28,7 @@ Route::prefix('customer')->group(function () {
      * Reset password routes.
      */
     Route::controller(ResetPasswordController::class)->prefix('reset-password')->group(function () {
-        Route::get('{token}', 'create')->name('shop.customers.reset_password.create');
+        Route::get('', 'create')->name('shop.customers.reset_password.create');
 
         Route::post('', 'store')->name('shop.customers.reset_password.store');
     });
@@ -58,6 +58,15 @@ Route::prefix('customer')->group(function () {
         Route::get('verify-account/{token}', 'verifyAccount')->name('shop.customers.verify');
 
         Route::get('resend/verification/{email}', 'resendVerificationEmail')->name('shop.customers.resend.verification_email');
+
+        /**
+         * Phone OTP verification routes.
+         */
+        Route::get('verify-phone', 'showVerifyPhonePage')->name('shop.customer.verify-phone');
+
+        Route::post('verify-phone', 'verifyPhone')->name('shop.customer.verify-phone.submit');
+
+        Route::post('resend-otp', 'resendOtp')->name('shop.customer.resend-otp');
     });
 
     /**

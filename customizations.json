@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "type": "image_carousel",
+        "name": "عرض الصور",
+        "status": "ON",
+        "sort_order": 1
+    },
+    {
+        "id": 2,
+        "type": "static_content",
+        "name": "معلومات العرض",
+        "status": "ON",
+        "sort_order": 2
+    },
+    {
+        "id": 3,
+        "type": "category_carousel",
+        "name": "تصنيفات المجموعات",
+        "status": "ON",
+        "sort_order": 3
+    },
+    {
+        "id": 4,
+        "type": "product_carousel",
+        "name": "منتجات جديدة",
+        "status": "ON",
+        "sort_order": 4
+    },
+    {
+        "id": 5,
+        "type": "static_content",
+        "name": "أفضل المجموعات",
+        "status": "OFF",
+        "sort_order": 5
+    },
+    {
+        "id": 6,
+        "type": "static_content",
+        "name": "مجموعات بارزة",
+        "status": "OFF",
+        "sort_order": 6
+    },
+    {
+        "id": 7,
+        "type": "product_carousel",
+        "name": "مجموعات مميزة",
+        "status": "ON",
+        "sort_order": 7
+    },
+    {
+        "id": 8,
+        "type": "static_content",
+        "name": "حاوية اللعبة",
+        "status": "ON",
+        "sort_order": 8
+    },
+    {
+        "id": 9,
+        "type": "product_carousel",
+        "name": "جميع المنتجات",
+        "status": "ON",
+        "sort_order": 9
+    },
+    {
+        "id": 10,
+        "type": "static_content",
+        "name": "مجموعات بارزة",
+        "status": "OFF",
+        "sort_order": 10
+    },
+    {
+        "id": 11,
+        "type": "footer_links",
+        "name": "روابط الذيل",
+        "status": "ON",
+        "sort_order": 11
+    },
+    {
+        "id": 12,
+        "type": "services_content",
+        "name": "محتوى الخدمات",
+        "status": "ON",
+        "sort_order": 12
+    }
+]

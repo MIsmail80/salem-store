@@ -102,6 +102,9 @@
 
                 <!-- Services-content Template -->
                 @includeWhen($theme->type === 'services_content', 'admin::settings.themes.edit.services-content')
+
+                <!-- Brand-Showcase Template -->
+                @includeWhen($theme->type === 'brand_showcase', 'admin::settings.themes.edit.brand-showcase')
             </div>
 
             <!-- General -->

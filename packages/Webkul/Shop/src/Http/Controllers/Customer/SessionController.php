@@ -2,10 +2,11 @@
 
 namespace Webkul\Shop\Http\Controllers\Customer;
 
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Event;
 use Webkul\Shop\Http\Controllers\Controller;
 use Webkul\Shop\Http\Requests\Customer\LoginRequest;
+use Webkul\SmsOtp\Services\SmsMisrService;
+use Webkul\SmsOtp\Services\SmsalaService;
 
 class SessionController extends Controller
 {
@@ -30,13 +31,15 @@ class SessionController extends Controller
      */
     public function store(LoginRequest $loginRequest)
     {
-        if (! auth()->guard('customer')->attempt($loginRequest->only(['email', 'password']))) {
+        if (!auth()->guard('customer')->attempt($loginRequest->only(['phone', 'password']))) {
             session()->flash('error', trans('shop::app.customers.login-form.invalid-credentials'));
 
             return redirect()->back();
         }
 
-        if (! auth()->guard('customer')->user()->status) {
+        $customer = auth()->guard('customer')->user();
+
+        if (!$customer->status) {
             auth()->guard('customer')->logout();
 
             session()->flash('warning', trans('shop::app.customers.login-form.not-activated'));
@@ -44,22 +47,32 @@ class SessionController extends Controller
             return redirect()->back();
         }
 
-        if (! auth()->guard('customer')->user()->is_verified) {
-            session()->flash('info', trans('shop::app.customers.login-form.verify-first'));
-
-            Cookie::queue(Cookie::make('enable-resend', 'true', 1));
-
-            Cookie::queue(Cookie::make('email-for-resend', $loginRequest->get('email'), 1));
-
+        // Check if customer is verified (phone OTP verified)
+        if (!$customer->is_verified) {
             auth()->guard('customer')->logout();
 
-            return redirect()->back();
+            // Send OTP for verification
+            try {
+                $otp = \Webkul\SmsOtp\Models\Otp::createForPhone($customer->phone);
+                $smsService = $this->resolveSmsService();
+                $smsService->sendOtp($customer->phone, $otp->code);
+            } catch (\Exception $e) {
+                report($e);
+            }
+
+            // Store phone in session for verification page
+            session()->put('otp_phone', $customer->phone);
+            session()->put('otp_customer_id', $customer->id);
+
+            session()->flash('warning', trans('smsotp::app.account-not-verified'));
+
+            return redirect()->route('shop.customer.verify-phone');
         }
 
         /**
          * Event passed to prepare cart after login.
          */
-        Event::dispatch('customer.after.login', auth()->guard()->user());
+        Event::dispatch('customer.after.login', $customer);
 
         if (core()->getConfigData('customer.settings.login_options.redirected_to_page') == 'account') {
             return redirect()->route('shop.customers.account.profile.index');
@@ -82,5 +95,16 @@ class SessionController extends Controller
         Event::dispatch('customer.after.logout', $id);
 
         return redirect()->route('shop.home.index');
+    }
+
+    /**
+     * Resolve the active SMS service based on the configured driver.
+     */
+    protected function resolveSmsService(): SmsMisrService|SmsalaService
+    {
+        return match (config('smsotp.driver', 'smsmisr')) {
+            'smsala' => app(SmsalaService::class),
+            default  => app(SmsMisrService::class),
+        };
     }
 }
